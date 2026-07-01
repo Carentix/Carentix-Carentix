@@ -1,0 +1,228 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =====================================================================
+   Carentix global styles — ported verbatim from the approved design.
+   These rules are the canonical source of truth for base behavior,
+   focus states, keyframes, scroll-reveal, and hover micro-interactions.
+   ===================================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #fafaf7;
+  color: #4a4a45;
+  font-family: var(--font-inter), "Inter", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
+}
+
+::selection {
+  background: #fec539;
+  color: #13294b;
+}
+
+a:focus-visible,
+button:focus-visible,
+[role="button"]:focus-visible,
+[tabindex]:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid #fec539;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 5px rgba(19, 41, 75, 0.5);
+  border-radius: 6px;
+}
+
+@keyframes cxDrift {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(28px, -22px) scale(1.08);
+  }
+}
+
+@keyframes cxFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* fail-safe reveal: transform-only, content never opacity-hidden */
+[data-reveal] {
+  transform: translateY(28px);
+  transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+[data-reveal].cx-seen {
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    transform: none !important;
+    transition: none !important;
+  }
+  .cx-anim {
+    animation: none !important;
+  }
+}
+
+.cx-link-u {
+  position: relative;
+}
+.cx-link-u::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  height: 1.5px;
+  width: 0;
+  background: currentColor;
+  transition: width 0.34s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.cx-link-u:hover::after {
+  width: 100%;
+}
+
+.cx-mag {
+  transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.3s ease, background 0.3s ease, color 0.3s ease;
+}
+.cx-gold:hover {
+  box-shadow: 0 16px 40px rgba(254, 197, 57, 0.4) !important;
+}
+.cx-inkbtn:hover {
+  background: #0c1e3c !important;
+  box-shadow: 0 16px 40px rgba(12, 30, 60, 0.28) !important;
+}
+
+.cx-disc-row {
+  cursor: pointer;
+  transition: padding-left 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.cx-disc-row .cx-disc-name {
+  transition: color 0.3s ease, opacity 0.3s ease;
+}
+.cx-disc-num {
+  transition: color 0.3s ease, opacity 0.3s ease;
+}
+
+.cx-lift {
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.45s ease, border-color 0.45s ease;
+}
+.cx-lift:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 28px 54px rgba(19, 41, 75, 0.13) !important;
+}
+
+.cx-faq-row {
+  cursor: pointer;
+}
+.cx-faq-plus {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cx-step {
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.2s ease, border-color 0.2s ease,
+    transform 0.12s ease;
+}
+.cx-step:hover {
+  background: rgba(19, 41, 75, 0.06) !important;
+  border-color: rgba(19, 41, 75, 0.3) !important;
+}
+.cx-step:active {
+  transform: scale(0.92);
+}
+
+/* Skip link (approved style-focus behavior expressed as CSS :focus) */
+.cx-skip {
+  position: absolute;
+  left: 16px;
+  top: -60px;
+  z-index: 300;
+  background: #13294b;
+  color: #fafaf7;
+  padding: 12px 18px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: top 0.2s ease;
+}
+.cx-skip:focus {
+  top: 16px;
+}
+
+/* Image-slot placeholders (real assets not present in the design export) */
+.cx-image-slot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    135deg,
+    rgba(19, 41, 75, 0.06),
+    rgba(254, 197, 57, 0.08)
+  );
+  color: rgba(19, 41, 75, 0.4);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* Responsive rules ported verbatim from the approved design */
+@media (max-width: 920px) {
+  #cx-navlinks {
+    display: none !important;
+  }
+  #cx-burger {
+    display: flex !important;
+  }
+}
+@media (min-width: 921px) {
+  #cx-mobilemenu {
+    display: none !important;
+  }
+}
+@media (max-width: 900px) {
+  .cx-hero-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .cx-hero-art {
+    margin: 10px auto 0 !important;
+    max-width: 440px !important;
+  }
+}
+@media (max-width: 860px) {
+  .cx-disc-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .cx-disc-detail {
+    position: relative !important;
+    top: 0 !important;
+  }
+  .cx-calc-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
