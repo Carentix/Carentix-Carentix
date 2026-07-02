@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import raw from "@/lib/content/hipaa-compliance.raw.json";
 import { CTA, CONTACT } from "@/lib/site";
 import Link from "next/link";
+import Image from "next/image";
+import CinematicHero from "@/components/CinematicHero";
 
 const SERIF = "var(--font-source-serif), 'Source Serif 4', serif";
 
@@ -33,47 +35,9 @@ const a = raw.arrays as unknown as {
   monitoring: TitleBody[];
 };
 
-function Eyebrow({ text }: { text: string }) {
+function SectionHead({ title }: { title: string }) {
   return (
-    <div
-      data-reveal
-      style={{
-        display: "inline-flex",
-        alignItems: "center",
-        gap: 10,
-        marginBottom: 26,
-        background: "rgba(91,140,123,0.1)",
-        border: "1px solid rgba(91,140,123,0.28)",
-        padding: "8px 15px",
-        borderRadius: 999,
-      }}
-    >
-      <span
-        style={{ width: 7, height: 7, borderRadius: "50%", background: "#5B8C7B" }}
-      />
-      <span style={{ fontSize: 13, fontWeight: 500, color: "#3C5A50" }}>
-        {text}
-      </span>
-    </div>
-  );
-}
-
-function SectionHead({ num, title }: { num: string; title: string }) {
-  return (
-    <div
-      style={{ display: "flex", alignItems: "baseline", gap: 14, marginBottom: 28 }}
-    >
-      <span
-        style={{
-          fontFamily: SERIF,
-          fontSize: 15,
-          fontWeight: 600,
-          color: "#5B8C7B",
-          flex: "0 0 auto",
-        }}
-      >
-        {num}
-      </span>
+    <div style={{ marginBottom: 28 }}>
       <h2
         style={{
           fontFamily: SERIF,
@@ -83,7 +47,7 @@ function SectionHead({ num, title }: { num: string; title: string }) {
           letterSpacing: "-0.025em",
           color: "#13294B",
           margin: 0,
-          maxWidth: "20ch",
+          maxWidth: "22ch",
           textWrap: "balance",
         }}
       >
@@ -98,47 +62,26 @@ const shell = { maxWidth: 1180, margin: "0 auto", padding: "0 32px" } as const;
 export default function Page() {
   return (
     <main>
-      {/* HERO */}
-      <section style={{ background: "#FAFAF7", overflow: "hidden" }}>
-        <div style={{ ...shell, padding: "clamp(120px, 14vw, 180px) 32px clamp(40px, 6vw, 60px)" }}>
-          <Eyebrow text="HIPAA Compliance" />
-          <h1
-            data-reveal
-            style={{
-              fontFamily: SERIF,
-              fontWeight: 500,
-              fontSize: "clamp(38px, 5.6vw, 74px)",
-              lineHeight: 1.02,
-              letterSpacing: "-0.04em",
-              margin: 0,
-              color: "#13294B",
-              maxWidth: "16ch",
-              textWrap: "balance",
-            }}
-          >
-            {raw.title}
-          </h1>
-          <p
-            data-reveal
-            style={{
-              fontSize: "clamp(16.5px, 1.3vw, 19px)",
-              lineHeight: 1.62,
-              color: "#4A4A45",
-              margin: "clamp(22px, 3vw, 30px) 0 0",
-              maxWidth: "60ch",
-              fontWeight: 450,
-            }}
-          >
-            {raw.intro}
-          </p>
+      <CinematicHero
+        image="/images/hipaa-hero.jpg"
+        alt="Operations colleagues working securely with data at a shared workstation"
+        eyebrow="HIPAA Compliance"
+        title={raw.title}
+        intro={raw.intro}
+        objectPosition="center"
+      />
+
+      {/* HERO CHECKS strip */}
+      <section style={{ background: "#FAFAF7" }}>
+        <div style={{ ...shell, padding: "clamp(48px, 6vw, 72px) 32px 0" }}>
           <ul
-            data-reveal
+            data-stagger
             style={{
               listStyle: "none",
               display: "grid",
               gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
               gap: "12px 26px",
-              margin: "34px 0 0",
+              margin: 0,
               padding: 0,
             }}
           >
@@ -236,7 +179,7 @@ export default function Page() {
       {/* SAFEGUARDS */}
       <section style={{ background: "#FAFAF7" }}>
         <div style={{ ...shell, padding: "clamp(64px, 8vw, 104px) 32px 0" }}>
-          <SectionHead num="01" title="Administrative, technical, and physical — covered." />
+          <SectionHead title="Administrative, technical, and physical — covered." />
           <div
             style={{
               display: "grid",
@@ -251,7 +194,7 @@ export default function Page() {
                 className="cx-lift"
                 style={{
                   position: "relative",
-                  background: "#F3F0E8",
+                  background: "#F4F6F9",
                   border: `1px solid ${s.iconBg}`,
                   borderRadius: 20,
                   padding: "30px 28px",
@@ -312,7 +255,7 @@ export default function Page() {
       {/* CONTROLS */}
       <section style={{ background: "#FAFAF7" }}>
         <div style={{ ...shell, padding: "clamp(64px, 8vw, 104px) 32px 0" }}>
-          <SectionHead num="02" title="The controls behind the promise." />
+          <SectionHead title="The controls behind the promise." />
           <div
             style={{
               display: "grid",
@@ -342,11 +285,20 @@ export default function Page() {
         </div>
       </section>
 
+      {/* SUPPORTING · Compliance team */}
+      <section style={{ background: "#FAFAF7" }}>
+        <div data-reveal style={{ ...shell, padding: "clamp(56px, 7vw, 88px) 32px 0" }}>
+          <div style={{ position: "relative", width: "100%", aspectRatio: "16 / 6", minHeight: 220, borderRadius: 22, overflow: "hidden", boxShadow: "0 22px 50px rgba(19,41,75,0.14)" }}>
+            <Image src="/images/careers-hero.jpg" alt="Our compliance team collaborates every week to keep controls sharp" fill sizes="(max-width: 1180px) 100vw, 1116px" style={{ objectFit: "cover" }} />
+            <div aria-hidden style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, rgba(12,30,60,0.28), rgba(12,30,60,0.0) 60%)" }} />
+          </div>
+        </div>
+      </section>
+
       {/* AI OVERSIGHT (monitoring) */}
       <section style={{ background: "#FAFAF7" }}>
         <div style={{ ...shell, padding: "clamp(64px, 8vw, 104px) 32px 0" }}>
           <div data-reveal style={{ marginBottom: 26 }}>
-            <span style={{ fontFamily: SERIF, fontSize: 15, fontWeight: 600, color: "#5B8C7B", marginRight: 14 }}>03</span>
             <span style={{ fontFamily: SERIF, fontWeight: 600, fontSize: "clamp(20px, 2.4vw, 28px)", color: "#13294B", letterSpacing: "-0.02em" }}>
               AI is supervised, reviewed, and accountable.
             </span>
@@ -380,7 +332,7 @@ export default function Page() {
       {/* BAA RESPONSIBILITIES */}
       <section style={{ background: "#FAFAF7" }}>
         <div style={{ ...shell, padding: "clamp(64px, 8vw, 104px) 32px 0" }}>
-          <SectionHead num="04" title="We sign before we access your records." />
+          <SectionHead title="We sign before we access your records." />
           <div
             style={{
               display: "grid",
@@ -393,7 +345,7 @@ export default function Page() {
                 key={i}
                 data-reveal
                 style={{
-                  background: "#F3F0E8",
+                  background: "#F4F6F9",
                   border: "1px solid rgba(19,41,75,0.09)",
                   borderRadius: 18,
                   padding: "24px 24px",
@@ -407,10 +359,20 @@ export default function Page() {
         </div>
       </section>
 
+      {/* SUPPORTING · Compliance security */}
+      <section style={{ background: "#FAFAF7" }}>
+        <div data-reveal style={{ ...shell, padding: "clamp(56px, 7vw, 88px) 32px 0" }}>
+          <div style={{ position: "relative", width: "100%", aspectRatio: "16 / 6", minHeight: 220, borderRadius: 22, overflow: "hidden", boxShadow: "0 22px 50px rgba(19,41,75,0.14)" }}>
+            <Image src="/images/careers-training.jpg" alt="A trained specialist working accurately on secure, company-managed equipment" fill sizes="(max-width: 1180px) 100vw, 1116px" style={{ objectFit: "cover" }} />
+            <div aria-hidden style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, rgba(12,30,60,0.28), rgba(12,30,60,0.0) 60%)" }} />
+          </div>
+        </div>
+      </section>
+
       {/* INCIDENT RESPONSE */}
       <section style={{ background: "#FAFAF7" }}>
         <div style={{ ...shell, padding: "clamp(64px, 8vw, 104px) 32px 0" }}>
-          <SectionHead num="05" title="If something goes wrong, you hear it from us first." />
+          <SectionHead title="If something goes wrong, you hear it from us first." />
           <div style={{ display: "flex", flexDirection: "column", gap: 2 }}>
             {a.incident.map((step, i) => (
               <div

@@ -15,7 +15,7 @@ export const NAV_LINKS = [
   { label: "FAQ", href: "/#faq" },
 ] as const;
 
-export const CTA = { label: "Schedule a call", href: "/#contact" } as const;
+export const CTA = { label: "Schedule a Call", href: "/#contact" } as const;
 
 export const CONTACT = {
   email: "info@carentix.com",
@@ -49,7 +49,7 @@ export const FOOTER_COLS = [
   {
     heading: "Contact",
     links: [
-      { label: "Schedule a call", href: "/#contact" },
+      { label: "Schedule a Call", href: "/#contact" },
       { label: CONTACT.email, href: `mailto:${CONTACT.email}` },
       { label: CONTACT.phone, href: CONTACT.phoneHref },
     ],

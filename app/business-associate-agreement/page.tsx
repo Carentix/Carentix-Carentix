@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import raw from "@/lib/content/business-associate-agreement.raw.json";
 import FaqList from "@/components/FaqList";
+import CinematicHero from "@/components/CinematicHero";
+import Image from "next/image";
 import { CTA, CONTACT } from "@/lib/site";
 import Link from "next/link";
 
@@ -28,10 +30,9 @@ const a = raw.arrays as unknown as {
 
 const shell = { maxWidth: 1080, margin: "0 auto", padding: "0 32px" } as const;
 
-function SectionHead({ num, title }: { num: string; title: string }) {
+function SectionHead({ title }: { title: string }) {
   return (
-    <div style={{ display: "flex", alignItems: "baseline", gap: 14, marginBottom: 28 }}>
-      <span style={{ fontFamily: SERIF, fontSize: 15, fontWeight: 600, color: "#3E78C2", flex: "0 0 auto" }}>{num}</span>
+    <div style={{ marginBottom: 28 }}>
       <h2
         style={{
           fontFamily: SERIF,
@@ -41,7 +42,7 @@ function SectionHead({ num, title }: { num: string; title: string }) {
           letterSpacing: "-0.025em",
           color: "#13294B",
           margin: 0,
-          maxWidth: "22ch",
+          maxWidth: "24ch",
           textWrap: "balance",
         }}
       >
@@ -86,66 +87,24 @@ function RespList({
 export default function Page() {
   return (
     <main>
-      {/* HERO */}
-      <section style={{ background: "#FAFAF7", overflow: "hidden" }}>
-        <div style={{ ...shell, padding: "clamp(120px, 14vw, 180px) 32px clamp(40px, 6vw, 56px)" }}>
-          <div
-            data-reveal
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: 10,
-              marginBottom: 26,
-              background: "rgba(62,120,194,0.1)",
-              border: "1px solid rgba(62,120,194,0.28)",
-              padding: "8px 15px",
-              borderRadius: 999,
-            }}
-          >
-            <span style={{ width: 7, height: 7, borderRadius: "50%", background: "#3E78C2" }} />
-            <span style={{ fontSize: 13, fontWeight: 500, color: "#2E5B96" }}>Business Associate Agreement</span>
-          </div>
-          <h1
-            data-reveal
-            style={{
-              fontFamily: SERIF,
-              fontWeight: 500,
-              fontSize: "clamp(38px, 5.4vw, 72px)",
-              lineHeight: 1.02,
-              letterSpacing: "-0.04em",
-              margin: 0,
-              color: "#13294B",
-              maxWidth: "17ch",
-              textWrap: "balance",
-            }}
-          >
-            {raw.title}
-          </h1>
-          <p
-            data-reveal
-            style={{
-              fontSize: "clamp(16.5px, 1.3vw, 19px)",
-              lineHeight: 1.62,
-              color: "#4A4A45",
-              margin: "clamp(22px, 3vw, 30px) 0 0",
-              maxWidth: "62ch",
-              fontWeight: 450,
-            }}
-          >
-            {raw.intro}
-          </p>
-        </div>
-      </section>
+      <CinematicHero
+        image="/images/baa-hero.jpg"
+        alt="Two executives finalizing an agreement with a firm handshake across a boardroom table"
+        eyebrow="Business Associate Agreement"
+        eyebrowColor="#7FA5D6"
+        title={raw.title}
+        intro={raw.intro}
+      />
 
       {/* AT A GLANCE */}
       <section style={{ background: "#FAFAF7" }}>
-        <div style={{ ...shell }}>
+        <div style={{ ...shell, padding: "clamp(56px, 7vw, 88px) 32px 0" }}>
           <div
-            data-reveal
+            data-stagger
             style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 20 }}
           >
             {a.glance.map((g, i) => (
-              <div key={i} className="cx-lift" style={{ background: "#F3F0E8", border: "1px solid rgba(19,41,75,0.09)", borderRadius: 18, padding: "26px 26px" }}>
+              <div key={i} className="cx-lift" style={{ background: "#F4F6F9", border: "1px solid rgba(19,41,75,0.09)", borderRadius: 18, padding: "26px 26px" }}>
                 <div style={{ fontFamily: SERIF, fontWeight: 600, fontSize: 18, color: "#13294B", marginBottom: 10, letterSpacing: "-0.01em" }}>{g.title}</div>
                 <p style={{ fontSize: 14, lineHeight: 1.56, color: "#4A4A45", margin: 0 }}>{g.body}</p>
               </div>
@@ -157,7 +116,7 @@ export default function Page() {
       {/* COMMITMENTS */}
       <section style={{ background: "#FAFAF7" }}>
         <div style={{ ...shell, padding: "clamp(64px, 8vw, 104px) 32px 0" }}>
-          <SectionHead num="01" title="A contract that makes us legally accountable for PHI." />
+          <SectionHead title="A contract that makes us legally accountable for PHI." />
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 20 }}>
             {a.commitments.map((c, i) => (
               <div key={i} data-reveal className="cx-lift" style={{ background: "#FAFAF7", border: "1px solid rgba(19,41,75,0.12)", borderRadius: 18, padding: "26px 26px" }}>
@@ -172,7 +131,7 @@ export default function Page() {
       {/* WHY / WHEN */}
       <section style={{ background: "#FAFAF7" }}>
         <div style={{ ...shell, padding: "clamp(64px, 8vw, 104px) 32px 0" }}>
-          <SectionHead num="02" title="Required by law. Signed before day one." />
+          <SectionHead title="Required by law. Signed before day one." />
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 20 }}>
             {a.whyWhen.map((w, i) => (
               <div key={i} data-reveal style={{ background: w.tint, border: `1px solid ${w.color}33`, borderRadius: 18, padding: "26px 26px" }}>
@@ -184,10 +143,20 @@ export default function Page() {
         </div>
       </section>
 
+      {/* SUPPORTING · BAA documentation */}
+      <section style={{ background: "#FAFAF7" }}>
+        <div data-reveal style={{ ...shell, padding: "clamp(56px, 7vw, 88px) 32px 0" }}>
+          <div style={{ position: "relative", width: "100%", aspectRatio: "16 / 6", minHeight: 220, borderRadius: 22, overflow: "hidden", boxShadow: "0 22px 50px rgba(19,41,75,0.14)" }}>
+            <Image src="/images/careers-training.jpg" alt="Documentation reviewed carefully by our operations specialist" fill sizes="(max-width: 1180px) 100vw, 1116px" style={{ objectFit: "cover" }} />
+            <div aria-hidden style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, rgba(12,30,60,0.28), rgba(12,30,60,0.0) 60%)" }} />
+          </div>
+        </div>
+      </section>
+
       {/* RESPONSIBILITIES */}
       <section style={{ background: "#FAFAF7" }}>
         <div style={{ ...shell, padding: "clamp(64px, 8vw, 104px) 32px 0" }}>
-          <SectionHead num="03" title="Who does what under the BAA." />
+          <SectionHead title="Who does what under the BAA." />
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: 20 }} data-reveal>
             <RespList heading="Our responsibilities" color="#3E78C2" tint="rgba(62,120,194,0.06)" border="rgba(62,120,194,0.2)" items={a.ourResp} />
             <RespList heading="Your responsibilities" color="#5B8C7B" tint="rgba(91,140,123,0.07)" border="rgba(91,140,123,0.22)" items={a.clientResp} />
@@ -198,7 +167,7 @@ export default function Page() {
       {/* FAQ */}
       <section style={{ background: "#FAFAF7" }}>
         <div style={{ ...shell, padding: "clamp(64px, 8vw, 104px) 32px 0" }}>
-          <SectionHead num="04" title="Answered plainly." />
+          <SectionHead title="Answered plainly." />
           <div data-reveal>
             <FaqList faqs={a.faqs} />
           </div>

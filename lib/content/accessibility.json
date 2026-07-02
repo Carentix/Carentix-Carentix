@@ -115,9 +115,11 @@
       "num": "08",
       "title": "Contact",
       "paras": [
-        "Accessibility feedback: accessibility@carentix.com. General inquiries: info@carentix.com or (628) 300-3310.",
-        "Carentix LLC · 30 N Gould St, STE R, Sheridan, WY 82801, USA. We review and update this statement periodically; the last review date is shown at the top of this page."
-      ]
+        "If you have questions or feedback about accessibility on this site, please email info@carentix.com."
+      ],
+      "hasList": false,
+      "list": [],
+      "hasCallout": false
     }
   ]
 }

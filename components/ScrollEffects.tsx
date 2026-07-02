@@ -13,13 +13,24 @@ import { useEffect } from "react";
  */
 export default function ScrollEffects() {
   useEffect(() => {
+    // Fix: browsers restoring a previous scroll position combined with
+    // CSS smooth-scrolling made the page visibly scroll to the middle on
+    // load. Take over restoration and start at the top unless a hash
+    // deep-link is present.
+    try {
+      if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+      if (!window.location.hash) window.scrollTo(0, 0);
+    } catch {
+      /* no-op */
+    }
+
     const reduce =
       typeof window !== "undefined" &&
       window.matchMedia &&
       window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     const revealEls = Array.from(
-      document.querySelectorAll<HTMLElement>("[data-reveal]")
+      document.querySelectorAll<HTMLElement>("[data-reveal], [data-stagger]")
     );
     if (reduce) {
       revealEls.forEach((el) => {
@@ -57,8 +68,23 @@ export default function ScrollEffects() {
       requestAnimationFrame(tick);
     };
 
+    const parallaxEls = Array.from(
+      document.querySelectorAll<HTMLElement>("[data-parallax]")
+    );
+
     const scan = () => {
       const vh = window.innerHeight || document.documentElement.clientHeight;
+      // soft parallax: image drifts a fraction of its scroll progress
+      if (!reduce) {
+        for (const el of parallaxEls) {
+          const host = el.parentElement || el;
+          const r = host.getBoundingClientRect();
+          if (r.bottom < 0 || r.top > vh) continue;
+          const progress = (r.top + r.height / 2 - vh / 2) / vh; // -1..1
+          const factor = parseFloat(el.dataset.parallax || "26");
+          el.style.transform = `translateY(${(-progress * factor).toFixed(1)}px)`;
+        }
+      }
       if (reduce) return;
       for (const el of revealEls) {
         if (el.classList.contains("cx-seen")) continue;

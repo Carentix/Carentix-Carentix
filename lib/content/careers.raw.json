@@ -9,10 +9,6 @@
         "label": "Immersive program"
       },
       {
-        "value": "120",
-        "label": "Question certification exam"
-      },
-      {
         "value": "8/8",
         "label": "Modules, 80% to pass"
       },
@@ -136,7 +132,7 @@
         "title": "Certified Professional",
         "color": "#5B8C7B",
         "focus": "Mastery",
-        "gate": "A step-change, not a raise — it should feel like joining a different company. Mentor trainees; cross-train a second service line."
+        "gate": "Mentor trainees; cross-train a second service line."
       },
       {
         "step": "03",
@@ -278,38 +274,6 @@
       "Remote",
       "Cohort start"
     ],
-    "values": [
-      {
-        "num": "III.1",
-        "title": "Mastery over mediocrity",
-        "body": "We hold a standard the industry hasn’t defined yet — because we intend to define it. 97%+ accuracy is the baseline, not the goal."
-      },
-      {
-        "num": "III.2",
-        "title": "Integrity without convenience",
-        "body": "We tell the truth, even when it’s uncomfortable. We own errors before they’re discovered. We manage performance, not perceptions."
-      },
-      {
-        "num": "III.3",
-        "title": "Patient first",
-        "body": "Every decision is tested against one question: does this improve the patient’s path to care? The admin work is the infrastructure of healing."
-      },
-      {
-        "num": "III.4",
-        "title": "People are the advantage",
-        "body": "We treat exceptional people as an asset to develop, not a cost to manage. We invest in the best because they produce the best."
-      },
-      {
-        "num": "III.6",
-        "title": "Accountability at every level",
-        "body": "It flows up, down, and sideways. No title exempts anyone from the standard; no tenure protects anyone from an expectation."
-      },
-      {
-        "num": "III.7",
-        "title": "Human dignity is non-negotiable",
-        "body": "High standards and dignity reinforce each other. We expect excellence and treat every person with the respect their effort deserves."
-      }
-    ],
     "hiring": [
       {
         "num": "1",
@@ -366,6 +330,10 @@
       {
         "q": "Do you really use AI in the day-to-day work?",
         "a": "Yes, natively. AI tools are taught from day one and woven into every workflow — you’ll graduate fluent in them. But AI augments human judgment here; it never replaces it. Every clinical or billing output gets human review, and accountability always belongs to people."
+      },
+      {
+        "q": "How does selection work?",
+        "a": "Introduce yourself — Tell us who you are and why this work. No prior healthcare experience required for the Academy track — attitude and aptitude matter most. Screening conversation — A real conversation about your goals, strengths, and how you think — not a scripted interrogation. Skills assessment — A practical evaluation that predicts how you’ll perform in the work. We measure aptitude, not pedigree. Academy invitation — “You’ve been selected for the Carentix Academy.” Admission is a distinction — you join a cohort, sign the pledge, and begin. Supervised onboarding — HIPAA certification, systems access, and real work under a coach from day one. Learning and contribution start together."
       }
     ]
   }

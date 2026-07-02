@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import raw from "@/lib/content/careers.raw.json";
 import FaqList from "@/components/FaqList";
-import { CTA, CONTACT } from "@/lib/site";
+import CinematicHero from "@/components/CinematicHero";
+import Image from "next/image";
+import { CONTACT } from "@/lib/site";
 import Link from "next/link";
 
 const SERIF = "var(--font-source-serif), 'Source Serif 4', serif";
@@ -53,19 +55,17 @@ const a = raw.arrays as unknown as {
 const shell = { maxWidth: 1180, margin: "0 auto", padding: "0 32px" } as const;
 
 function SectionHead({
-  num,
   title,
-  color = "#C2683E",
-  max = "22ch",
+  color = "#13294B",
+  max = "26ch",
 }: {
-  num: string;
   title: string;
   color?: string;
   max?: string;
 }) {
   return (
-    <div style={{ display: "flex", alignItems: "baseline", gap: 14, marginBottom: 32 }}>
-      <span style={{ fontFamily: SERIF, fontSize: 15, fontWeight: 600, color, flex: "0 0 auto" }}>{num}</span>
+    <div style={{ marginBottom: 32, display: "flex", alignItems: "center", gap: 14 }}>
+      <span aria-hidden style={{ display: "inline-block", width: 32, height: 3, borderRadius: 2, background: color }} />
       <h2
         style={{
           fontFamily: SERIF,
@@ -88,63 +88,35 @@ function SectionHead({
 export default function Page() {
   return (
     <main>
-      {/* HERO */}
-      <section style={{ background: "#FAFAF7", overflow: "hidden" }}>
-        <div style={{ ...shell, padding: "clamp(120px, 14vw, 178px) 32px clamp(40px, 5vw, 56px)" }}>
-          <div
-            data-reveal
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: 10,
-              marginBottom: 26,
-              background: "rgba(194,104,62,0.1)",
-              border: "1px solid rgba(194,104,62,0.28)",
-              padding: "8px 15px",
-              borderRadius: 999,
-            }}
-          >
-            <span style={{ width: 7, height: 7, borderRadius: "50%", background: "#C2683E" }} />
-            <span style={{ fontSize: 13, fontWeight: 500, color: "#A2542E" }}>Careers at Carentix</span>
-          </div>
-          <h1
-            data-reveal
-            style={{
-              fontFamily: SERIF,
-              fontWeight: 500,
-              fontSize: "clamp(40px, 6vw, 80px)",
-              lineHeight: 1.0,
-              letterSpacing: "-0.04em",
-              margin: 0,
-              color: "#13294B",
-              maxWidth: "15ch",
-              textWrap: "balance",
-            }}
-          >
-            {raw.title}
-          </h1>
-          <p
-            data-reveal
-            style={{
-              fontSize: "clamp(16.5px, 1.3vw, 19px)",
-              lineHeight: 1.62,
-              color: "#4A4A45",
-              margin: "clamp(22px, 3vw, 30px) 0 0",
-              maxWidth: "64ch",
-              fontWeight: 450,
-            }}
-          >
-            {raw.intro}
-          </p>
+      <CinematicHero
+        image="/images/careers-hero.jpg"
+        alt="The Carentix Academy in session — a facilitator leading a small team through an operations workshop"
+        eyebrow="Careers at Carentix"
+        eyebrowColor="#FEC539"
+        title={raw.title}
+        intro={raw.intro}
+        light
+        objectPosition="center"
+      >
+        <div style={{ marginTop: 30, display: "flex", flexWrap: "wrap", gap: 14 }}>
+          <Link href="#openings" className="cx-gold cx-mag" style={{ display: "inline-flex", alignItems: "center", gap: 8, textDecoration: "none", background: "#FEC539", color: "#13294B", fontWeight: 600, fontSize: 15.5, padding: "14px 26px", borderRadius: 999, boxShadow: "0 8px 22px rgba(254,197,57,0.25)" }}>
+            Start Your Journey <span>↓</span>
+          </Link>
+          <a href={`mailto:${CONTACT.email}`} className="cx-mag" style={{ display: "inline-flex", alignItems: "center", textDecoration: "none", color: "#FAFAF7", fontWeight: 500, fontSize: 15.5, padding: "14px 26px", borderRadius: 999, border: "1px solid rgba(250,250,247,0.36)", background: "rgba(250,250,247,0.06)", backdropFilter: "blur(6px)" }}>
+            Introduce yourself
+          </a>
+        </div>
+      </CinematicHero>
 
-          {/* credential stats */}
+      {/* Credentials + skills strip (was in hero) */}
+      <section style={{ background: "#FAFAF7" }}>
+        <div style={{ ...shell, padding: "clamp(56px, 7vw, 88px) 32px 0" }}>
           <div
-            data-reveal
+            data-stagger
             style={{
               display: "grid",
               gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))",
               gap: "24px 20px",
-              margin: "40px 0 0",
             }}
           >
             {a.credentialStats.map((s, i) => (
@@ -156,8 +128,6 @@ export default function Page() {
               </div>
             ))}
           </div>
-
-          {/* skill tags */}
           <div data-reveal style={{ display: "flex", flexWrap: "wrap", gap: 9, marginTop: 34 }}>
             {a.skillTags.map((t, i) => (
               <span
@@ -182,7 +152,7 @@ export default function Page() {
       {/* WHY CARDS */}
       <section style={{ background: "#FAFAF7" }}>
         <div style={{ ...shell, padding: "clamp(64px, 8vw, 104px) 32px 0" }}>
-          <SectionHead num="01" title="A different kind of place to build a career." />
+          <SectionHead title="A different kind of place to build a career." />
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: 20 }}>
             {a.whyCards.map((c, i) => (
               <div key={i} data-reveal className="cx-lift" style={{ background: c.tint, border: `1px solid ${c.color}2E`, borderRadius: 20, padding: "28px 26px" }}>
@@ -194,10 +164,20 @@ export default function Page() {
         </div>
       </section>
 
+      {/* SUPPORTING · Career Culture */}
+      <section style={{ background: "#FAFAF7" }}>
+        <div data-reveal style={{ ...shell, padding: "clamp(56px, 7vw, 88px) 32px 0" }}>
+          <div style={{ position: "relative", width: "100%", aspectRatio: "16 / 6", minHeight: 220, borderRadius: 22, overflow: "hidden", boxShadow: "0 22px 50px rgba(19,41,75,0.14)" }}>
+            <Image src="/images/careers-hero.jpg" alt="Our culture: a facilitator and Academy peers thinking hard together" fill sizes="(max-width: 1180px) 100vw, 1116px" style={{ objectFit: "cover" }} />
+            <div aria-hidden style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, rgba(12,30,60,0.28), rgba(12,30,60,0.0) 60%)" }} />
+          </div>
+        </div>
+      </section>
+
       {/* TRAINING — band stats + phases */}
       <section style={{ background: "#FAFAF7" }}>
         <div style={{ ...shell, padding: "clamp(64px, 8vw, 104px) 32px 0" }}>
-          <SectionHead num="02" title="World-class training for healthcare operations." color="#5B8C7B" />
+          <SectionHead title="World-class training for healthcare operations." color="#5B8C7B" />
           <div data-reveal style={{ background: "#13294B", borderRadius: 24, padding: "clamp(32px, 4vw, 48px)", marginBottom: 28 }}>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))", gap: "24px 20px" }}>
               {a.bandStats.map((s, i) => (
@@ -208,9 +188,18 @@ export default function Page() {
               ))}
             </div>
           </div>
+          <div data-reveal style={{ position: "relative", width: "100%", aspectRatio: "2.4 / 1", borderRadius: 20, overflow: "hidden", marginBottom: 28, boxShadow: "0 22px 50px rgba(19,41,75,0.14)" }}>
+            <Image
+              src="/images/careers-training.jpg"
+              alt="A trained operations specialist working accurately across dual monitors in a focused workspace"
+              fill
+              sizes="(max-width: 1180px) 100vw, 1116px"
+              style={{ objectFit: "cover" }}
+            />
+          </div>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 20 }}>
             {a.phases.map((p, i) => (
-              <div key={i} data-reveal className="cx-lift" style={{ background: "#F3F0E8", border: "1px solid rgba(19,41,75,0.09)", borderRadius: 20, padding: "26px 26px" }}>
+              <div key={i} data-reveal className="cx-lift" style={{ background: "#F4F6F9", border: "1px solid rgba(19,41,75,0.09)", borderRadius: 20, padding: "26px 26px" }}>
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", gap: 10, marginBottom: 14 }}>
                   <span style={{ fontSize: 12.5, fontWeight: 600, color: "#5B8C7B", textTransform: "uppercase", letterSpacing: "0.04em" }}>{p.tag}</span>
                   <span style={{ fontSize: 12.5, fontWeight: 500, color: "#4A4A45" }}>{p.grade}</span>
@@ -228,7 +217,7 @@ export default function Page() {
       {/* LADDER */}
       <section style={{ background: "#FAFAF7" }}>
         <div style={{ ...shell, padding: "clamp(64px, 8vw, 104px) 32px 0" }}>
-          <SectionHead num="03" title="A visible path from Academy to executive." color="#3E78C2" />
+          <SectionHead title="A visible path from Academy to executive." color="#3E78C2" />
           <div style={{ display: "flex", flexDirection: "column", gap: 2 }}>
             {a.ladder.map((l, i) => (
               <div
@@ -236,23 +225,24 @@ export default function Page() {
                 data-reveal
                 style={{
                   display: "grid",
-                  gridTemplateColumns: "auto auto 1fr",
+                  gridTemplateColumns: "auto 1fr",
                   gap: "18px 22px",
                   alignItems: "center",
                   padding: "22px 0",
                   borderTop: "1px solid rgba(19,41,75,0.12)",
                 }}
               >
-                <div style={{ fontFamily: SERIF, fontWeight: 600, fontSize: 22, color: l.color, minWidth: 30, letterSpacing: "-0.02em" }}>{l.step}</div>
                 <div
                   style={{
-                    fontSize: 12.5,
+                    fontSize: 12,
                     fontWeight: 600,
                     color: l.color,
-                    background: `${l.color}18`,
-                    padding: "5px 11px",
+                    background: `${l.color}14`,
+                    border: `1px solid ${l.color}30`,
+                    padding: "6px 12px",
                     borderRadius: 999,
                     whiteSpace: "nowrap",
+                    letterSpacing: "0.02em",
                   }}
                 >
                   {l.grades}
@@ -272,7 +262,7 @@ export default function Page() {
       {/* BENEFITS */}
       <section style={{ background: "#FAFAF7" }}>
         <div style={{ ...shell, padding: "clamp(64px, 8vw, 104px) 32px 0" }}>
-          <SectionHead num="04" title="We invest in people when others cut." color="#B8902A" />
+          <SectionHead title="We invest in people when others cut." color="#B8902A" />
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 20 }}>
             {a.benefits.map((b, i) => (
               <div key={i} data-reveal className="cx-lift" style={{ background: "#FAFAF7", border: "1px solid rgba(19,41,75,0.12)", borderRadius: 18, padding: "24px 24px" }}>
@@ -284,102 +274,63 @@ export default function Page() {
         </div>
       </section>
 
-      {/* OPENINGS */}
+      {/* FAQ */}
       <section style={{ background: "#FAFAF7" }}>
+        <div style={{ ...shell, padding: "clamp(64px, 8vw, 104px) 32px 0", maxWidth: 1080 }}>
+          <SectionHead title="The things people ask before they apply." color="#3E78C2" />
+          <div data-reveal>
+            <FaqList faqs={a.faqs} />
+          </div>
+        </div>
+      </section>
+
+      {/* SUPPORTING · Career Office */}
+      <section style={{ background: "#FAFAF7" }}>
+        <div data-reveal style={{ ...shell, padding: "clamp(56px, 7vw, 88px) 32px 0" }}>
+          <div style={{ position: "relative", width: "100%", aspectRatio: "16 / 6", minHeight: 220, borderRadius: 22, overflow: "hidden", boxShadow: "0 22px 50px rgba(19,41,75,0.14)" }}>
+            <Image src="/images/careers-training.jpg" alt="Our operations specialists at focused work, side-by-side with their supervisors" fill sizes="(max-width: 1180px) 100vw, 1116px" style={{ objectFit: "cover" }} />
+            <div aria-hidden style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, rgba(12,30,60,0.32), rgba(12,30,60,0.0) 60%)" }} />
+          </div>
+        </div>
+      </section>
+
+      {/* OPENINGS */}
+      <section id="openings" style={{ background: "#FAFAF7", scrollMarginTop: 110 }}>
         <div style={{ ...shell, padding: "clamp(64px, 8vw, 104px) 32px 0" }}>
-          <SectionHead num="05" title="Roles open right now." color="#C2683E" />
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: 18 }}>
+          <SectionHead title="Roles open right now." color="#13294B" />
+          <div data-stagger style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: 18 }}>
             {a.openings.map((o, i) => (
               <div
                 key={i}
-                data-reveal
                 className="cx-lift"
                 style={{
                   display: "flex",
                   flexDirection: "column",
                   gap: 14,
-                  background: "#F3F0E8",
-                  border: "1px solid rgba(19,41,75,0.1)",
+                  background: "#FAFAF7",
+                  border: "1px solid rgba(19,41,75,0.12)",
                   borderRadius: 18,
-                  padding: "24px 24px",
+                  padding: "26px 26px",
+                  boxShadow: "0 2px 6px rgba(19,41,75,0.04)",
                 }}
               >
                 <div style={{ fontFamily: SERIF, fontWeight: 600, fontSize: 18, color: "#13294B", letterSpacing: "-0.01em" }}>{o.title}</div>
                 <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
                   {o.tags.map((t, j) => (
-                    <span key={j} style={{ fontSize: 12, fontWeight: 450, color: "#4A4A45", background: "rgba(19,41,75,0.06)", padding: "5px 11px", borderRadius: 999 }}>
+                    <span key={j} style={{ fontSize: 12, fontWeight: 450, color: "#13294B", background: "rgba(19,41,75,0.06)", padding: "5px 11px", borderRadius: 999 }}>
                       {t}
                     </span>
                   ))}
                 </div>
-                <Link
-                  href={CTA.href}
+                <a
+                  href={`mailto:${CONTACT.email}?subject=${encodeURIComponent(`Interest: ${o.title}`)}`}
                   className="cx-link-u"
-                  style={{ marginTop: 2, fontSize: 14, fontWeight: 600, color: "#C2683E", textDecoration: "none", alignSelf: "flex-start" }}
+                  style={{ marginTop: 2, fontSize: 14, fontWeight: 600, color: "#13294B", textDecoration: "none", alignSelf: "flex-start" }}
                 >
                   Express interest →
-                </Link>
+                </a>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* VALUES */}
-      <section style={{ background: "#FAFAF7" }}>
-        <div style={{ ...shell, padding: "clamp(64px, 8vw, 104px) 32px 0" }}>
-          <SectionHead num="06" title="Values you can observe, not just read." color="#7A5BA6" />
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: 20 }}>
-            {a.values.map((v, i) => (
-              <div key={i} data-reveal style={{ display: "flex", gap: 16, alignItems: "flex-start" }}>
-                <span style={{ fontFamily: SERIF, fontWeight: 600, fontSize: 14, color: "#7A5BA6", flex: "0 0 auto", marginTop: 3 }}>{v.num}</span>
-                <div>
-                  <div style={{ fontFamily: SERIF, fontWeight: 600, fontSize: 18, color: "#13294B", marginBottom: 8 }}>{v.title}</div>
-                  <p style={{ fontSize: 14.5, lineHeight: 1.58, color: "#4A4A45", margin: 0, maxWidth: "46ch" }}>{v.body}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* HIRING PROCESS */}
-      <section style={{ background: "#FAFAF7" }}>
-        <div style={{ ...shell, padding: "clamp(64px, 8vw, 104px) 32px 0" }}>
-          <SectionHead num="07" title="How selection works." color="#5B8C7B" />
-          <div style={{ display: "flex", flexDirection: "column", gap: 2 }}>
-            {a.hiring.map((h, i) => (
-              <div
-                key={i}
-                data-reveal
-                style={{
-                  display: "grid",
-                  gridTemplateColumns: "auto auto 1fr",
-                  gap: "16px 20px",
-                  alignItems: "start",
-                  padding: "22px 0",
-                  borderTop: "1px solid rgba(19,41,75,0.12)",
-                }}
-              >
-                <div style={{ fontFamily: SERIF, fontWeight: 600, fontSize: 20, color: "#5B8C7B", minWidth: 26 }}>{h.num}</div>
-                <div style={{ fontSize: 12.5, fontWeight: 600, color: "#5B8C7B", background: "rgba(91,140,123,0.12)", padding: "5px 11px", borderRadius: 999, whiteSpace: "nowrap", alignSelf: "start", marginTop: 2 }}>{h.when}</div>
-                <div>
-                  <div style={{ fontFamily: SERIF, fontWeight: 600, fontSize: 17, color: "#13294B", marginBottom: 6 }}>{h.title}</div>
-                  <p style={{ fontSize: 14.5, lineHeight: 1.58, color: "#4A4A45", margin: 0, maxWidth: "76ch" }}>{h.body}</p>
-                </div>
-              </div>
-            ))}
-            <div style={{ borderTop: "1px solid rgba(19,41,75,0.12)" }} />
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ */}
-      <section style={{ background: "#FAFAF7" }}>
-        <div style={{ ...shell, padding: "clamp(64px, 8vw, 104px) 32px 0", maxWidth: 1080 }}>
-          <SectionHead num="08" title="The things people ask before they apply." color="#3E78C2" />
-          <div data-reveal>
-            <FaqList faqs={a.faqs} />
           </div>
         </div>
       </section>
