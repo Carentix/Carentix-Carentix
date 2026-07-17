@@ -121,10 +121,23 @@
       const mount = document.createElement('div');
       mount.id = 'carentix-site';
       root.replaceWith(mount);
+      let hasRendered = false;
       const render = () => {
         const vals = instance.renderVals ? instance.renderVals() : {};
         const ctx = { ...instance.props, ...vals };
         mount.replaceChildren(renderNode(template.content, ctx));
+        // Every setState rebuilds the whole subtree, which detaches the
+        // scroll-reveal machinery's captured node references. Freshly built
+        // [data-reveal] nodes keep their initial opacity:0 and would never
+        // re-reveal, blanking the page after the first setState. On re-renders
+        // reveal them synchronously so content can never be lost.
+        if (hasRendered) {
+          mount.querySelectorAll('[data-reveal]').forEach((el) => {
+            el.classList.add('cx-seen');
+            el.style.transform = 'none';
+          });
+        }
+        hasRendered = true;
         if (instance.componentDidMount && !instance.__mounted) {
           instance.__mounted = true;
           setTimeout(() => instance.componentDidMount(), 0);
