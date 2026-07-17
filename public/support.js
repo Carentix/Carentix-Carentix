@@ -36,6 +36,11 @@
     if (node.nodeType === Node.TEXT_NODE) {
       return document.createTextNode(interpolate(node.textContent || '', ctx));
     }
+    if (node.nodeType === Node.DOCUMENT_FRAGMENT_NODE) {
+      const fragment = document.createDocumentFragment();
+      Array.from(node.childNodes).forEach((child) => fragment.appendChild(renderNode(child, ctx)));
+      return fragment;
+    }
     if (node.nodeType !== Node.ELEMENT_NODE) return node.cloneNode(true);
 
     const tag = node.tagName.toLowerCase();
@@ -77,7 +82,8 @@
     const htmlAttr = node.getAttribute('dangerouslySetInnerHTML') || node.getAttribute('dangerouslysetinnerhtml');
     if (htmlAttr) {
       const expr = htmlAttr.replace(/[{}]/g, '').trim();
-      el.innerHTML = getPath(ctx, expr) || '';
+      const html = getPath(ctx, expr);
+      el.innerHTML = (html && typeof html === 'object' && '__html' in html) ? (html.__html || '') : (html || '');
     } else {
       Array.from(node.childNodes).forEach((child) => el.appendChild(renderNode(child, ctx)));
     }
