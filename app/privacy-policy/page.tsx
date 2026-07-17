@@ -136,7 +136,7 @@ const data: LegalPageData = {
       num: "08",
       title: "Contact us",
       paras: [
-        "Questions, requests, or concerns about this policy? Email our privacy team at privacy@carentix.com, or reach us at hello@carentix.com. We respond to verified requests promptly.",
+        "Questions, requests, or concerns about this policy? Email us at info@carentix.com, or reach us at support@carentix.com. We respond to verified requests promptly.",
         "Carentix LLC · a Wyoming company. We may update this policy as our services evolve; material changes will be posted here with a new effective date.",
       ],
     },
@@ -144,7 +144,7 @@ const data: LegalPageData = {
   cta: {
     title: "Questions about your data or ours?",
     body: "Our privacy and compliance team answers real questions from real people. Reach out any time.",
-    email: "privacy@carentix.com",
+    email: "info@carentix.com",
   },
 };
 
