@@ -1,0 +1,340 @@
+{
+  "slug": "careers",
+  "title": "Build the future of healthcare operations",
+  "intro": "We’re not an outsourcing company. We’re a professional institution that develops certified experts, pairs them with AI, and pays them like the best in the field. If you want to become elite at the work — and be recognized for it — this is where you do it.",
+  "arrays": {
+    "credentialStats": [
+      {
+        "value": "6–9 mo",
+        "label": "Immersive program"
+      },
+      {
+        "value": "8/8",
+        "label": "Modules, 80% to pass"
+      },
+      {
+        "value": "G1→G15",
+        "label": "Path to the C-suite"
+      }
+    ],
+    "skillTags": [
+      "Operational excellence",
+      "Systems thinking",
+      "Prior authorization",
+      "Clinical scribing",
+      "Leadership & ownership",
+      "Decision-making",
+      "Patient-first thinking",
+      "Continuous improvement",
+      "AI workflows",
+      "Communication",
+      "Accountability",
+      "Quality mindset"
+    ],
+    "whyCards": [
+      {
+        "title": "A profession, not a placement",
+        "color": "#3E78C2",
+        "tint": "rgba(62,120,194,0.12)",
+        "body": "You join an institution that develops certified experts — not a marketplace that rents out hours. The difference governs how we hire, train, and pay."
+      },
+      {
+        "title": "Rewarded for excellence",
+        "color": "#5B8C7B",
+        "tint": "rgba(91,140,123,0.14)",
+        "body": "We invest meaningfully in exceptional people and reward performance and mastery. Compensation is a philosophy here, not a ceiling — it grows with the responsibility and impact you take on."
+      },
+      {
+        "title": "AI-native from day one",
+        "color": "#7A5BA6",
+        "tint": "rgba(122,91,166,0.13)",
+        "body": "AI is woven into every workflow you learn — a performance multiplier that makes you 3x more capable while your judgment stays in charge."
+      },
+      {
+        "title": "A credential that travels",
+        "color": "#B8902A",
+        "tint": "rgba(184,144,42,0.16)",
+        "body": "Carentix Certified is designed to become a recognized standard in healthcare operations. It is a Carentix credential and is not currently an externally accredited or CEU-bearing certification."
+      },
+      {
+        "title": "Coaching as a multiplier",
+        "color": "#C2683E",
+        "tint": "rgba(194,104,62,0.13)",
+        "body": "Everyone gets formal coaching — and the best performers get the most. We coach to challenge, not to reassure."
+      },
+      {
+        "title": "Patient at the end of the work",
+        "color": "#13294B",
+        "tint": "rgba(19,41,75,0.09)",
+        "body": "Every prior auth, every verification, every note has a patient waiting on the other side. Precision here is patient care."
+      }
+    ],
+    "bandStats": [
+      {
+        "value": "6–9 mo",
+        "label": "Immersive Academy — real client work from week one"
+      },
+      {
+        "value": "G1→G15",
+        "label": "A visible grade ladder from Academy to leadership"
+      },
+      {
+        "value": "1:6",
+        "label": "Coach-to-trainee ratio during the Academy"
+      },
+      {
+        "value": "AI-native",
+        "label": "Modern AI woven into every workflow you learn"
+      },
+      {
+        "value": "Remote",
+        "label": "Work from anywhere on company-managed equipment"
+      }
+    ],
+    "phases": [
+      {
+        "tag": "Phase 1",
+        "grade": "Grade G1",
+        "title": "Foundations",
+        "months": "Months 1–3",
+        "production": "Supervised production — 50% capacity",
+        "body": "Healthcare knowledge, systems, compliance, and AI basics. HIPAA certified in week one. You do real, supervised client work from the start."
+      },
+      {
+        "tag": "Phase 2",
+        "grade": "Grade G2",
+        "title": "Core Operations",
+        "months": "Months 4–6",
+        "production": "Independent production — 80% capacity",
+        "body": "Service-line mastery across prior auth, scribing, verification, and referrals. Quality benchmarks rise; AI is used in every workflow."
+      },
+      {
+        "tag": "Phase 3",
+        "grade": "Grade G3",
+        "title": "Advanced Practicum",
+        "months": "Months 7–9",
+        "production": "Full production — 95%+ capacity",
+        "body": "Cross-service mastery, leadership skills, a capstone project, and certification. You graduate ready to lead the work, not just do it."
+      }
+    ],
+    "ladder": [
+      {
+        "step": "01",
+        "grades": "G1–G3",
+        "title": "Academy",
+        "color": "#C2683E",
+        "focus": "Formation",
+        "gate": "Nine-month formation. HIPAA, accuracy, and the certification exam are the gates between you and G4."
+      },
+      {
+        "step": "02",
+        "grades": "G4–G8",
+        "title": "Certified Professional",
+        "color": "#5B8C7B",
+        "focus": "Mastery",
+        "gate": "Mentor trainees; cross-train a second service line."
+      },
+      {
+        "step": "03",
+        "grades": "G9–G10",
+        "title": "Lead / Specialist",
+        "color": "#3E78C2",
+        "focus": "Ownership",
+        "gate": "Own SOPs and team accuracy, or go deep as a domain specialist. The technical track peaks here without managing people."
+      },
+      {
+        "step": "04",
+        "grades": "G11–G12",
+        "title": "Manager",
+        "color": "#7A5BA6",
+        "focus": "People",
+        "gate": "Pass the Management Readiness Assessment. Develop people, run quality, and own outcomes for 6–15 reports."
+      },
+      {
+        "step": "05",
+        "grades": "G13–G14",
+        "title": "Director",
+        "color": "#B8902A",
+        "focus": "Strategy",
+        "gate": "P&L ownership and function strategy. Multi-function scope at VP. Board endorsement for every step above."
+      },
+      {
+        "step": "06",
+        "grades": "G15",
+        "title": "Executive",
+        "color": "#13294B",
+        "focus": "Leadership",
+        "gate": "C-suite leadership. 15+ years total, board-approved, accountable for the company against measurable OKRs."
+      }
+    ],
+    "benefits": [
+      {
+        "title": "Competitive compensation philosophy",
+        "body": "A meaningful investment in exceptional people that rewards performance and mastery — with performance bonuses, profit sharing at G4+, and long-term incentives at G9+."
+      },
+      {
+        "title": "Professional development",
+        "body": "Formal coaching at every level, advanced certifications, and a development budget that grows with your grade."
+      },
+      {
+        "title": "The Carentix credential",
+        "body": "A portable, recognized professional credential issued at a public Certification Ceremony — yours for the rest of your career."
+      },
+      {
+        "title": "AI-first workplace",
+        "body": "Work alongside modern AI tools every day, with the training to use them well — and the judgment to know when not to."
+      },
+      {
+        "title": "Clear career growth",
+        "body": "A fifteen-grade ladder with visible gates and dual tracks. You always know what the next step is and how to earn it."
+      },
+      {
+        "title": "Remote culture",
+        "body": "Work from anywhere on company-managed equipment, inside a structured, supportive operation — not a chaotic gig pool."
+      },
+      {
+        "title": "Continuous learning",
+        "body": "A versioned curriculum and SOP library that improves every quarter — plus AI labs, simulations, and capstones."
+      },
+      {
+        "title": "Wellness & dignity",
+        "body": "Wellness stipend, mental-health days, and a culture where high standards and human dignity reinforce each other."
+      }
+    ],
+    "openings": [
+      {
+        "title": "COS Academy Trainee",
+        "tags": [
+          "Academy · G1",
+          "Full-time",
+          "Remote",
+          "Cohort start"
+        ]
+      },
+      {
+        "title": "Prior Authorization Specialist",
+        "tags": [
+          "Certified · G4–G6",
+          "Full-time",
+          "Remote"
+        ]
+      },
+      {
+        "title": "Medical Scribe (Behavioral Health)",
+        "tags": [
+          "Certified · G4–G6",
+          "Full-time",
+          "Remote"
+        ]
+      },
+      {
+        "title": "Insurance Verification Specialist",
+        "tags": [
+          "Certified · G4–G6",
+          "Full-time",
+          "Remote"
+        ]
+      },
+      {
+        "title": "Referral & Records Coordinator",
+        "tags": [
+          "Certified · G4–G6",
+          "Full-time",
+          "Remote"
+        ]
+      },
+      {
+        "title": "Operations Supervisor / COS Lead",
+        "tags": [
+          "Lead · G9–G10",
+          "Full-time",
+          "Remote"
+        ]
+      },
+      {
+        "title": "Academy Coach",
+        "tags": [
+          "Leadership · G9+",
+          "Full-time",
+          "Remote"
+        ]
+      },
+      {
+        "title": "Client Account Manager",
+        "tags": [
+          "Management · G11",
+          "Full-time",
+          "Remote"
+        ]
+      }
+    ],
+    "tags": [
+      "Academy · G1",
+      "Full-time",
+      "Remote",
+      "Cohort start"
+    ],
+    "hiring": [
+      {
+        "num": "1",
+        "when": "Apply",
+        "title": "Introduce yourself",
+        "body": "Tell us who you are and why this work. No prior healthcare experience required for the Academy track — attitude and aptitude matter most."
+      },
+      {
+        "num": "2",
+        "when": "~30 min",
+        "title": "Screening conversation",
+        "body": "A real conversation about your goals, strengths, and how you think — not a scripted interrogation."
+      },
+      {
+        "num": "3",
+        "when": "Structured",
+        "title": "Skills assessment",
+        "body": "A practical evaluation that predicts how you’ll perform in the work. We measure aptitude, not pedigree."
+      },
+      {
+        "num": "4",
+        "when": "By cohort",
+        "title": "Academy invitation",
+        "body": "“You’ve been selected for the Carentix Academy.” Admission is a distinction — you join a cohort, sign the pledge, and begin."
+      },
+      {
+        "num": "5",
+        "when": "Week 1+",
+        "title": "Supervised onboarding",
+        "body": "HIPAA certification, systems access, and real work under a coach from day one. Learning and contribution start together."
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Do I need prior healthcare experience?",
+        "a": "Not for the Academy track. We hire for aptitude, integrity, and a genuine drive to master the work — then we build the healthcare knowledge through a structured, production-integrated program. Experienced professionals are welcome too and may enter at a higher grade after assessment."
+      },
+      {
+        "q": "What exactly is the Carentix Academy?",
+        "a": "A 6–9 month immersive professional program — not onboarding. Across three phases you learn revenue cycle, prior auth, scribing, verification, compliance, and AI workflows while doing supervised real client work. You graduate with the Carentix Certified credential after passing a 120-question exam, a simulation battery, and a Graduation Board interview."
+      },
+      {
+        "q": "Is this a remote role?",
+        "a": "Yes — we’re remote. You work from anywhere on company-managed equipment behind a mandatory VPN with MFA, inside a structured operation with daily check-ins and coaching. It’s the support of an institution with the flexibility of remote work."
+      },
+      {
+        "q": "How does compensation actually work?",
+        "a": "Academy grades (G1–G3) are paid competitively during the development period. On graduation you transition immediately to the Certified Professional track — a genuine step-change in compensation, plus performance bonuses, profit sharing at G4+, and long-term incentives at G9+. Our philosophy is to invest in exceptional people and reward performance and mastery."
+      },
+      {
+        "q": "What happens if I don’t graduate?",
+        "a": "The standard is real and enforced — not everyone who enters graduates. Gates exist at every phase, and they’re not relaxed for candidates who are “almost there.” That’s exactly what makes the credential valuable. We coach hard to help you clear them, and we handle every outcome with dignity."
+      },
+      {
+        "q": "Do you really use AI in the day-to-day work?",
+        "a": "Yes, natively. AI tools are taught from day one and woven into every workflow — you’ll graduate fluent in them. But AI augments human judgment here; it never replaces it. Every clinical or billing output gets human review, and accountability always belongs to people."
+      },
+      {
+        "q": "How does selection work?",
+        "a": "Introduce yourself — Tell us who you are and why this work. No prior healthcare experience required for the Academy track — attitude and aptitude matter most. Screening conversation — A real conversation about your goals, strengths, and how you think — not a scripted interrogation. Skills assessment — A practical evaluation that predicts how you’ll perform in the work. We measure aptitude, not pedigree. Academy invitation — “You’ve been selected for the Carentix Academy.” Admission is a distinction — you join a cohort, sign the pledge, and begin. Supervised onboarding — HIPAA certification, systems access, and real work under a coach from day one. Learning and contribution start together."
+      }
+    ]
+  }
+}

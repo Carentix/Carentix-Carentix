@@ -1,5 +1,0 @@
-# https://carentix.com — Carentix LLC marketing site
-User-agent: *
-Allow: /
-
-Sitemap: https://carentix.com/sitemap.xml

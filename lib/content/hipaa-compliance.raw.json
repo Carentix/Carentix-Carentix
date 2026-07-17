@@ -1,0 +1,176 @@
+{
+  "slug": "hipaa-compliance",
+  "title": "Compliance isn’t a checkbox. It’s the architecture.",
+  "intro": "Protecting patient information isn’t something we bolt on at the end. It’s designed into every workflow, every device, and every person from day one. Here’s exactly how we safeguard PHI — and why practices trust us with it.",
+  "arrays": {
+    "heroChecks": [
+      "Signed BAA before PHI access",
+      "Company-managed devices, MFA + VPN",
+      "Encryption in transit and at rest",
+      "PHI access logged and audited",
+      "Human review on AI-assisted clinical & billing outputs"
+    ],
+    "trustStats": [
+      {
+        "value": "8/8",
+        "label": "Named training modules — 80% minimum to pass"
+      },
+      {
+        "value": "MFA",
+        "label": "Company-managed devices, MFA + VPN by default"
+      },
+      {
+        "value": "1:8",
+        "label": "Supervisor ratio target with daily check-ins"
+      },
+      {
+        "value": "BAA",
+        "label": "Signed before PHI access — directly accountable"
+      },
+      {
+        "value": "24 hr",
+        "label": "Internal root-cause review target on Level 1 events"
+      },
+      {
+        "value": "6-yr",
+        "label": "Compliance record retention"
+      }
+    ],
+    "safeguards": [
+      {
+        "title": "Administrative",
+        "color": "#5B8C7B",
+        "iconBg": "rgba(91,140,123,0.16)",
+        "blob": "rgba(91,140,123,0.08)",
+        "desc": "The policies and people that govern how PHI is handled — and who is accountable.",
+        "items": [
+          "Documented SOPs with named owners",
+          "Workforce HIPAA training, 80% to pass",
+          "1:8 supervision with daily check-ins",
+          "Designated compliance ownership"
+        ]
+      },
+      {
+        "title": "Technical",
+        "color": "#3E78C2",
+        "iconBg": "rgba(62,120,194,0.14)",
+        "blob": "rgba(62,120,194,0.08)",
+        "desc": "The systems that control access to PHI and protect it from unauthorized eyes.",
+        "items": [
+          "Encryption in transit and at rest",
+          "MFA and mandatory VPN on every login",
+          "Role-based, least-privilege access",
+          "Comprehensive audit logging"
+        ]
+      },
+      {
+        "title": "Physical",
+        "color": "#B8902A",
+        "iconBg": "rgba(184,144,42,0.16)",
+        "blob": "rgba(184,144,42,0.1)",
+        "desc": "Control over the devices and environments where work actually happens.",
+        "items": [
+          "Company-managed, encrypted devices",
+          "Locked screens and auto-timeout",
+          "No PHI on personal hardware",
+          "Secure disposal of records and devices"
+        ]
+      }
+    ],
+    "items": [
+      "Documented SOPs with named owners",
+      "Workforce HIPAA training, 80% to pass",
+      "1:8 supervision with daily check-ins",
+      "Designated compliance ownership"
+    ],
+    "controls": [
+      {
+        "title": "Workforce training",
+        "body": "Our standard process has each team member complete an eight-module HIPAA and compliance program with an 80% minimum to pass — refreshed annually and on regulatory change."
+      },
+      {
+        "title": "Access controls",
+        "body": "Access to PHI is role-based and least-privilege. Each person has a unique ID; permissions are reviewed and revoked promptly once they’re no longer needed."
+      },
+      {
+        "title": "Encryption",
+        "body": "PHI is encrypted in transit and at rest using industry-standard protocols, so data is protected both as it moves and where it lives."
+      },
+      {
+        "title": "Audit logs",
+        "body": "PHI access is logged. Records are retained for six years and reviewed for anomalies — accountability you can audit."
+      },
+      {
+        "title": "Secure communication",
+        "body": "PHI travels through approved, secured channels. Our standard process does not route patient information through unsecured email or consumer messaging tools."
+      },
+      {
+        "title": "Minimum Necessary Rule",
+        "body": "We use and disclose the minimum PHI reasonably required for the task at hand — including in AI prompts, which are reviewed for PHI minimization before use."
+      }
+    ],
+    "baResp": [
+      {
+        "title": "Signed BAA first",
+        "body": "Our standard onboarding process executes a Business Associate Agreement before PHI access."
+      },
+      {
+        "title": "Direct HIPAA liability",
+        "body": "As a Business Associate we’re directly liable under the law, not just to you by contract."
+      },
+      {
+        "title": "Human accountability for AI",
+        "body": "When AI assists with clinical or billing work, a human reviews the output before finalization and the accountability is ours — “the AI did it” is not an answer."
+      },
+      {
+        "title": "Vendor BAAs on file",
+        "body": "Any subcontractor or tool that could touch PHI signs its own BAA before we use it."
+      }
+    ],
+    "incident": [
+      {
+        "step": "01",
+        "title": "Detect",
+        "body": "Monitoring and audit logs surface anomalies fast — often before they become incidents."
+      },
+      {
+        "step": "02",
+        "title": "Contain",
+        "body": "Access is locked down immediately to stop any potential exposure from spreading."
+      },
+      {
+        "step": "03",
+        "title": "Assess",
+        "body": "An internal root-cause review, targeted within 24 hours of a Level 1 event: what did the system allow?"
+      },
+      {
+        "step": "04",
+        "title": "Notify",
+        "body": "We notify you promptly, with the facts and the plan. Contractual breach-notification timelines are set in your BAA."
+      },
+      {
+        "step": "05",
+        "title": "Remediate & review",
+        "body": "We fix the root cause, update the SOP, and feed the lesson back into training."
+      }
+    ],
+    "monitoring": [
+      {
+        "title": "Quarterly AI review",
+        "body": "Every AI tool’s security posture and BAA currency is reviewed at least quarterly by our CTO."
+      },
+      {
+        "title": "Annual recertification",
+        "body": "Workforce compliance training is refreshed annually and on regulatory change."
+      },
+      {
+        "title": "Designed-in checkpoints",
+        "body": "New workflows are designed to include compliance validation — not audited on afterward."
+      },
+      {
+        "title": "Measured like any KPI",
+        "body": "PHI exposure is treated as a top-priority risk, tracked on dashboards with named owners."
+      }
+    ]
+  }
+}

@@ -1,0 +1,418 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =====================================================================
+   Carentix global styles — ported verbatim from the approved design.
+   These rules are the canonical source of truth for base behavior,
+   focus states, keyframes, scroll-reveal, and hover micro-interactions.
+   ===================================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #fafaf7;
+  color: #4a4a45;
+  font-family: var(--font-inter), "Inter", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
+}
+
+::selection {
+  background: #fec539;
+  color: #13294b;
+}
+
+a:focus-visible,
+button:focus-visible,
+[role="button"]:focus-visible,
+[tabindex]:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid #fec539;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 5px rgba(19, 41, 75, 0.5);
+  border-radius: 6px;
+}
+
+@keyframes cxDrift {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(28px, -22px) scale(1.08);
+  }
+}
+
+@keyframes cxFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Cinematic slow zoom for hero photography (Ken Burns, barely perceptible) */
+@keyframes cxKenBurns {
+  from {
+    transform: scale(1.02);
+  }
+  to {
+    transform: scale(1.1);
+  }
+}
+
+/* ---------- Cinematic hero system ---------- */
+.cx-cine {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+.cx-cine-img {
+  position: absolute;
+  inset: 0;
+  z-index: -3;
+}
+.cx-cine-img img {
+  object-fit: cover;
+  animation: cxKenBurns 26s ease-out both;
+  will-change: transform;
+  filter: saturate(0.92) contrast(1.04) brightness(0.98);
+}
+/* premium dark grade + readability overlay */
+.cx-cine-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background: linear-gradient(
+      180deg,
+      rgba(12, 30, 60, 0.62) 0%,
+      rgba(12, 30, 60, 0.5) 42%,
+      rgba(12, 30, 60, 0.74) 100%
+    ),
+    linear-gradient(105deg, rgba(12, 30, 60, 0.55) 0%, rgba(12, 30, 60, 0.05) 68%);
+}
+/* gentle vignette */
+.cx-cine-vignette {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background: radial-gradient(
+    120% 90% at 50% 40%,
+    transparent 55%,
+    rgba(8, 20, 40, 0.42) 100%
+  );
+}
+/* fade the hero photograph into the page background below */
+.cx-cine-fade {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: clamp(90px, 14vw, 180px);
+  z-index: -1;
+  background: linear-gradient(180deg, transparent, var(--cx-fade-to, #fafaf7));
+  pointer-events: none;
+}
+/* lighter grade variant (Careers hero) */
+.cx-cine--light .cx-cine-overlay {
+  background: linear-gradient(
+      180deg,
+      rgba(250, 250, 247, 0.14) 0%,
+      rgba(12, 30, 60, 0.34) 55%,
+      rgba(12, 30, 60, 0.62) 100%
+    ),
+    linear-gradient(105deg, rgba(12, 30, 60, 0.42) 0%, rgba(12, 30, 60, 0.04) 66%);
+}
+
+/* Homepage hero art: soft fade into the page on all edges */
+.cx-hero-blend {
+  -webkit-mask-image: radial-gradient(
+    130% 130% at 50% 42%,
+    #000 62%,
+    transparent 98%
+  );
+  mask-image: radial-gradient(130% 130% at 50% 42%, #000 62%, transparent 98%);
+}
+
+/* staggered reveal children */
+[data-stagger] > * {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+[data-stagger].cx-seen > * {
+  opacity: 1;
+  transform: none;
+}
+[data-stagger].cx-seen > *:nth-child(1) { transition-delay: 0s; }
+[data-stagger].cx-seen > *:nth-child(2) { transition-delay: 0.08s; }
+[data-stagger].cx-seen > *:nth-child(3) { transition-delay: 0.16s; }
+[data-stagger].cx-seen > *:nth-child(4) { transition-delay: 0.24s; }
+[data-stagger].cx-seen > *:nth-child(5) { transition-delay: 0.32s; }
+[data-stagger].cx-seen > *:nth-child(6) { transition-delay: 0.4s; }
+[data-stagger].cx-seen > *:nth-child(n + 7) { transition-delay: 0.48s; }
+
+/* richer navy surface with subtle depth */
+.cx-navy-deep {
+  background: radial-gradient(
+      110% 90% at 85% -10%,
+      rgba(254, 197, 57, 0.1),
+      transparent 55%
+    ),
+    radial-gradient(90% 80% at -10% 110%, rgba(91, 140, 123, 0.14), transparent 55%),
+    linear-gradient(178deg, #12294e 0%, #0e2140 56%, #0c1e3c 100%);
+}
+
+/* interior-page cool surface used on navy-heavy pages */
+.cx-cool {
+  background: #f4f6f9;
+  border: 1px solid rgba(19, 41, 75, 0.09);
+}
+
+/* discreet inline card with a navy left accent */
+.cx-nav-card {
+  background: #fafaf7;
+  border: 1px solid rgba(19, 41, 75, 0.1);
+  border-left: 3px solid #13294b;
+  border-radius: 14px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cx-cine-img img {
+    animation: none !important;
+  }
+  [data-stagger] > * {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  [data-parallax] {
+    transform: none !important;
+  }
+}
+
+/* fail-safe reveal: transform-only, content never opacity-hidden */
+[data-reveal] {
+  transform: translateY(28px);
+  transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+[data-reveal].cx-seen {
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    transform: none !important;
+    transition: none !important;
+  }
+  .cx-anim {
+    animation: none !important;
+  }
+}
+
+.cx-link-u {
+  position: relative;
+}
+.cx-link-u::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  height: 1.5px;
+  width: 0;
+  background: currentColor;
+  transition: width 0.34s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.cx-link-u:hover::after {
+  width: 100%;
+}
+
+.cx-mag {
+  transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.3s ease, background 0.3s ease, color 0.3s ease;
+}
+.cx-gold:hover {
+  box-shadow: 0 16px 40px rgba(254, 197, 57, 0.4) !important;
+}
+.cx-inkbtn:hover {
+  background: #0c1e3c !important;
+  box-shadow: 0 16px 40px rgba(12, 30, 60, 0.28) !important;
+}
+
+.cx-disc-row {
+  cursor: pointer;
+  transition: padding-left 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.cx-disc-row .cx-disc-name {
+  transition: color 0.3s ease, opacity 0.3s ease;
+}
+.cx-disc-num {
+  transition: color 0.3s ease, opacity 0.3s ease;
+}
+
+.cx-lift {
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.45s ease, border-color 0.45s ease;
+}
+.cx-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 42px rgba(19, 41, 75, 0.1) !important;
+}
+
+/* ---------- Unified card system (calm, consistent) ---------- */
+.cx-card {
+  background: #ffffff;
+  border: 1px solid rgba(19, 41, 75, 0.08);
+  border-radius: 18px;
+  box-shadow: 0 1px 2px rgba(19, 41, 75, 0.04);
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.45s ease, border-color 0.45s ease;
+}
+.cx-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 42px rgba(19, 41, 75, 0.1);
+  border-color: rgba(19, 41, 75, 0.12);
+}
+
+/* soft seams so dark sections fade in/out of the paper surface
+   instead of hard-cutting — key to a continuous, un-striped flow */
+.cx-seam-top,
+.cx-seam-bottom {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: clamp(64px, 8vw, 120px);
+  pointer-events: none;
+  z-index: 1;
+}
+.cx-seam-top {
+  top: 0;
+  background: linear-gradient(180deg, var(--cx-seam, #fafaf7), transparent);
+}
+.cx-seam-bottom {
+  bottom: 0;
+  background: linear-gradient(0deg, var(--cx-seam, #fafaf7), transparent);
+}
+
+/* hairline that quietly separates two same-color sections */
+.cx-hairline {
+  height: 1px;
+  max-width: 1320px;
+  margin: 0 auto;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(19, 41, 75, 0.1) 18%,
+    rgba(19, 41, 75, 0.1) 82%,
+    transparent
+  );
+}
+
+.cx-faq-row {
+  cursor: pointer;
+}
+.cx-faq-plus {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cx-step {
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.2s ease, border-color 0.2s ease,
+    transform 0.12s ease;
+}
+.cx-step:hover {
+  background: rgba(19, 41, 75, 0.06) !important;
+  border-color: rgba(19, 41, 75, 0.3) !important;
+}
+.cx-step:active {
+  transform: scale(0.92);
+}
+
+/* Skip link (approved style-focus behavior expressed as CSS :focus) */
+.cx-skip {
+  position: absolute;
+  left: 16px;
+  top: -60px;
+  z-index: 300;
+  background: #13294b;
+  color: #fafaf7;
+  padding: 12px 18px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: top 0.2s ease;
+}
+.cx-skip:focus {
+  top: 16px;
+}
+
+/* Image-slot placeholders (real assets not present in the design export) */
+.cx-image-slot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    135deg,
+    rgba(19, 41, 75, 0.06),
+    rgba(254, 197, 57, 0.08)
+  );
+  color: rgba(19, 41, 75, 0.4);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* Responsive rules ported verbatim from the approved design */
+@media (max-width: 920px) {
+  #cx-navlinks {
+    display: none !important;
+  }
+  #cx-burger {
+    display: flex !important;
+  }
+}
+@media (min-width: 921px) {
+  #cx-mobilemenu {
+    display: none !important;
+  }
+}
+@media (max-width: 900px) {
+  .cx-hero-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .cx-hero-art {
+    margin: 10px auto 0 !important;
+    max-width: 440px !important;
+  }
+}
+@media (max-width: 860px) {
+  .cx-disc-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .cx-disc-detail {
+    position: relative !important;
+    top: 0 !important;
+  }
+  .cx-calc-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
