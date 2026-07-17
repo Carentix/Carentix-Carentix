@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" width="180" height="180">
+  <!-- Square lockup of the Carentix mark, for maskable/touch icons.
+       favicon.svg stays the wide 100x56 logo; this centers the same mark. -->
+  <rect width="180" height="180" fill="#13294B"></rect>
+  <g transform="translate(-12.5,32.6) scale(2.05)">
+    <circle cx="35" cy="28" r="14.5" fill="none" stroke="#FAFAF7" stroke-width="5.4"></circle>
+    <circle cx="65" cy="28" r="14.5" fill="none" stroke="#FAFAF7" stroke-width="5.4"></circle>
+    <circle cx="50" cy="28" r="8.5" fill="#13294B"></circle>
+    <rect x="47" y="20.5" width="6" height="15" rx="1.8" fill="#FEC539"></rect>
+    <rect x="42.5" y="25" width="15" height="6" rx="1.8" fill="#FEC539"></rect>
+  </g>
+</svg>

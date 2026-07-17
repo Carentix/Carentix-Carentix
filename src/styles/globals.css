@@ -1,0 +1,162 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ------------------------------------------------------------------ *
+ * shadcn/ui semantic tokens, tuned to the Carentix palette.
+ * Light theme only — the brand is a warm paper background, never dark UI.
+ * ------------------------------------------------------------------ */
+@layer base {
+  :root {
+    --background: 60 33% 98%; /* paper #FAFAF7 */
+    --foreground: 214 59% 18%; /* navy #13294B */
+
+    --card: 60 33% 98%;
+    --card-foreground: 214 59% 18%;
+
+    --popover: 60 33% 98%;
+    --popover-foreground: 214 59% 18%;
+
+    --primary: 214 59% 18%; /* navy */
+    --primary-foreground: 60 33% 98%;
+
+    --secondary: 40 33% 93%; /* paper-warm */
+    --secondary-foreground: 214 59% 18%;
+
+    --muted: 40 33% 93%;
+    --muted-foreground: 60 5% 29%; /* ink */
+
+    --accent: 45 99% 61%; /* gold #FEC539 */
+    --accent-foreground: 214 59% 18%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 60 33% 98%;
+
+    --border: 214 30% 88%;
+    --input: 214 30% 88%;
+    --ring: 45 99% 61%; /* gold focus ring */
+
+    --radius: 0.9rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Visible focus for keyboard users on every interactive element. Gold
+     reads on navy sections; the dark outer ring keeps it visible on paper. */
+  :where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+    outline: 2px solid #fec539;
+    outline-offset: 2px;
+    border-radius: 4px;
+    box-shadow: 0 0 0 4px rgba(12, 30, 60, 0.55);
+  }
+
+  body {
+    @apply bg-paper text-ink font-sans antialiased;
+    font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: #fec539;
+    color: #13294b;
+  }
+}
+
+/* ------------------------------------------------------------------ *
+ * Utilities
+ * ------------------------------------------------------------------ */
+@layer utilities {
+  /* Scroll-reveal: transform + opacity, driven by the useReveal() hook.
+     Fail-safe — if JS never runs, add .no-js on <html> to force visible. */
+  .reveal {
+    opacity: 0;
+    transform: translateY(26px);
+    transition:
+      opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+      transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+  }
+  .reveal[data-shown="true"] {
+    opacity: 1;
+    transform: none;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-pretty {
+    text-wrap: pretty;
+  }
+
+  /* Skip-to-content: offscreen until focused, then pinned over the header. */
+  .skip-link {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    z-index: 100;
+    transform: translate(-50%, -120%);
+    background: #13294b;
+    color: #fafaf7;
+    padding: 0.75rem 1.25rem;
+    border-radius: 0 0 0.75rem 0.75rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform 0.18s ease-in-out;
+  }
+  .skip-link:focus-visible {
+    transform: translate(-50%, 0);
+  }
+
+  /* Animated gold underline used under nav links */
+  .link-underline {
+    position: relative;
+  }
+  .link-underline::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    height: 1.5px;
+    width: 0;
+    background: currentColor;
+    transition: width 0.34s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .link-underline:hover::after {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .skip-link {
+    transition: none;
+  }
+  .animate-drift,
+  .animate-ken-burns,
+  .animate-reveal-up {
+    animation: none !important;
+  }
+  /* Catch-all for hover lifts and any transition not named above. */
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
