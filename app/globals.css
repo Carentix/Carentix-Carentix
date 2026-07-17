@@ -247,6 +247,24 @@ textarea:focus-visible {
   transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1),
     box-shadow 0.3s ease, background 0.3s ease, color 0.3s ease;
 }
+
+/* Legal template: sticky table-of-contents sidebar (Privacy / Terms) */
+.cx-toc a {
+  transition: color 0.25s ease, border-color 0.25s ease;
+}
+.cx-toc a:hover {
+  color: #13294b !important;
+  border-color: #5b8c7b !important;
+}
+@media (max-width: 900px) {
+  .cx-legal-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .cx-toc {
+    position: relative !important;
+    top: 0 !important;
+  }
+}
 .cx-gold:hover {
   box-shadow: 0 16px 40px rgba(254, 197, 57, 0.4) !important;
 }
