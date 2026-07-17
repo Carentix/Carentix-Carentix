@@ -273,6 +273,46 @@ textarea:focus-visible {
   }
 }
 
+/* Homepage: hero Ken Burns, calculator steppers, disciplines + calc grids */
+.cx-hero-bg {
+  animation: cxKenBurns 20s ease-in-out infinite alternate;
+  will-change: transform;
+}
+@media (max-width: 720px) {
+  .cx-hero-scrim {
+    background: linear-gradient(180deg, rgba(250, 250, 247, 0.97) 0%, rgba(250, 250, 247, 0.9) 42%, rgba(250, 250, 247, 0.74) 100%) !important;
+  }
+}
+.cx-step {
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.12s ease;
+}
+.cx-step:hover {
+  background: rgba(19, 41, 75, 0.06) !important;
+  border-color: rgba(19, 41, 75, 0.3) !important;
+}
+.cx-step:active {
+  transform: scale(0.92);
+}
+@media (max-width: 860px) {
+  .cx-disc-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .cx-disc-detail {
+    position: relative !important;
+    top: 0 !important;
+  }
+  .cx-calc-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cx-hero-bg {
+    animation: none !important;
+  }
+}
+
 /* Careers: open-role rows + pay ladder */
 .cx-role {
   transition: border-color 0.3s ease, background 0.3s ease, box-shadow 0.4s ease;
