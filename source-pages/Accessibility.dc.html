@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Accessibility Statement — Carentix</title>
+<meta name="description" content="Carentix is committed to making its website usable for everyone, working toward WCAG 2.1 AA. Read our accessibility commitment and how to request help or report a barrier.">
+<meta property="og:title" content="Accessibility Statement — Carentix">
+<meta property="og:description" content="Our commitment to an accessible, inclusive web experience — and how to reach us for accommodations.">
+<meta property="og:type" content="website">
+<!-- Suggested URL: /accessibility -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Inter:wght@400;450;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: #FAFAF7; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; font-feature-settings: "kern" 1, "liga" 1, "calt" 1; }
+  ::selection { background: #FEC539; color: #13294B; }
+  a:focus-visible, button:focus-visible, [role="button"]:focus-visible, [tabindex]:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, image-slot:focus-visible { outline: 3px solid #FEC539; outline-offset: 2px; box-shadow: 0 0 0 5px rgba(19,41,75,0.5); border-radius: 6px; }
+  @keyframes cxDrift { 0%,100% { transform: translate(0,0) scale(1); } 50% { transform: translate(28px,-22px) scale(1.08); } }
+  @keyframes cxKenBurns { 0% { transform: scale(1.06) translate(0.5%,0); } 100% { transform: scale(1.17) translate(-1.8%,-1.2%); } }
+  .cx-hero-bg { animation: cxKenBurns 26s ease-in-out infinite alternate; will-change: transform; filter: contrast(1.08) saturate(1.08) brightness(1.0); }
+  .cx-hero-tint { position: absolute; inset: 0; background: #13294B; mix-blend-mode: multiply; opacity: 0; pointer-events: none; }
+  @media (prefers-reduced-motion: reduce) { .cx-hero-bg { animation: none !important; } }
+  @keyframes cxFadeUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+  [data-reveal] { transform: translateY(28px); transition: transform 0.55s cubic-bezier(0.22,1,0.36,1); }
+  [data-reveal].cx-seen { transform: none; }
+  @media (prefers-reduced-motion: reduce) { [data-reveal] { transform: none !important; transition: none !important; } .cx-anim { animation: none !important; } }
+  .cx-link-u { position: relative; }
+  .cx-link-u::after { content: ''; position: absolute; left: 0; bottom: -3px; height: 1.5px; width: 0; background: currentColor; transition: width 0.34s cubic-bezier(0.16,1,0.3,1); }
+  .cx-link-u:hover::after { width: 100%; }
+  .cx-mag { transition: transform 0.18s cubic-bezier(0.16,1,0.3,1), box-shadow 0.3s ease, background 0.3s ease, color 0.3s ease; }
+  .cx-gold:hover { box-shadow: 0 16px 40px rgba(254,197,57,0.4) !important; }
+  .cx-toc a { transition: color 0.25s ease, border-color 0.25s ease; }
+  .cx-toc a:hover { color: #13294B !important; border-color: #5B8C7B !important; }
+  @media (max-width: 920px) { #cx-navlinks { display: none !important; } #cx-burger { display: flex !important; } }
+  @media (min-width: 921px) { #cx-mobilemenu { display: none !important; } }
+  @media (max-width: 900px) { .cx-legal-grid { grid-template-columns: 1fr !important; } .cx-toc { position: relative !important; top: 0 !important; } }
+</style>
+</helmet>
+
+<div data-screen-label="Accessibility" style="position: relative; font-family: 'Inter', system-ui, sans-serif; color: #4A4A45; overflow-x: hidden;">
+
+  <svg aria-hidden="true" style="position: fixed; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 4; opacity: 0.045; mix-blend-mode: multiply;">
+    <filter id="cxGrain"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/></filter>
+    <rect width="100%" height="100%" filter="url(#cxGrain)"/>
+  </svg>
+
+  <header style="position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(250,250,247,0.78); backdrop-filter: saturate(180%) blur(16px); -webkit-backdrop-filter: saturate(180%) blur(16px); border-bottom: 1px solid rgba(19,41,75,0.07);">
+    <nav style="max-width: 1320px; margin: 0 auto; padding: 16px 32px; display: flex; align-items: center; justify-content: space-between; gap: 24px;">
+      <a href="Carentix%20Homepage.dc.html" style="display: flex; align-items: center; gap: 11px; text-decoration: none;">
+        <svg width="50" height="28" viewBox="0 0 100 56" fill="none" aria-label="Carentix mark"><circle cx="35" cy="28" r="14.5" fill="none" stroke="#13294B" stroke-width="5.4"/><circle cx="65" cy="28" r="14.5" fill="none" stroke="#13294B" stroke-width="5.4"/><circle cx="50" cy="28" r="8.5" fill="#FAFAF7"/><rect x="47" y="20.5" width="6" height="15" rx="1.8" fill="#FEC539"/><rect x="42.5" y="25" width="15" height="6" rx="1.8" fill="#FEC539"/></svg>
+        <span style="font-family: 'Source Serif 4', serif; font-weight: 600; font-size: 22px; color: #13294B; letter-spacing: -0.015em;">Carentix</span>
+      </a>
+      <div id="cx-navlinks" style="display: flex; align-items: center; gap: 34px;">
+        <a href="Carentix%20Homepage.dc.html#capabilities" class="cx-link-u" style="text-decoration: none; color: #13294B; font-size: 14.5px; font-weight: 450;">What we handle</a>
+        <a href="Carentix%20Homepage.dc.html#process" class="cx-link-u" style="text-decoration: none; color: #13294B; font-size: 14.5px; font-weight: 450;">How it works</a>
+        <a href="Carentix%20Homepage.dc.html#pricing" class="cx-link-u" style="text-decoration: none; color: #13294B; font-size: 14.5px; font-weight: 450;">Pricing</a>
+        <a href="Careers.dc.html" class="cx-link-u" style="text-decoration: none; color: #13294B; font-size: 14.5px; font-weight: 450;">Careers</a>
+        <a href="HIPAA%20Compliance.dc.html" class="cx-link-u" style="text-decoration: none; color: #13294B; font-size: 14.5px; font-weight: 450;">Compliance</a>
+        <a href="Carentix%20Homepage.dc.html#contact" class="cx-gold cx-mag" style="display: inline-flex; align-items: center; gap: 7px; text-decoration: none; background: #FEC539; color: #13294B; font-weight: 600; font-size: 14.5px; padding: 11px 20px; border-radius: 999px;">Schedule a call <span style="font-size: 15px;">&rarr;</span></a>
+      </div>
+      <button id="cx-burger" onClick="{{ toggleMenu }}" aria-label="Open menu" style="display: none; align-items: center; justify-content: center; width: 44px; height: 44px; border: 1px solid rgba(19,41,75,0.16); background: #FAFAF7; border-radius: 12px; cursor: pointer;">
+        <svg width="20" height="20" viewBox="0 0 20 20"><path d="M3 6h14M3 10h14M3 14h14" stroke="#13294B" stroke-width="1.7" stroke-linecap="round"/></svg>
+      </button>
+    </nav>
+    <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+      <div id="cx-mobilemenu" style="margin: 0 16px; padding: 10px 16px 18px; display: flex; flex-direction: column; gap: 2px; background: #FAFAF7; border: 1px solid rgba(19,41,75,0.08); border-radius: 18px; box-shadow: 0 20px 44px rgba(19,41,75,0.14); animation: cxFadeUp 0.3s ease;">
+        <a href="Carentix%20Homepage.dc.html#capabilities" onClick="{{ closeMenu }}" style="text-decoration: none; color: #13294B; font-size: 16px; font-weight: 500; padding: 13px 8px; border-bottom: 1px solid rgba(19,41,75,0.07);">What we handle</a>
+        <a href="Carentix%20Homepage.dc.html#process" onClick="{{ closeMenu }}" style="text-decoration: none; color: #13294B; font-size: 16px; font-weight: 500; padding: 13px 8px; border-bottom: 1px solid rgba(19,41,75,0.07);">How it works</a>
+        <a href="Carentix%20Homepage.dc.html#pricing" onClick="{{ closeMenu }}" style="text-decoration: none; color: #13294B; font-size: 16px; font-weight: 500; padding: 13px 8px; border-bottom: 1px solid rgba(19,41,75,0.07);">Pricing</a>
+        <a href="Careers.dc.html" onClick="{{ closeMenu }}" style="text-decoration: none; color: #13294B; font-size: 16px; font-weight: 500; padding: 13px 8px; border-bottom: 1px solid rgba(19,41,75,0.07);">Careers</a>
+        <a href="HIPAA%20Compliance.dc.html" onClick="{{ closeMenu }}" style="text-decoration: none; color: #13294B; font-size: 16px; font-weight: 500; padding: 13px 8px;">Compliance</a>
+        <a href="Carentix%20Homepage.dc.html#contact" onClick="{{ closeMenu }}" style="text-align: center; text-decoration: none; background: #FEC539; color: #13294B; font-weight: 600; font-size: 16px; padding: 14px; border-radius: 999px; margin-top: 10px;">Schedule a call &rarr;</a>
+      </div>
+    </sc-if>
+  </header>
+
+  <!-- HERO -->
+  <section style="position: relative; overflow: hidden; background: #0C1E3C;">
+    <img src="assets/hero-accessibility.png" alt="An inclusive, welcoming healthcare setting" class="cx-hero-bg" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 35%;">
+    <div class="cx-hero-tint"></div>
+    <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(12,30,60,0.6) 0%, rgba(12,30,60,0.7) 46%, rgba(12,30,60,0.96) 100%);"></div>
+    <div style="position: relative; z-index: 2; max-width: 900px; margin: 0 auto; padding: clamp(128px, 15vw, 178px) 32px clamp(56px, 7vw, 80px);">
+      <div data-reveal style="display: inline-flex; align-items: center; gap: 10px; margin-bottom: clamp(24px, 3vw, 34px); background: rgba(250,250,247,0.1); border: 1px solid rgba(250,250,247,0.3); padding: 8px 15px; border-radius: 999px;">
+        <span style="width: 7px; height: 7px; border-radius: 50%; background: #5B8C7B;"></span>
+        <span style="font-size: 13px; font-weight: 500; color: rgba(250,250,247,0.9);">Accessibility</span>
+      </div>
+      <h1 data-reveal style="font-family: 'Source Serif 4', serif; font-weight: 500; font-size: clamp(40px, 6vw, 78px); line-height: 1.0; letter-spacing: -0.04em; margin: 0; color: #FAFAF7; max-width: 16ch; text-wrap: balance;">Accessibility Statement</h1>
+      <p data-reveal style="font-size: clamp(16.5px, 1.3vw, 19px); line-height: 1.62; color: rgba(250,250,247,0.82); margin: clamp(22px, 3vw, 30px) 0 0; max-width: 58ch; font-weight: 450;">
+        We want everyone to be able to use the Carentix website — including people who rely on assistive technology. Accessibility is part of how we design, and we treat it as ongoing work rather than a one-time checkbox.
+      </p>
+      <div data-reveal style="display: flex; flex-wrap: wrap; gap: 22px; margin-top: clamp(26px, 3vw, 34px); font-size: 13.5px; color: rgba(250,250,247,0.75);">
+        <span><strong style="color:#FAFAF7;">Target standard</strong> WCAG 2.1 AA</span>
+        <span><strong style="color:#FAFAF7;">Last reviewed</strong> June 30, 2026</span>
+        <span><strong style="color:#FAFAF7;">Feedback</strong> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="51222421213e232511323023343f2538297f323e3c">[email&#160;protected]</a></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- AT A GLANCE -->
+  <section style="background: #FAFAF7; padding: 0 32px clamp(20px, 3vw, 30px);">
+    <div style="max-width: 1080px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1px; background: rgba(19,41,75,0.1); border: 1px solid rgba(19,41,75,0.1); border-radius: 6px; overflow: hidden;">
+      <sc-for list="{{ glance }}" as="g" hint-placeholder-count="3">
+        <div data-reveal style="background: #fff; padding: 28px 26px;">
+          <div style="width: 44px; height: 44px; border-radius: 12px; background: rgba(91,140,123,0.14); display: flex; align-items: center; justify-content: center; color: #5B8C7B; margin-bottom: 18px;"><span dangerouslySetInnerHTML="{{ g.icon }}"></span></div>
+          <div style="font-family: 'Source Serif 4', serif; font-weight: 600; font-size: 17px; color: #13294B; margin-bottom: 7px;">{{ g.title }}</div>
+          <p style="font-size: 13.5px; line-height: 1.55; color: #4A4A45; margin: 0;">{{ g.body }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- BODY: TOC + SECTIONS -->
+  <section style="background: #FAFAF7; padding: clamp(48px, 6vw, 80px) 32px clamp(70px, 9vw, 120px);">
+    <div class="cx-legal-grid" style="max-width: 1080px; margin: 0 auto; display: grid; grid-template-columns: 240px 1fr; gap: clamp(36px, 5vw, 64px); align-items: start;">
+      <nav class="cx-toc" data-reveal style="position: sticky; top: 104px;">
+        <div style="font-size: 11.5px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #5B8C7B; margin-bottom: 18px;">On this page</div>
+        <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 2px;">
+          <sc-for list="{{ sections }}" as="s" hint-placeholder-count="8">
+            <li><a href="#{{ s.id }}" style="display: block; text-decoration: none; color: #4A4A45; font-size: 14px; line-height: 1.4; padding: 8px 0 8px 14px; border-left: 2px solid rgba(19,41,75,0.12);">{{ s.title }}</a></li>
+          </sc-for>
+        </ul>
+      </nav>
+
+      <div style="min-width: 0;">
+        <sc-for list="{{ sections }}" as="s" hint-placeholder-count="8">
+          <div id="{{ s.id }}" data-reveal style="scroll-margin-top: 100px; padding-bottom: clamp(40px, 5vw, 56px); margin-bottom: clamp(40px, 5vw, 56px); border-bottom: 1px solid rgba(19,41,75,0.1);">
+            <h2 style="font-family: 'Source Serif 4', serif; font-weight: 600; font-size: clamp(25px, 3.2vw, 36px); line-height: 1.08; letter-spacing: -0.025em; color: #13294B; margin: 0 0 18px; text-wrap: balance;">{{ s.title }}</h2>
+            <sc-for list="{{ s.paras }}" as="p" hint-placeholder-count="2">
+              <p style="font-size: 16px; line-height: 1.66; color: #4A4A45; margin: 0 0 18px; max-width: 64ch;">{{ p }}</p>
+            </sc-for>
+            <sc-if value="{{ s.hasList }}" hint-placeholder-val="{{ false }}">
+              <ol style="list-style: none; margin: 8px 0 0; padding: 0; display: flex; flex-direction: column; gap: 14px;">
+                <sc-for list="{{ s.list }}" as="li" hint-placeholder-count="3">
+                  <li style="display: flex; gap: 13px; align-items: flex-start; max-width: 64ch;">
+                    <span style="flex: 0 0 auto; width: 26px; height: 26px; border-radius: 50%; background: rgba(19,41,75,0.1); color: #13294B; font-family: 'Source Serif 4', serif; font-weight: 600; font-size: 13px; display: flex; align-items: center; justify-content: center; margin-top: 1px;">{{ li.n }}</span>
+                    <span style="font-size: 15.5px; line-height: 1.55; color: #4A4A45;"><strong style="color:#13294B; font-weight:600;">{{ li.label }}</strong> {{ li.text }}</span>
+                  </li>
+                </sc-for>
+              </ol>
+            </sc-if>
+            <sc-if value="{{ s.hasCallout }}" hint-placeholder-val="{{ false }}">
+              <div style="margin-top: 24px; display: flex; gap: 16px; align-items: flex-start; background: #13294B; color: #FAFAF7; border-radius: 18px; padding: 24px 26px;">
+                <span style="flex: 0 0 auto; width: 42px; height: 42px; border-radius: 12px; background: rgba(254,197,57,0.18); display: flex; align-items: center; justify-content: center; color: #FEC539;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.5 8 8 10 4.5-2 8-5 8-10V6Z"/><path d="M12 9v4M12 16h.01"/></svg></span>
+                <div><div style="font-family: 'Source Serif 4', serif; font-weight: 600; font-size: 17px; color: #FAFAF7; margin-bottom: 6px;">{{ s.calloutTitle }}</div><p style="font-size: 14.5px; line-height: 1.6; color: rgba(250,250,247,0.82); margin: 0;">{{ s.calloutBody }}</p></div>
+              </div>
+            </sc-if>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="background: #FAFAF7; padding: 0 32px clamp(80px, 11vw, 150px);">
+    <div data-reveal style="max-width: 1080px; margin: 0 auto; background: #13294B; color: #FAFAF7; border-radius: 28px; padding: clamp(40px, 6vw, 70px) clamp(28px, 5vw, 64px); position: relative; overflow: hidden; text-align: center;">
+      <div class="cx-anim" style="position: absolute; top: -160px; left: 50%; transform: translateX(-50%); width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle, rgba(254,197,57,0.12), transparent 60%); animation: cxDrift 28s ease-in-out infinite;"></div>
+      <div style="position: relative;">
+        <h2 style="font-family: 'Source Serif 4', serif; font-weight: 500; font-size: clamp(28px, 4vw, 48px); line-height: 1.05; letter-spacing: -0.035em; margin: 0 auto 18px; color: #FAFAF7; max-width: 22ch; text-wrap: balance;">Hit a barrier? Tell us.</h2>
+        <p style="font-size: 17px; line-height: 1.6; color: rgba(250,250,247,0.78); margin: 0 auto 32px; max-width: 50ch;">If any part of this site is hard to use, or you need information in a different format, our team will help and use your feedback to improve.</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 14px; justify-content: center;">
+          <a href="/cdn-cgi/l/email-protection#ef9c9a9f9f809d9baf8c8e9d8a819b8697c18c8082d09c9a8d858a8c9bd2ae8c8c8a9c9c868d8683869b96cadddf898a8a8b8d8e8c84" class="cx-gold cx-mag" style="display: inline-flex; align-items: center; gap: 9px; text-decoration: none; background: #FEC539; color: #13294B; font-weight: 600; font-size: 16px; padding: 16px 30px; border-radius: 999px;"><span class="__cf_email__" data-cfemail="52212722223d202612313320373c263b2a7c313d3f">[email&#160;protected]</span></a>
+          <a href="Privacy%20Policy.dc.html" class="cx-mag" style="display: inline-flex; align-items: center; gap: 9px; text-decoration: none; color: #FAFAF7; font-weight: 600; font-size: 16px; padding: 16px 28px; border-radius: 999px; border: 1px solid rgba(250,250,247,0.28);">Read our Privacy Policy</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer style="background: #0C1E3C; color: rgba(250,250,247,0.7); padding: clamp(56px, 6vw, 84px) 32px 34px;">
+    <div style="max-width: 1320px; margin: 0 auto;">
+      <div style="display: grid; grid-template-columns: minmax(240px, 1.6fr) repeat(3, minmax(140px, 1fr)); gap: 40px; padding-bottom: 46px; border-bottom: 1px solid rgba(250,250,247,0.1);">
+        <div>
+          <div style="display: flex; align-items: center; gap: 11px; margin-bottom: 18px;">
+            <svg width="50" height="28" viewBox="0 0 100 56" fill="none"><circle cx="35" cy="28" r="14.5" fill="none" stroke="#FAFAF7" stroke-width="5.4"/><circle cx="65" cy="28" r="14.5" fill="none" stroke="#FAFAF7" stroke-width="5.4"/><circle cx="50" cy="28" r="8.5" fill="#0C1E3C"/><rect x="47" y="20.5" width="6" height="15" rx="1.8" fill="#FEC539"/><rect x="42.5" y="25" width="15" height="6" rx="1.8" fill="#FEC539"/></svg>
+            <span style="font-family: 'Source Serif 4', serif; font-weight: 600; font-size: 22px; color: #FAFAF7;">Carentix</span>
+          </div>
+          <p style="font-size: 14.5px; line-height: 1.6; max-width: 320px; margin: 0;">A managed, compliant operations partner &mdash; so your providers can focus entirely on patient care.</p>
+        </div>
+        <sc-for list="{{ footerCols }}" as="col" hint-placeholder-count="3">
+          <div>
+            <div style="font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #FAFAF7; margin-bottom: 18px;">{{ col.heading }}</div>
+            <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px;">
+              <sc-for list="{{ col.links }}" as="link" hint-placeholder-count="4">
+                <li><a href="{{ link.href }}" class="cx-link-u" style="text-decoration: none; color: rgba(250,250,247,0.7); font-size: 14px;">{{ link.label }}</a></li>
+              </sc-for>
+            </ul>
+          </div>
+        </sc-for>
+      </div>
+      <p style="margin: 24px 0 0; font-size: 12px; line-height: 1.6; color: rgba(250,250,247,0.4); max-width: 100ch;">Carentix&trade; and the Carentix logo are trademarks of Carentix LLC. This site is provided for general informational purposes and does not constitute a binding offer; any engagement is governed by a separately executed Master Services Agreement and, where applicable, a Business Associate Agreement, which control in the event of any conflict.</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 14px; justify-content: space-between; align-items: center; padding-top: 20px; font-size: 13px; color: rgba(250,250,247,0.55);">
+        <div>&copy; 2026 Carentix LLC &middot; 30 N Gould St, STE R, Sheridan, WY 82801, USA</div>
+        <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+          <a href="Privacy%20Policy.dc.html" style="text-decoration: none; color: rgba(250,250,247,0.55);">Privacy Policy</a>
+          <a href="Terms%20of%20Service.dc.html" style="text-decoration: none; color: rgba(250,250,247,0.55);">Terms of Service</a>
+          <a href="HIPAA%20Compliance.dc.html" style="text-decoration: none; color: rgba(250,250,247,0.55);">HIPAA</a>
+          <a href="Business%20Associate%20Agreement.dc.html" style="text-decoration: none; color: rgba(250,250,247,0.55);">BAA</a>
+          <a href="Accessibility.dc.html" style="text-decoration: none; color: #FEC539;">Accessibility</a>
+          <button onClick="{{ openCookiePrefs }}" style="background: none; border: none; padding: 0; cursor: pointer; font: inherit; color: rgba(250,250,247,0.55);">Cookie preferences</button>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- COOKIE CONSENT -->
+  <sc-if value="{{ cookieOpen }}" hint-placeholder-val="{{ false }}">
+    <div role="dialog" aria-label="Cookie preferences" style="position: fixed; left: 16px; right: 16px; bottom: 16px; z-index: 200; display: flex; justify-content: center; pointer-events: none;">
+      <div style="pointer-events: auto; width: 100%; max-width: 560px; background: #FAFAF7; border: 1px solid rgba(19,41,75,0.14); border-radius: 20px; box-shadow: 0 28px 64px rgba(12,30,60,0.28); padding: 24px 26px; animation: cxFadeUp 0.4s cubic-bezier(0.16,1,0.3,1);">
+        <div style="font-family: 'Source Serif 4', serif; font-weight: 600; font-size: 18px; color: #13294B; margin-bottom: 8px;">Your privacy choices</div>
+        <p style="font-size: 13.5px; line-height: 1.58; color: #4A4A45; margin: 0 0 16px;">We use essential cookies to run this site and, with your consent, optional analytics cookies to understand usage. We honor Global Privacy Control signals. See our <a href="#cookies" class="cx-link-u" style="color:#13294B; font-weight:600; text-decoration:none;">Cookie &amp; Privacy Policy</a>.</p>
+        <sc-if value="{{ gpcDetected }}" hint-placeholder-val="{{ false }}">
+          <div style="display: flex; gap: 10px; align-items: flex-start; background: rgba(91,140,123,0.12); border: 1px solid rgba(91,140,123,0.28); border-radius: 12px; padding: 11px 13px; margin-bottom: 16px;">
+            <span style="color:#3C5A50; flex:0 0 auto; margin-top:1px;"><svg width="15" height="15" viewBox="0 0 18 18" fill="none"><path d="M3 9.5l4 4 8-9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <span style="font-size: 12.5px; line-height: 1.45; color: #3C5A50;">A Global Privacy Control signal was detected. Optional cookies are off by default and your opt-out is honored.</span>
+          </div>
+        </sc-if>
+        <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+          <button onClick="{{ acceptAll }}" class="cx-gold" style="flex: 1; min-width: 140px; background: #FEC539; color: #13294B; font-weight: 600; font-size: 14px; padding: 12px 18px; border: none; border-radius: 999px; cursor: pointer;">Accept all</button>
+          <button onClick="{{ essentialOnly }}" style="flex: 1; min-width: 140px; background: #FAFAF7; color: #13294B; font-weight: 600; font-size: 14px; padding: 12px 18px; border: 1px solid rgba(19,41,75,0.2); border-radius: 999px; cursor: pointer;">Essential only</button>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+</div>
+
+  <template id="__bundler_thumbnail">
+    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <rect width="100" height="100" fill="#13294B"/>
+      <g transform="translate(50,50)">
+        <circle cx="-15" cy="0" r="14.5" fill="none" stroke="#FAFAF7" stroke-width="5.4"/>
+        <circle cx="15" cy="0" r="14.5" fill="none" stroke="#FAFAF7" stroke-width="5.4"/>
+        <circle cx="0" cy="0" r="8.5" fill="#13294B"/>
+        <rect x="-3" y="-7.5" width="6" height="15" rx="1.8" fill="#FEC539"/>
+        <rect x="-7.5" y="-3" width="15" height="6" rx="1.8" fill="#FEC539"/>
+      </g>
+    </svg>
+  </template></x-dc>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;: {&quot;width&quot;: 1080, &quot;height&quot;: 900}}">
+class Component extends DCLogic {
+  state = { menuOpen: false, cookieOpen: false, gpcDetected: false };
+  icon(svg) { return { __html: svg }; }
+  initCookies() {
+    try {
+      const gpc = !!(navigator.globalPrivacyControl);
+      const stored = localStorage.getItem('cx-cookie-consent');
+      if (gpc && !stored) { localStorage.setItem('cx-cookie-consent', 'essential-only'); }
+      this.setState({ gpcDetected: gpc, cookieOpen: !stored });
+    } catch (e) { this.setState({ cookieOpen: true }); }
+  }
+  setConsent(v) { try { localStorage.setItem('cx-cookie-consent', v); } catch (e) {} this.setState({ cookieOpen: false }); }
+  componentDidMount() {
+    try { if ('scrollRestoration' in history) history.scrollRestoration = 'manual'; } catch (e) {}
+    requestAnimationFrame(() => { try { window.scrollTo(0, 0); } catch (e) {} });
+    const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const revealEls = Array.from(document.querySelectorAll('[data-reveal]'));
+    this._safety = setTimeout(() => revealEls.forEach(el => { el.classList.add('cx-seen'); el.style.transform = 'none'; }), 2600);
+    if (reduce) revealEls.forEach(el => { el.classList.add('cx-seen'); el.style.transform = 'none'; });
+    const scan = () => {
+      const vh = window.innerHeight || document.documentElement.clientHeight;
+      if (reduce) return;
+      for (const el of revealEls) { if (el.classList.contains('cx-seen')) continue; const r = el.getBoundingClientRect(); if (r.top < vh * 0.92 && r.bottom > 0) { el.classList.add('cx-seen'); el.style.transform = 'none'; } }
+    };
+    let raf = 0;
+    const onScroll = () => { if (raf) return; raf = requestAnimationFrame(() => { raf = 0; scan(); }); };
+    this._onScroll = onScroll;
+    document.addEventListener('scroll', onScroll, { capture: true, passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
+    let polls = 0; this._poll = setInterval(() => { scan(); if (++polls > 60) { clearInterval(this._poll); this._poll = null; } }, 120);
+    scan();
+    this.initCookies();
+    this._mag = [];
+    if (!reduce && window.matchMedia('(pointer:fine)').matches) {
+      document.querySelectorAll('.cx-mag').forEach(btn => {
+        const move = (e) => { const r = btn.getBoundingClientRect(); btn.style.transform = 'translate(' + ((e.clientX - (r.left + r.width/2)) * 0.16) + 'px,' + ((e.clientY - (r.top + r.height/2)) * 0.26) + 'px)'; };
+        const leave = () => { btn.style.transform = 'translate(0,0)'; };
+        btn.addEventListener('mousemove', move); btn.addEventListener('mouseleave', leave);
+        this._mag.push([btn, move, leave]);
+      });
+    }
+  }
+  componentWillUnmount() {
+    if (this._poll) clearInterval(this._poll);
+    if (this._onScroll) { document.removeEventListener('scroll', this._onScroll, { capture: true }); window.removeEventListener('resize', this._onScroll); }
+    if (this._mag) this._mag.forEach(([b, m, l]) => { b.removeEventListener('mousemove', m); b.removeEventListener('mouseleave', l); });
+  }
+  renderVals() {
+    const ic = (p) => `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${p}</svg>`;
+    const sections = [
+      { id: "commitment", num: "01", title: "Our commitment",
+        paras: ["Carentix is committed to making its website usable for as many people as possible, including those who use assistive technologies such as screen readers, keyboard navigation, and screen magnification. We view accessibility as part of good design and an ongoing responsibility, not a one-time project."] },
+      { id: "standard", num: "02", title: "The standard we work toward",
+        paras: ["We aim to conform with the Web Content Accessibility Guidelines (WCAG) 2.1, Level AA \u2014 the benchmark referenced by accessibility laws in the United States and internationally. Conformance is a goal we design and test toward; some content may not yet fully meet every criterion, and we work to close gaps as we find them."] },
+      { id: "measures", num: "03", title: "What we do to support access",
+        paras: ["Accessibility is considered as we design and build pages."],
+        hasList: true, list: [
+          { n: "1", label: "Semantic structure.", text: "Meaningful headings, landmarks, and reading order so assistive technology can navigate the page." },
+          { n: "2", label: "Keyboard support.", text: "Interactive elements such as menus, accordions, and the cookie dialog are reachable and operable by keyboard." },
+          { n: "3", label: "Readable contrast and text.", text: "Color choices and type sizes chosen for legibility, with content that reflows on smaller screens and when zoomed." },
+          { n: "4", label: "Reduced motion.", text: "Animations are minimized and respect your operating-system \u2018reduce motion\u2019 preference." },
+        ] },
+      { id: "labels", num: "04", title: "Images, icons & controls",
+        paras: ["Decorative graphics are hidden from assistive technology, and we work to give meaningful names to icon-only controls so their purpose is announced. If you encounter a control whose purpose is unclear with a screen reader, please let us know and we will fix it."] },
+      { id: "thirdparty", num: "05", title: "Third-party content",
+        paras: ["Some elements \u2014 such as embedded fonts or future third-party tools \u2014 are provided by others and may not be fully under our control. Where a third-party component creates a barrier, we will look for an accessible alternative or provide the information another way on request."] },
+      { id: "limitations", num: "06", title: "Known limitations",
+        paras: ["Because our site evolves and is reviewed periodically, some areas may not yet fully meet WCAG 2.1 AA at all times. We treat reported barriers as priorities and aim to remediate them promptly. This statement reflects our status as of the last review date shown above."] },
+      { id: "feedback", num: "07", title: "Feedback and requesting help",
+        paras: ["If you have difficulty using any part of this site, need information in an alternative format, or want to report a barrier, please contact us at support@carentix.com. Tell us the page, what happened, and the assistive technology you were using, and we will respond and help."],
+        hasCallout: true, calloutTitle: "We aim to respond promptly", calloutBody: "We treat accessibility feedback as a priority and will work with you to provide the information or function you need while we address the underlying issue." },
+      { id: "contact", num: "08", title: "Contact",
+        paras: ["General inquiries: info@carentix.com or (628) 300-3310.", "Carentix LLC \u00b7 30 N Gould St, STE R, Sheridan, WY 82801, USA. We review and update this statement periodically; the last review date is shown at the top of this page."] },
+    ];
+    return {
+      menuOpen: this.state.menuOpen,
+      toggleMenu: () => this.setState(s => ({ menuOpen: !s.menuOpen })),
+      closeMenu: () => this.setState({ menuOpen: false }),
+      cookieOpen: this.state.cookieOpen,
+      gpcDetected: this.state.gpcDetected,
+      acceptAll: () => this.setConsent('accepted-all'),
+      essentialOnly: () => this.setConsent('essential-only'),
+      openCookiePrefs: () => this.setState({ cookieOpen: true }),
+      glance: [
+        { title: "Working toward WCAG 2.1 AA", icon: this.icon(ic('<path d="M20 7 9 18l-5-5"/>')), body: "We design and test toward the WCAG 2.1 AA standard and treat conformance as ongoing work." },
+        { title: "Built to be operable", icon: this.icon(ic('<rect x="2" y="4" width="20" height="14" rx="2"/><path d="M6 8h.01M10 8h.01M14 8h.01M7 12h10M8 20h8"/>')), body: "Keyboard navigation, readable contrast, responsive layout, and reduced-motion support are part of how we build." },
+        { title: "We want your feedback", icon: this.icon(ic('<path d="M21 11.5a8.4 8.4 0 0 1-9 8.4L3 21l1.1-3.5A8.4 8.4 0 1 1 21 11.5Z"/>')), body: "Hit a barrier or need another format? Email support@carentix.com and we will help." },
+      ],
+      sections,
+      footerCols: [
+        { heading: "Company", links: [ { label: "About", href: "Carentix%20Homepage.dc.html#top" }, { label: "Careers", href: "Careers.dc.html" }, { label: "How it works", href: "Carentix%20Homepage.dc.html#process" }, { label: "Pricing", href: "Carentix%20Homepage.dc.html#pricing" } ]},
+        { heading: "Compliance", links: [ { label: "HIPAA Compliance", href: "HIPAA%20Compliance.dc.html" }, { label: "Business Associate Agreement", href: "Business%20Associate%20Agreement.dc.html" }, { label: "Our Accessibility Commitment", href: "Accessibility.dc.html" }, { label: "Privacy Policy", href: "Privacy%20Policy.dc.html" }, { label: "Terms of Service", href: "Terms%20of%20Service.dc.html" } ]},
+        { heading: "Contact", links: [ { label: "Schedule a call", href: "Carentix%20Homepage.dc.html#contact" }, { label: "info@carentix.com", href: "mailto:info@carentix.com" } ]},
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

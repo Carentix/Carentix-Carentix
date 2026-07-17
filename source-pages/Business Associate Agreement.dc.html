@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Business Associate Agreement (BAA) — Carentix</title>
+<meta name="description" content="What a HIPAA Business Associate Agreement is, why your practice needs one, and how Carentix protects PHI under it. Request a copy of our BAA.">
+<meta property="og:title" content="Business Associate Agreement (BAA) — Carentix">
+<meta property="og:description" content="A plain-English guide to the BAA that protects your patients' information — and a copy on request.">
+<meta property="og:type" content="website">
+<!-- Suggested URL: /baa -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Inter:wght@400;450;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: #FAFAF7; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; font-feature-settings: "kern" 1, "liga" 1, "calt" 1; }
+  ::selection { background: #FEC539; color: #13294B; }
+  a:focus-visible, button:focus-visible, [role="button"]:focus-visible, [tabindex]:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, image-slot:focus-visible { outline: 3px solid #FEC539; outline-offset: 2px; box-shadow: 0 0 0 5px rgba(19,41,75,0.5); border-radius: 6px; }
+  @keyframes cxDrift { 0%,100% { transform: translate(0,0) scale(1); } 50% { transform: translate(28px,-22px) scale(1.08); } }
+  @keyframes cxKenBurns { 0% { transform: scale(1.06) translate(0.5%,0); } 100% { transform: scale(1.17) translate(-1.8%,-1.2%); } }
+  .cx-hero-bg { animation: cxKenBurns 26s ease-in-out infinite alternate; will-change: transform; filter: contrast(1.08) saturate(1.08) brightness(1.0); }
+  .cx-hero-tint { position: absolute; inset: 0; background: #13294B; mix-blend-mode: multiply; opacity: 0; pointer-events: none; }
+  @media (max-width: 720px) { .cx-hero-scrim { background: linear-gradient(180deg, rgba(12,30,60,0.72) 0%, rgba(12,30,60,0.82) 46%, rgba(12,30,60,0.97) 100%) !important; } }
+  @media (prefers-reduced-motion: reduce) { .cx-hero-bg { animation: none !important; } }
+  @keyframes cxFadeUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+  [data-reveal] { transform: translateY(28px); transition: transform 0.55s cubic-bezier(0.22,1,0.36,1); }
+  [data-reveal].cx-seen { transform: none; }
+  @media (prefers-reduced-motion: reduce) { [data-reveal] { transform: none !important; transition: none !important; } .cx-anim { animation: none !important; } }
+  .cx-link-u { position: relative; }
+  .cx-link-u::after { content: ''; position: absolute; left: 0; bottom: -3px; height: 1.5px; width: 0; background: currentColor; transition: width 0.34s cubic-bezier(0.16,1,0.3,1); }
+  .cx-link-u:hover::after { width: 100%; }
+  .cx-mag { transition: transform 0.18s cubic-bezier(0.16,1,0.3,1), box-shadow 0.3s ease, background 0.3s ease, color 0.3s ease; }
+  .cx-gold:hover { box-shadow: 0 16px 40px rgba(254,197,57,0.4) !important; }
+  .cx-lift { transition: transform 0.45s cubic-bezier(0.16,1,0.3,1), box-shadow 0.45s ease, border-color 0.45s ease; }
+  .cx-lift:hover { transform: translateY(-5px); box-shadow: 0 28px 54px rgba(19,41,75,0.13) !important; }
+  .cx-faq-row { cursor: pointer; }
+  .cx-faq-plus { transition: transform 0.4s cubic-bezier(0.16,1,0.3,1); }
+  @media (max-width: 920px) { #cx-navlinks { display: none !important; } #cx-burger { display: flex !important; } }
+  @media (min-width: 921px) { #cx-mobilemenu { display: none !important; } }
+  @media (max-width: 860px) { .cx-resp-grid { grid-template-columns: 1fr !important; } }
+</style>
+</helmet>
+
+<div data-screen-label="Business Associate Agreement" style="position: relative; font-family: 'Inter', system-ui, sans-serif; color: #4A4A45; overflow-x: hidden;">
+
+  <svg aria-hidden="true" style="position: fixed; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 4; opacity: 0.045; mix-blend-mode: multiply;">
+    <filter id="cxGrain"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/></filter>
+    <rect width="100%" height="100%" filter="url(#cxGrain)"/>
+  </svg>
+
+  <header style="position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(250,250,247,0.78); backdrop-filter: saturate(180%) blur(16px); -webkit-backdrop-filter: saturate(180%) blur(16px); border-bottom: 1px solid rgba(19,41,75,0.07);">
+    <nav style="max-width: 1320px; margin: 0 auto; padding: 16px 32px; display: flex; align-items: center; justify-content: space-between; gap: 24px;">
+      <a href="Carentix%20Homepage.dc.html" style="display: flex; align-items: center; gap: 11px; text-decoration: none;">
+        <svg width="50" height="28" viewBox="0 0 100 56" fill="none" aria-label="Carentix mark"><circle cx="35" cy="28" r="14.5" fill="none" stroke="#13294B" stroke-width="5.4"/><circle cx="65" cy="28" r="14.5" fill="none" stroke="#13294B" stroke-width="5.4"/><circle cx="50" cy="28" r="8.5" fill="#FAFAF7"/><rect x="47" y="20.5" width="6" height="15" rx="1.8" fill="#FEC539"/><rect x="42.5" y="25" width="15" height="6" rx="1.8" fill="#FEC539"/></svg>
+        <span style="font-family: 'Source Serif 4', serif; font-weight: 600; font-size: 22px; color: #13294B; letter-spacing: -0.015em;">Carentix</span>
+      </a>
+      <div id="cx-navlinks" style="display: flex; align-items: center; gap: 34px;">
+        <a href="Carentix%20Homepage.dc.html#capabilities" class="cx-link-u" style="text-decoration: none; color: #13294B; font-size: 14.5px; font-weight: 450;">What we handle</a>
+        <a href="Carentix%20Homepage.dc.html#process" class="cx-link-u" style="text-decoration: none; color: #13294B; font-size: 14.5px; font-weight: 450;">How it works</a>
+        <a href="Carentix%20Homepage.dc.html#pricing" class="cx-link-u" style="text-decoration: none; color: #13294B; font-size: 14.5px; font-weight: 450;">Pricing</a>
+        <a href="Careers.dc.html" class="cx-link-u" style="text-decoration: none; color: #13294B; font-size: 14.5px; font-weight: 450;">Careers</a>
+        <a href="HIPAA%20Compliance.dc.html" class="cx-link-u" style="text-decoration: none; color: #B8902A; font-size: 14.5px; font-weight: 600;">Compliance</a>
+        <a href="Carentix%20Homepage.dc.html#contact" class="cx-gold cx-mag" style="display: inline-flex; align-items: center; gap: 7px; text-decoration: none; background: #FEC539; color: #13294B; font-weight: 600; font-size: 14.5px; padding: 11px 20px; border-radius: 999px;">Schedule a call <span style="font-size: 15px;">&rarr;</span></a>
+      </div>
+      <button id="cx-burger" onClick="{{ toggleMenu }}" aria-label="Open menu" style="display: none; align-items: center; justify-content: center; width: 44px; height: 44px; border: 1px solid rgba(19,41,75,0.16); background: #FAFAF7; border-radius: 12px; cursor: pointer;">
+        <svg width="20" height="20" viewBox="0 0 20 20"><path d="M3 6h14M3 10h14M3 14h14" stroke="#13294B" stroke-width="1.7" stroke-linecap="round"/></svg>
+      </button>
+    </nav>
+    <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+      <div id="cx-mobilemenu" style="margin: 0 16px; padding: 10px 16px 18px; display: flex; flex-direction: column; gap: 2px; background: #FAFAF7; border: 1px solid rgba(19,41,75,0.08); border-radius: 18px; box-shadow: 0 20px 44px rgba(19,41,75,0.14); animation: cxFadeUp 0.3s ease;">
+        <a href="Carentix%20Homepage.dc.html#capabilities" onClick="{{ closeMenu }}" style="text-decoration: none; color: #13294B; font-size: 16px; font-weight: 500; padding: 13px 8px; border-bottom: 1px solid rgba(19,41,75,0.07);">What we handle</a>
+        <a href="Carentix%20Homepage.dc.html#process" onClick="{{ closeMenu }}" style="text-decoration: none; color: #13294B; font-size: 16px; font-weight: 500; padding: 13px 8px; border-bottom: 1px solid rgba(19,41,75,0.07);">How it works</a>
+        <a href="Carentix%20Homepage.dc.html#pricing" onClick="{{ closeMenu }}" style="text-decoration: none; color: #13294B; font-size: 16px; font-weight: 500; padding: 13px 8px; border-bottom: 1px solid rgba(19,41,75,0.07);">Pricing</a>
+        <a href="Careers.dc.html" onClick="{{ closeMenu }}" style="text-decoration: none; color: #13294B; font-size: 16px; font-weight: 500; padding: 13px 8px; border-bottom: 1px solid rgba(19,41,75,0.07);">Careers</a>
+        <a href="HIPAA%20Compliance.dc.html" onClick="{{ closeMenu }}" style="text-decoration: none; color: #B8902A; font-size: 16px; font-weight: 600; padding: 13px 8px;">Compliance</a>
+        <a href="Carentix%20Homepage.dc.html#contact" onClick="{{ closeMenu }}" style="text-align: center; text-decoration: none; background: #FEC539; color: #13294B; font-weight: 600; font-size: 16px; padding: 14px; border-radius: 999px; margin-top: 10px;">Schedule a call &rarr;</a>
+      </div>
+    </sc-if>
+  </header>
+
+  <!-- HERO -->
+  <section id="top" style="position: relative; overflow: hidden; background: #0C1E3C;">
+    <img src="assets/hero-baa.png" alt="A signed agreement protecting patient information" class="cx-hero-bg" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 35%;">
+    <div class="cx-hero-tint"></div>
+    <div class="cx-hero-scrim" style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(12,30,60,0.6) 0%, rgba(12,30,60,0.7) 46%, rgba(12,30,60,0.96) 100%);"></div>
+    <div style="position: relative; z-index: 2; max-width: 1080px; margin: 0 auto; padding: clamp(128px, 15vw, 182px) 32px clamp(56px, 7vw, 88px);">
+      <div data-reveal style="display: inline-flex; align-items: center; gap: 10px; margin-bottom: clamp(20px, 2.5vw, 28px); background: rgba(250,250,247,0.1); border: 1px solid rgba(250,250,247,0.3); padding: 8px 15px; border-radius: 999px;">
+        <span style="width: 7px; height: 7px; border-radius: 50%; background: #5B8C7B;"></span>
+        <span style="font-size: 13px; font-weight: 500; color: rgba(250,250,247,0.9);">Compliance &middot; Business Associate Agreement</span>
+      </div>
+      <h1 data-reveal style="font-family: 'Source Serif 4', serif; font-weight: 500; font-size: clamp(40px, 6vw, 78px); line-height: 1.0; letter-spacing: -0.04em; margin: 0; color: #FAFAF7; max-width: 18ch; text-wrap: balance;">Your Business Associate Agreement, explained.</h1>
+      <p data-reveal style="font-size: clamp(16.5px, 1.3vw, 19px); line-height: 1.62; color: rgba(250,250,247,0.82); margin: clamp(22px, 3vw, 30px) 0 0; max-width: 60ch; font-weight: 450;">
+        Before we access your records, we sign a BAA with your practice. This page explains what that document is, why it protects you, and what we commit to under it &mdash; in plain English. When you&rsquo;re ready, request a copy of ours.
+      </p>
+      <div data-reveal style="display: flex; flex-wrap: wrap; gap: 14px; align-items: center; margin-top: clamp(26px, 3.5vw, 36px);">
+        <a href="#request" class="cx-gold cx-mag" style="display: inline-flex; align-items: center; gap: 9px; text-decoration: none; background: #FEC539; color: #13294B; font-weight: 600; font-size: 16px; padding: 16px 28px; border-radius: 999px; box-shadow: 0 8px 26px rgba(254,197,57,0.26);">Request a copy of our BAA <span style="font-size: 18px;">&rarr;</span></a>
+        <a href="HIPAA%20Compliance.dc.html" class="cx-link-u" style="text-decoration: none; color: #FAFAF7; font-weight: 600; font-size: 16px;">See our HIPAA program</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- GLANCE -->
+  <section style="background: #FAFAF7; padding: clamp(40px, 5vw, 64px) 32px clamp(40px, 5vw, 60px);">
+    <div style="max-width: 1080px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 18px;">
+      <sc-for list="{{ glance }}" as="g" hint-placeholder-count="3">
+        <div data-reveal class="cx-lift" style="background: rgba(255,255,255,0.6); border: 1px solid rgba(19,41,75,0.08); border-radius: 20px; padding: 30px 28px; backdrop-filter: blur(6px); box-shadow: 0 12px 30px rgba(19,41,75,0.05);">
+          <div style="width: 46px; height: 46px; border-radius: 13px; background: rgba(19,41,75,0.1); display: flex; align-items: center; justify-content: center; color: #13294B; margin-bottom: 18px;"><span dangerouslySetInnerHTML="{{ g.icon }}"></span></div>
+          <div style="font-family: 'Source Serif 4', serif; font-weight: 600; font-size: 18px; color: #13294B; margin-bottom: 7px;">{{ g.title }}</div>
+          <p style="font-size: 14px; line-height: 1.55; color: #4A4A45; margin: 0;">{{ g.body }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- WHAT IT IS -->
+  <section style="background: #FAFAF7; padding: clamp(60px, 8vw, 120px) 32px;">
+    <div style="max-width: 1080px; margin: 0 auto;">
+      <h2 data-reveal style="font-family: 'Source Serif 4', serif; font-weight: 500; font-size: clamp(30px, 4.4vw, 52px); line-height: 1.06; letter-spacing: -0.03em; color: #13294B; margin: 0 0 22px; max-width: 22ch; text-wrap: balance;">A contract that makes us legally accountable for PHI.</h2>
+      <p data-reveal style="font-size: 17px; line-height: 1.66; color: #4A4A45; margin: 0 0 18px; max-width: 64ch;">A Business Associate Agreement (BAA) is a HIPAA-required contract between a healthcare provider (the &ldquo;Covered Entity&rdquo;) and a service partner that handles Protected Health Information on its behalf (the &ldquo;Business Associate&rdquo;). It defines how PHI may be used, how it must be protected, and who is liable if something goes wrong.</p>
+      <p data-reveal style="font-size: 17px; line-height: 1.66; color: #4A4A45; margin: 0 0 28px; max-width: 64ch;">When Carentix manages your scheduling, prior authorizations, verification, scribing, or records, we are your Business Associate. The BAA is what turns our security promises into binding, enforceable obligations.</p>
+      <div data-reveal style="display: flex; gap: 16px; align-items: flex-start; background: #13294B; color: #FAFAF7; border-radius: 20px; padding: 26px 28px;">
+        <span style="flex: 0 0 auto; width: 44px; height: 44px; border-radius: 12px; background: rgba(254,197,57,0.18); display: flex; align-items: center; justify-content: center; color: #FEC539;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg></span>
+        <div><div style="font-family: 'Source Serif 4', serif; font-weight: 600; font-size: 18px; color: #FAFAF7; margin-bottom: 6px;">Protected Health Information (PHI)</div><p style="font-size: 14.5px; line-height: 1.6; color: rgba(250,250,247,0.84); margin: 0;">Any individually identifiable health information &mdash; names, contact details, insurance and claims data, appointment and clinical records &mdash; that we encounter while supporting your practice. We use only the minimum necessary, always.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY & WHEN -->
+  <section style="background: #F3F0E8; padding: clamp(70px, 9vw, 130px) 32px;">
+    <div style="max-width: 1320px; margin: 0 auto;">
+      <div data-reveal style="max-width: 760px; margin-bottom: clamp(40px, 5vw, 60px);">
+        <h2 style="font-family: 'Source Serif 4', serif; font-weight: 500; font-size: clamp(30px, 4.4vw, 56px); line-height: 1.04; letter-spacing: -0.03em; color: #13294B; margin: 0; text-wrap: balance;">Required by law. Signed before day one.</h2>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 22px;">
+        <sc-for list="{{ whyWhen }}" as="w" hint-placeholder-count="3">
+          <div data-reveal class="cx-lift" style="background: #FAFAF7; border: 1px solid rgba(19,41,75,0.09); border-radius: 20px; padding: 32px 30px;">
+            <div style="width: 50px; height: 50px; border-radius: 14px; background: {{ w.tint }}; display: flex; align-items: center; justify-content: center; color: {{ w.color }}; margin-bottom: 22px;"><span dangerouslySetInnerHTML="{{ w.icon }}"></span></div>
+            <div style="font-family: 'Source Serif 4', serif; font-weight: 600; font-size: 20px; color: #13294B; margin-bottom: 10px; letter-spacing: -0.01em;">{{ w.title }}</div>
+            <p style="font-size: 14.5px; line-height: 1.58; color: #4A4A45; margin: 0;">{{ w.body }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESPONSIBILITIES SPLIT -->
+  <section style="background: #FAFAF7; padding: clamp(80px, 11vw, 150px) 32px;">
+    <div style="max-width: 1080px; margin: 0 auto;">
+      <div data-reveal style="max-width: 760px; margin-bottom: clamp(40px, 5vw, 60px);">
+        <h2 style="font-family: 'Source Serif 4', serif; font-weight: 500; font-size: clamp(30px, 4.4vw, 56px); line-height: 1.04; letter-spacing: -0.03em; color: #13294B; margin: 0; text-wrap: balance;">Who does what under the BAA.</h2>
+      </div>
+      <div class="cx-resp-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 18px;">
+        <div data-reveal class="cx-lift" style="background: #13294B; color: #FAFAF7; padding: clamp(28px, 3.5vw, 44px); border-radius: 24px;">
+          <div style="display: inline-flex; align-items: center; gap: 9px; margin-bottom: 26px;"><span style="width: 8px; height: 8px; border-radius: 50%; background: #FEC539;"></span><span style="font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #FEC539;">Carentix commits to</span></div>
+          <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 18px;">
+            <sc-for list="{{ ourResp }}" as="r" hint-placeholder-count="5">
+              <li style="display: flex; gap: 13px; align-items: flex-start;">
+                <span style="flex: 0 0 auto; color: #5B8C7B; margin-top: 1px;"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9.5l4 4 8-9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                <span style="font-size: 15px; line-height: 1.5; color: rgba(250,250,247,0.92);">{{ r }}</span>
+              </li>
+            </sc-for>
+          </ul>
+        </div>
+        <div data-reveal class="cx-lift" style="background: #FAFAF7; padding: clamp(28px, 3.5vw, 44px); border-radius: 24px; border: 1px solid rgba(19,41,75,0.1);">
+          <div style="display: inline-flex; align-items: center; gap: 9px; margin-bottom: 26px;"><span style="width: 8px; height: 8px; border-radius: 50%; background: #5B8C7B;"></span><span style="font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #3C5A50;">Your practice handles</span></div>
+          <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 18px;">
+            <sc-for list="{{ clientResp }}" as="r" hint-placeholder-count="4">
+              <li style="display: flex; gap: 13px; align-items: flex-start;">
+                <span style="flex: 0 0 auto; color: #5B8C7B; margin-top: 1px;"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9.5l4 4 8-9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                <span style="font-size: 15px; line-height: 1.5; color: #13294B;">{{ r }}</span>
+              </li>
+            </sc-for>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section style="background: #F3F0E8; padding: clamp(80px, 11vw, 150px) 32px;">
+    <div style="max-width: 1080px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: clamp(36px, 5vw, 72px); align-items: start;">
+      <div data-reveal style="position: sticky; top: 110px;">
+        <h2 style="font-family: 'Source Serif 4', serif; font-weight: 500; font-size: clamp(30px, 4vw, 52px); line-height: 1.04; letter-spacing: -0.035em; color: #13294B; margin: 0 0 20px; text-wrap: balance;">Answered plainly.</h2>
+        <a href="#request" class="cx-link-u" style="text-decoration: none; color: #13294B; font-weight: 600; font-size: 16px;">Request a copy of our BAA &rarr;</a>
+      </div>
+      <div style="display: flex; flex-direction: column;">
+        <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="6">
+          <div data-reveal style="border-top: 1px solid rgba(19,41,75,0.14);">
+            <div class="cx-faq-row" onClick="{{ f.onToggle }}" role="button" tabindex="0" aria-expanded="{{ f.isOpen }}" aria-label="{{ f.q }}" style="display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 24px 0;">
+              <span style="font-family: 'Source Serif 4', serif; font-weight: 600; font-size: 18px; color: #13294B; line-height: 1.3; letter-spacing: -0.01em;">{{ f.q }}</span>
+              <span class="cx-faq-plus" style="flex: 0 0 auto; color: #5B8C7B; transform: {{ f.iconTransform }};"><svg width="16" height="16" viewBox="0 0 16 16"><path d="M8 2v12M2 8h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+            </div>
+            <sc-if value="{{ f.isOpen }}" hint-placeholder-val="{{ false }}">
+              <div style="overflow: hidden; animation: cxFadeUp 0.4s cubic-bezier(0.16,1,0.3,1);">
+                <p style="margin: 0; padding: 0 0 26px; font-size: 15px; line-height: 1.62; color: #4A4A45; max-width: 60ch;">{{ f.a }}</p>
+              </div>
+            </sc-if>
+          </div>
+        </sc-for>
+        <div style="border-top: 1px solid rgba(19,41,75,0.14);"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="request" style="background: #FAFAF7; padding: 0 32px clamp(80px, 11vw, 160px);">
+    <div data-reveal style="max-width: 1180px; margin: 0 auto; background: #13294B; color: #FAFAF7; border-radius: 32px; padding: clamp(48px, 7vw, 92px) clamp(32px, 5vw, 80px); position: relative; overflow: hidden; text-align: center;">
+      <div class="cx-anim" style="position: absolute; top: -160px; left: 50%; transform: translateX(-50%); width: 700px; height: 700px; border-radius: 50%; background: radial-gradient(circle, rgba(254,197,57,0.13), transparent 60%); animation: cxDrift 28s ease-in-out infinite;"></div>
+      <div style="position: relative;">
+        <h2 style="font-family: 'Source Serif 4', serif; font-weight: 500; font-size: clamp(30px, 4.6vw, 56px); line-height: 1.04; letter-spacing: -0.04em; margin: 0 auto 22px; color: #FAFAF7; max-width: 24ch; text-wrap: balance;">Request a copy of our Business Associate Agreement.</h2>
+        <p style="font-size: 18px; line-height: 1.6; color: rgba(250,250,247,0.78); margin: 0 auto 38px; max-width: 52ch;">We&rsquo;ll send our standard BAA for your compliance team to review &mdash; and we&rsquo;re glad to work from yours instead.</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 14px; justify-content: center;">
+          <a href="/cdn-cgi/l/email-protection#2f4c40425f43464e414c4a6f4c4e5d4a415b4657014c4042105c5a4d454a4c5b126d6e6e0a1d1f5d4a5e5a4a5c5b" class="cx-gold cx-mag" data-notice="By contacting us, your information is handled per our Privacy Policy." style="display: inline-flex; align-items: center; gap: 9px; text-decoration: none; background: #FEC539; color: #13294B; font-weight: 600; font-size: 16.5px; padding: 17px 32px; border-radius: 999px; box-shadow: 0 12px 34px rgba(254,197,57,0.26);">Schedule a call <span style="font-size: 18px;">&rarr;</span></a>
+          <a href="HIPAA%20Compliance.dc.html" class="cx-mag" style="display: inline-flex; align-items: center; gap: 9px; text-decoration: none; color: #FAFAF7; font-weight: 600; font-size: 16.5px; padding: 17px 28px; border-radius: 999px; border: 1px solid rgba(250,250,247,0.28);">See our HIPAA program</a>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 24px; justify-content: center; margin-top: 34px; font-size: 13.5px; color: rgba(250,250,247,0.62);">
+          <span style="display: inline-flex; align-items: center; gap: 7px;"><span style="color:#5B8C7B;">&check;</span> Signed before PHI access</span>
+          <span style="display: inline-flex; align-items: center; gap: 7px;"><span style="color:#5B8C7B;">&check;</span> Work from ours or yours</span>
+          <span style="display: inline-flex; align-items: center; gap: 7px;"><span style="color:#5B8C7B;">&check;</span> Reviewed by your compliance team</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer style="background: #0C1E3C; color: rgba(250,250,247,0.7); padding: clamp(56px, 6vw, 84px) 32px 34px;">
+    <div style="max-width: 1320px; margin: 0 auto;">
+      <div style="display: grid; grid-template-columns: minmax(240px, 1.6fr) repeat(3, minmax(140px, 1fr)); gap: 40px; padding-bottom: 46px; border-bottom: 1px solid rgba(250,250,247,0.1);">
+        <div>
+          <div style="display: flex; align-items: center; gap: 11px; margin-bottom: 18px;">
+            <svg width="50" height="28" viewBox="0 0 100 56" fill="none"><circle cx="35" cy="28" r="14.5" fill="none" stroke="#FAFAF7" stroke-width="5.4"/><circle cx="65" cy="28" r="14.5" fill="none" stroke="#FAFAF7" stroke-width="5.4"/><circle cx="50" cy="28" r="8.5" fill="#0C1E3C"/><rect x="47" y="20.5" width="6" height="15" rx="1.8" fill="#FEC539"/><rect x="42.5" y="25" width="15" height="6" rx="1.8" fill="#FEC539"/></svg>
+            <span style="font-family: 'Source Serif 4', serif; font-weight: 600; font-size: 22px; color: #FAFAF7;">Carentix</span>
+          </div>
+          <p style="font-size: 14.5px; line-height: 1.6; max-width: 320px; margin: 0;">A managed, compliant operations partner &mdash; so your providers can focus entirely on patient care.</p>
+        </div>
+        <sc-for list="{{ footerCols }}" as="col" hint-placeholder-count="3">
+          <div>
+            <div style="font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #FAFAF7; margin-bottom: 18px;">{{ col.heading }}</div>
+            <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px;">
+              <sc-for list="{{ col.links }}" as="link" hint-placeholder-count="4">
+                <li><a href="{{ link.href }}" class="cx-link-u" style="text-decoration: none; color: rgba(250,250,247,0.7); font-size: 14px;">{{ link.label }}</a></li>
+              </sc-for>
+            </ul>
+          </div>
+        </sc-for>
+      </div>
+        <p style="margin: 24px 0 0; font-size: 12px; line-height: 1.6; color: rgba(250,250,247,0.4); max-width: 100ch;">This page is an educational overview only. It is not a Business Associate Agreement and creates no binding obligations. Our actual BAA is a separate, signed legal document executed with each client before PHI access. The executed BAA and Master Services Agreement control in the event of any conflict. By contacting us, your information is handled per our Privacy Policy. Carentix&trade; and the Carentix logo are trademarks of Carentix LLC.</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 14px; justify-content: space-between; align-items: center; padding-top: 20px; font-size: 13px; color: rgba(250,250,247,0.55);">
+        <div>&copy; 2026 Carentix LLC &middot; 30 N Gould St, STE R, Sheridan, WY 82801, USA</div>
+        <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+          <a href="Privacy%20Policy.dc.html" style="text-decoration: none; color: rgba(250,250,247,0.55);">Privacy Policy</a>
+          <a href="Terms%20of%20Service.dc.html" style="text-decoration: none; color: rgba(250,250,247,0.55);">Terms of Service</a>
+          <a href="HIPAA%20Compliance.dc.html" style="text-decoration: none; color: rgba(250,250,247,0.55);">HIPAA</a>
+          <a href="Business%20Associate%20Agreement.dc.html" style="text-decoration: none; color: #FEC539;">BAA</a>
+          <a href="Accessibility.dc.html" style="text-decoration: none; color: rgba(250,250,247,0.55);">Accessibility</a>
+          <button onClick="{{ openCookiePrefs }}" style="background: none; border: none; padding: 0; cursor: pointer; font: inherit; color: rgba(250,250,247,0.55);">Cookie preferences</button>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- COOKIE CONSENT -->
+  <sc-if value="{{ cookieOpen }}" hint-placeholder-val="{{ false }}">
+    <div role="dialog" aria-label="Cookie preferences" style="position: fixed; left: 16px; right: 16px; bottom: 16px; z-index: 200; display: flex; justify-content: center; pointer-events: none;">
+      <div style="pointer-events: auto; width: 100%; max-width: 560px; background: #FAFAF7; border: 1px solid rgba(19,41,75,0.14); border-radius: 20px; box-shadow: 0 28px 64px rgba(12,30,60,0.28); padding: 24px 26px; animation: cxFadeUp 0.4s cubic-bezier(0.16,1,0.3,1);">
+        <div style="font-family: 'Source Serif 4', serif; font-weight: 600; font-size: 18px; color: #13294B; margin-bottom: 8px;">Your privacy choices</div>
+        <p style="font-size: 13.5px; line-height: 1.58; color: #4A4A45; margin: 0 0 16px;">We use essential cookies to run this site and, with your consent, optional analytics cookies to understand usage. We honor Global Privacy Control signals. See our <a href="Privacy%20Policy.dc.html#cookies" class="cx-link-u" style="color:#13294B; font-weight:600; text-decoration:none;">Cookie &amp; Privacy Policy</a>.</p>
+        <sc-if value="{{ gpcDetected }}" hint-placeholder-val="{{ false }}">
+          <div style="display: flex; gap: 10px; align-items: flex-start; background: rgba(91,140,123,0.12); border: 1px solid rgba(91,140,123,0.28); border-radius: 12px; padding: 11px 13px; margin-bottom: 16px;">
+            <span style="color:#3C5A50; flex:0 0 auto; margin-top:1px;"><svg width="15" height="15" viewBox="0 0 18 18" fill="none"><path d="M3 9.5l4 4 8-9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <span style="font-size: 12.5px; line-height: 1.45; color: #3C5A50;">A Global Privacy Control signal was detected. Optional cookies are off by default and your opt-out is honored.</span>
+          </div>
+        </sc-if>
+        <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+          <button onClick="{{ acceptAll }}" class="cx-gold" style="flex: 1; min-width: 140px; background: #FEC539; color: #13294B; font-weight: 600; font-size: 14px; padding: 12px 18px; border: none; border-radius: 999px; cursor: pointer;">Accept all</button>
+          <button onClick="{{ essentialOnly }}" style="flex: 1; min-width: 140px; background: #FAFAF7; color: #13294B; font-weight: 600; font-size: 14px; padding: 12px 18px; border: 1px solid rgba(19,41,75,0.2); border-radius: 999px; cursor: pointer;">Essential only</button>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+</div>
+
+  <template id="__bundler_thumbnail">
+    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <rect width="100" height="100" fill="#13294B"/>
+      <g transform="translate(50,50)">
+        <circle cx="-15" cy="0" r="14.5" fill="none" stroke="#FAFAF7" stroke-width="5.4"/>
+        <circle cx="15" cy="0" r="14.5" fill="none" stroke="#FAFAF7" stroke-width="5.4"/>
+        <circle cx="0" cy="0" r="8.5" fill="#13294B"/>
+        <rect x="-3" y="-7.5" width="6" height="15" rx="1.8" fill="#FEC539"/>
+        <rect x="-7.5" y="-3" width="15" height="6" rx="1.8" fill="#FEC539"/>
+      </g>
+    </svg>
+  </template></x-dc>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;: {&quot;width&quot;: 1080, &quot;height&quot;: 920}}">
+class Component extends DCLogic {
+  state = { menuOpen: false, openFaq: -1, cookieOpen: false, gpcDetected: false };
+  icon(svg) { return { __html: svg }; }
+  initCookies() {
+    try {
+      const gpc = !!(navigator.globalPrivacyControl);
+      const stored = localStorage.getItem('cx-cookie-consent');
+      if (gpc && !stored) { localStorage.setItem('cx-cookie-consent', 'essential-only'); }
+      this.setState({ gpcDetected: gpc, cookieOpen: !stored });
+    } catch (e) { this.setState({ cookieOpen: true }); }
+  }
+  setConsent(v) { try { localStorage.setItem('cx-cookie-consent', v); } catch (e) {} this.setState({ cookieOpen: false }); }
+  componentDidMount() {
+    try { if ('scrollRestoration' in history) history.scrollRestoration = 'manual'; } catch (e) {}
+    requestAnimationFrame(() => { try { window.scrollTo(0, 0); } catch (e) {} });
+    const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const revealEls = Array.from(document.querySelectorAll('[data-reveal]'));
+    this._safety = setTimeout(() => revealEls.forEach(el => { el.classList.add('cx-seen'); el.style.transform = 'none'; }), 2600);
+    if (reduce) revealEls.forEach(el => { el.classList.add('cx-seen'); el.style.transform = 'none'; });
+    const scan = () => {
+      const vh = window.innerHeight || document.documentElement.clientHeight;
+      if (reduce) return;
+      for (const el of revealEls) { if (el.classList.contains('cx-seen')) continue; const r = el.getBoundingClientRect(); if (r.top < vh * 0.92 && r.bottom > 0) { el.classList.add('cx-seen'); el.style.transform = 'none'; } }
+    };
+    let raf = 0;
+    const onScroll = () => { if (raf) return; raf = requestAnimationFrame(() => { raf = 0; scan(); }); };
+    this._onScroll = onScroll;
+    document.addEventListener('scroll', onScroll, { capture: true, passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
+    let polls = 0; this._poll = setInterval(() => { scan(); if (++polls > 60) { clearInterval(this._poll); this._poll = null; } }, 120);
+    scan();
+    this.initCookies();
+    this._mag = [];
+    if (!reduce && window.matchMedia('(pointer:fine)').matches) {
+      document.querySelectorAll('.cx-mag').forEach(btn => {
+        const move = (e) => { const r = btn.getBoundingClientRect(); btn.style.transform = 'translate(' + ((e.clientX - (r.left + r.width/2)) * 0.16) + 'px,' + ((e.clientY - (r.top + r.height/2)) * 0.26) + 'px)'; };
+        const leave = () => { btn.style.transform = 'translate(0,0)'; };
+        btn.addEventListener('mousemove', move); btn.addEventListener('mouseleave', leave);
+        this._mag.push([btn, move, leave]);
+      });
+    }
+  }
+  componentWillUnmount() {
+    if (this._poll) clearInterval(this._poll);
+    if (this._onScroll) { document.removeEventListener('scroll', this._onScroll, { capture: true }); window.removeEventListener('resize', this._onScroll); }
+    if (this._mag) this._mag.forEach(([b, m, l]) => { b.removeEventListener('mousemove', m); b.removeEventListener('mouseleave', l); });
+  }
+  renderVals() {
+    const ic = (p) => `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${p}</svg>`;
+    return {
+      menuOpen: this.state.menuOpen,
+      toggleMenu: () => this.setState(s => ({ menuOpen: !s.menuOpen })),
+      closeMenu: () => this.setState({ menuOpen: false }),
+      cookieOpen: this.state.cookieOpen,
+      gpcDetected: this.state.gpcDetected,
+      acceptAll: () => this.setConsent('accepted-all'),
+      essentialOnly: () => this.setConsent('essential-only'),
+      openCookiePrefs: () => this.setState({ cookieOpen: true }),
+
+      glance: [
+        { title: "It\u2019s required by HIPAA", icon: this.icon(ic('<rect x="4" y="3" width="16" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h4"/>')), body: "Any partner that handles PHI on a provider\u2019s behalf must have a signed BAA in place. It\u2019s the law, not a formality." },
+        { title: "It protects your patients", icon: this.icon(ic('<path d="M12 2 4 6v6c0 5 3.5 8 8 10 4.5-2 8-5 8-10V6Z"/><path d="m9 12 2 2 4-4"/>')), body: "It binds us to specific safeguards and makes us directly liable for protecting the information you entrust to us." },
+        { title: "We sign before day one", icon: this.icon(ic('<path d="M3 17l6-6 4 4 8-8"/><path d="M17 7h4v4"/>')), body: "Our standard onboarding process requires a signed BAA before PHI access." },
+      ],
+
+      whyWhen: [
+        { title: "Why the law requires it", color: "#3E78C2", tint: "rgba(62,120,194,0.12)", icon: this.icon(ic('<path d="M12 3v18M5 7l7-4 7 4M5 7v8a7 7 0 0 0 14 0V7"/>')),
+          body: "HIPAA holds providers responsible for the PHI they share with partners. A BAA passes specific, enforceable obligations down to that partner \u2014 so protection follows the data." },
+        { title: "Why it protects you", color: "#5B8C7B", tint: "rgba(91,140,123,0.14)", icon: this.icon(ic('<path d="M20 7 9 18l-5-5"/>')),
+          body: "Without a signed BAA, sharing PHI with us would itself be a HIPAA violation. With one, your practice is covered and we carry direct, documented accountability." },
+        { title: "When it gets signed", color: "#B8902A", tint: "rgba(184,144,42,0.16)", icon: this.icon(ic('<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>')),
+          body: "During onboarding, before any systems access or PHI exposure. Our standard onboarding sequence is: BAA executed, systems secured, SOPs set \u2014 then work begins." },
+      ],
+
+      ourResp: [
+        "Use and disclose PHI only as the agreement and HIPAA permit \u2014 never for marketing.",
+        "Apply administrative, technical, and physical safeguards to all PHI we handle.",
+        "Limit access to the minimum necessary, on a least-privilege basis.",
+        "Ensure any subcontractor that touches PHI signs an equivalent agreement.",
+        "Report security incidents and breaches to you promptly, with the facts.",
+        "Make our practices available for audit, and return or destroy PHI at the end of the engagement.",
+      ],
+      clientResp: [
+        "Provide PHI only through the secure channels we establish together.",
+        "Share the minimum information we need to perform the agreed services.",
+        "Tell us about any restrictions a patient has requested on their information.",
+        "Keep your own Notice of Privacy Practices and patient consents current.",
+      ],
+
+      commitments: [
+        { title: "Security commitments", icon: this.icon(ic('<path d="M12 2 4 6v6c0 5 3.5 8 8 10 4.5-2 8-5 8-10V6Z"/><path d="m9 12 2 2 4-4"/>')), body: "Encryption in transit and at rest, MFA and VPN on login, company-managed devices, and audit logging \u2014 written into the agreement, not just promised." },
+        { title: "Incident reporting", icon: this.icon(ic('<path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/>')), body: "We commit to prompt notification, consistent with your BAA, if a security incident or breach involving your PHI occurs \u2014 with a clear remediation plan." },
+        { title: "Subcontractors", icon: this.icon(ic('<circle cx="6" cy="12" r="3"/><circle cx="18" cy="5" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 10.6 6.8-4M8.6 13.4l6.8 4"/>')), body: "A tool or partner that may access PHI \u2014 including AI vendors \u2014 is required to sign its own BAA before use, so the chain of accountability is maintained." },
+        { title: "Compliance &amp; audit", icon: this.icon(ic('<path d="M4 4h12l4 4v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1Z"/><path d="M8 12h8M8 16h5"/>')), body: "We keep records for six years, review controls regularly, and make our compliance practices available so your team can verify, not just trust." },
+      ],
+
+      faqs: [
+        { q: "Do we have to use your BAA, or can we use ours?", a: "Either works. We have a standard BAA ready for your compliance team to review, and we\u2019re equally happy to sign yours. What matters is that a mutually agreed agreement is fully executed before any PHI changes hands." },
+        { q: "When exactly is the BAA signed in the process?", a: "During onboarding, before systems access or PHI exposure. Our standard sequence is BAA executed first, then systems secured, then SOPs and access configured. Your team never works on live PHI before the agreement is in place." },
+        { q: "What counts as PHI in our engagement?", a: "Any individually identifiable health information we encounter while supporting you \u2014 patient names and contact details, insurance and claims data, appointment and scheduling records, and clinical documentation. We use only the minimum necessary for each task." },
+        { q: "How do you handle AI tools under the BAA?", a: "An AI tool that may process PHI is subject to its own signed BAA before we use it, and human review is required on AI-assisted clinical or billing outputs before finalization. We minimize PHI in AI prompts to the minimum necessary, and accountability for the result is always ours \u2014 never \u201cthe AI did it.\u201d" },
+        { q: "What happens to our data when the engagement ends?", a: "At the end of the relationship we return or securely destroy the PHI we hold on your behalf, as the agreement specifies, and we document that it was done. Required compliance and audit records are retained only as the law allows." },
+        { q: "How do we request a copy?", a: "Email compliance@carentix.com or use the button below, and we\u2019ll send our standard BAA along with our safeguards documentation so your compliance officer has everything needed to review and approve." },
+      ].map((f, i) => ({
+        q: f.q, a: f.a,
+        isOpen: this.state.openFaq === i,
+        iconTransform: this.state.openFaq === i ? 'rotate(135deg)' : 'none',
+        onToggle: () => this.setState(s => ({ openFaq: s.openFaq === i ? -1 : i })),
+      })),
+
+      footerCols: [
+        { heading: "Company", links: [ { label: "About", href: "Carentix%20Homepage.dc.html#top" }, { label: "Careers", href: "Careers.dc.html" }, { label: "How it works", href: "Carentix%20Homepage.dc.html#process" }, { label: "Pricing", href: "Carentix%20Homepage.dc.html#pricing" } ]},
+        { heading: "Compliance", links: [ { label: "HIPAA Compliance", href: "HIPAA%20Compliance.dc.html" }, { label: "Business Associate Agreement", href: "Business%20Associate%20Agreement.dc.html" }, { label: "Our Accessibility Commitment", href: "Accessibility.dc.html" }, { label: "Privacy Policy", href: "Privacy%20Policy.dc.html" }, { label: "Terms of Service", href: "Terms%20of%20Service.dc.html" } ]},
+        { heading: "Contact", links: [ { label: "Schedule a call", href: "Carentix%20Homepage.dc.html#contact" }, { label: "compliance@carentix.com", href: "mailto:compliance@carentix.com" }, { label: "info@carentix.com", href: "mailto:info@carentix.com" } ]},
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

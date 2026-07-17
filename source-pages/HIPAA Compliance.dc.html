@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>HIPAA Compliance — Carentix</title>
+<meta name="description" content="Compliance is the product. See how Carentix protects PHI with administrative, technical, and physical safeguards, workforce training, encryption, audit logs, and a documented incident-response program.">
+<meta property="og:title" content="HIPAA Compliance — Carentix">
+<meta property="og:description" content="HIPAA isn't a checkbox for us — it's the architecture. Explore the administrative, technical, and physical safeguards behind how we protect PHI.">
+<meta property="og:type" content="website">
+<!-- Suggested URL: /hipaa -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Inter:wght@400;450;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: #FAFAF7; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; font-feature-settings: "kern" 1, "liga" 1, "calt" 1; }
+  ::selection { background: #FEC539; color: #13294B; }
+  a:focus-visible, button:focus-visible, [role="button"]:focus-visible, [tabindex]:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, image-slot:focus-visible { outline: 3px solid #FEC539; outline-offset: 2px; box-shadow: 0 0 0 5px rgba(19,41,75,0.5); border-radius: 6px; }
+  .cx-controls-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 18px; }
+  .cx-ctrl-cell { position: relative; background: rgba(255,255,255,0.62) !important; border: 1px solid rgba(19,41,75,0.08); border-radius: 20px; backdrop-filter: blur(6px); box-shadow: 0 12px 30px rgba(19,41,75,0.05); transition: transform 0.4s cubic-bezier(0.16,1,0.3,1), box-shadow 0.4s ease, background 0.4s ease; }
+  .cx-ctrl-cell:hover { transform: scale(1.04); z-index: 2; box-shadow: 0 22px 50px rgba(19,41,75,0.16); background: #F7F9FC !important; }
+  .cx-ctrl-ic { transition: transform 0.45s cubic-bezier(0.16,1,0.3,1), background 0.35s ease, color 0.35s ease; }
+  .cx-ctrl-cell:hover .cx-ctrl-ic { transform: translateY(-3px) rotate(-5deg) scale(1.08); background: #13294B !important; color: #FAFAF7 !important; }
+  @keyframes cxFloat { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+  .cx-sg-ic { animation: cxFloat 6s ease-in-out infinite; will-change: transform; }
+  @media (max-width: 900px) { .cx-controls-grid { grid-template-columns: repeat(2, minmax(0,1fr)); } }
+  @media (max-width: 600px) { .cx-controls-grid { grid-template-columns: 1fr; } }
+  @keyframes cxDrift { 0%,100% { transform: translate(0,0) scale(1); } 50% { transform: translate(28px,-22px) scale(1.08); } }
+  @keyframes cxFadeUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+  [data-reveal] { transform: translateY(28px); transition: transform 0.55s cubic-bezier(0.22,1,0.36,1); }
+  [data-reveal].cx-seen { transform: none; }
+  @media (prefers-reduced-motion: reduce) { [data-reveal] { transform: none !important; transition: none !important; } .cx-anim { animation: none !important; } .cx-sg-ic { animation: none !important; } }
+  .cx-link-u { position: relative; }
+  .cx-link-u::after { content: ''; position: absolute; left: 0; bottom: -3px; height: 1.5px; width: 0; background: currentColor; transition: width 0.34s cubic-bezier(0.16,1,0.3,1); }
+  .cx-link-u:hover::after { width: 100%; }
+  .cx-mag { transition: transform 0.18s cubic-bezier(0.16,1,0.3,1), box-shadow 0.3s ease, background 0.3s ease, color 0.3s ease; }
+  .cx-gold:hover { box-shadow: 0 16px 40px rgba(254,197,57,0.4) !important; }
+  .cx-lift { transition: transform 0.45s cubic-bezier(0.16,1,0.3,1), box-shadow 0.45s ease, border-color 0.45s ease; }
+  .cx-lift:hover { transform: translateY(-5px); box-shadow: 0 28px 54px rgba(19,41,75,0.13) !important; }
+  @media (max-width: 920px) { #cx-navlinks { display: none !important; } #cx-burger { display: flex !important; } }
+  @media (min-width: 921px) { #cx-mobilemenu { display: none !important; } }
+  @media (max-width: 900px) { .cx-hero-grid { grid-template-columns: 1fr !important; } .cx-hero-art { margin: 10px auto 0 !important; max-width: 460px !important; } }
+</style>
+</helmet>
+
+<div data-screen-label="HIPAA Compliance" style="position: relative; font-family: 'Inter', system-ui, sans-serif; color: #4A4A45; overflow-x: hidden;">
+
+  <svg aria-hidden="true" style="position: fixed; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 4; opacity: 0.045; mix-blend-mode: multiply;">
+    <filter id="cxGrain"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/></filter>
+    <rect width="100%" height="100%" filter="url(#cxGrain)"/>
+  </svg>
+
+  <header style="position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(250,250,247,0.78); backdrop-filter: saturate(180%) blur(16px); -webkit-backdrop-filter: saturate(180%) blur(16px); border-bottom: 1px solid rgba(19,41,75,0.07);">
+    <nav style="max-width: 1320px; margin: 0 auto; padding: 16px 32px; display: flex; align-items: center; justify-content: space-between; gap: 24px;">
+      <a href="Carentix%20Homepage.dc.html" style="display: flex; align-items: center; gap: 11px; text-decoration: none;">
+        <svg width="50" height="28" viewBox="0 0 100 56" fill="none" aria-label="Carentix mark"><circle cx="35" cy="28" r="14.5" fill="none" stroke="#13294B" stroke-width="5.4"/><circle cx="65" cy="28" r="14.5" fill="none" stroke="#13294B" stroke-width="5.4"/><circle cx="50" cy="28" r="8.5" fill="#FAFAF7"/><rect x="47" y="20.5" width="6" height="15" rx="1.8" fill="#FEC539"/><rect x="42.5" y="25" width="15" height="6" rx="1.8" fill="#FEC539"/></svg>
+        <span style="font-family: 'Source Serif 4', serif; font-weight: 600; font-size: 22px; color: #13294B; letter-spacing: -0.015em;">Carentix</span>
+      </a>
+      <div id="cx-navlinks" style="display: flex; align-items: center; gap: 34px;">
+        <a href="Carentix%20Homepage.dc.html#capabilities" class="cx-link-u" style="text-decoration: none; color: #13294B; font-size: 14.5px; font-weight: 450;">What we handle</a>
+        <a href="Carentix%20Homepage.dc.html#process" class="cx-link-u" style="text-decoration: none; color: #13294B; font-size: 14.5px; font-weight: 450;">How it works</a>
+        <a href="Carentix%20Homepage.dc.html#pricing" class="cx-link-u" style="text-decoration: none; color: #13294B; font-size: 14.5px; font-weight: 450;">Pricing</a>
+        <a href="Careers.dc.html" class="cx-link-u" style="text-decoration: none; color: #13294B; font-size: 14.5px; font-weight: 450;">Careers</a>
+        <a href="HIPAA%20Compliance.dc.html" class="cx-link-u" style="text-decoration: none; color: #B8902A; font-size: 14.5px; font-weight: 600;">Compliance</a>
+        <a href="Carentix%20Homepage.dc.html#contact" class="cx-gold cx-mag" style="display: inline-flex; align-items: center; gap: 7px; text-decoration: none; background: #FEC539; color: #13294B; font-weight: 600; font-size: 14.5px; padding: 11px 20px; border-radius: 999px;">Schedule a call <span style="font-size: 15px;">&rarr;</span></a>
+      </div>
+      <button id="cx-burger" onClick="{{ toggleMenu }}" aria-label="Open menu" style="display: none; align-items: center; justify-content: center; width: 44px; height: 44px; border: 1px solid rgba(19,41,75,0.16); background: #FAFAF7; border-radius: 12px; cursor: pointer;">
+        <svg width="20" height="20" viewBox="0 0 20 20"><path d="M3 6h14M3 10h14M3 14h14" stroke="#13294B" stroke-width="1.7" stroke-linecap="round"/></svg>
+      </button>
+    </nav>
+    <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+      <div id="cx-mobilemenu" style="margin: 0 16px; padding: 10px 16px 18px; display: flex; flex-direction: column; gap: 2px; background: #FAFAF7; border: 1px solid rgba(19,41,75,0.08); border-radius: 18px; box-shadow: 0 20px 44px rgba(19,41,75,0.14); animation: cxFadeUp 0.3s ease;">
+        <a href="Carentix%20Homepage.dc.html#capabilities" onClick="{{ closeMenu }}" style="text-decoration: none; color: #13294B; font-size: 16px; font-weight: 500; padding: 13px 8px; border-bottom: 1px solid rgba(19,41,75,0.07);">What we handle</a>
+        <a href="Carentix%20Homepage.dc.html#process" onClick="{{ closeMenu }}" style="text-decoration: none; color: #13294B; font-size: 16px; font-weight: 500; padding: 13px 8px; border-bottom: 1px solid rgba(19,41,75,0.07);">How it works</a>
+        <a href="Carentix%20Homepage.dc.html#pricing" onClick="{{ closeMenu }}" style="text-decoration: none; color: #13294B; font-size: 16px; font-weight: 500; padding: 13px 8px; border-bottom: 1px solid rgba(19,41,75,0.07);">Pricing</a>
+        <a href="Careers.dc.html" onClick="{{ closeMenu }}" style="text-decoration: none; color: #13294B; font-size: 16px; font-weight: 500; padding: 13px 8px; border-bottom: 1px solid rgba(19,41,75,0.07);">Careers</a>
+        <a href="HIPAA%20Compliance.dc.html" onClick="{{ closeMenu }}" style="text-decoration: none; color: #B8902A; font-size: 16px; font-weight: 600; padding: 13px 8px;">Compliance</a>
+        <a href="Carentix%20Homepage.dc.html#contact" onClick="{{ closeMenu }}" style="text-align: center; text-decoration: none; background: #FEC539; color: #13294B; font-weight: 600; font-size: 16px; padding: 14px; border-radius: 999px; margin-top: 10px;">Schedule a call &rarr;</a>
+      </div>
+    </sc-if>
+  </header>
+
+  <!-- HERO -->
+  <section id="top" style="position: relative; background: #0C1E3C; color: #FAFAF7; overflow: hidden;">
+    <img src="assets/hero-compliance.png" alt="Secure handling of protected health information" class="cx-hero-bg" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center;">
+    <div style="position: absolute; inset: 0; background: linear-gradient(100deg, rgba(12,30,60,0.95) 0%, rgba(12,30,60,0.9) 42%, rgba(12,30,60,0.74) 72%, rgba(12,30,60,0.6) 100%);"></div>
+    <div class="cx-anim" style="position: absolute; top: -160px; right: -120px; width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle, rgba(91,140,123,0.2), transparent 62%); animation: cxDrift 24s ease-in-out infinite;"></div>
+    <div style="position: relative; max-width: 1320px; margin: 0 auto; padding: clamp(120px, 14vw, 178px) 32px clamp(60px, 8vw, 96px);">
+      <div data-reveal style="display: inline-flex; align-items: center; gap: 10px; margin-bottom: clamp(26px, 3.5vw, 38px); background: rgba(91,140,123,0.18); border: 1px solid rgba(91,140,123,0.34); padding: 8px 15px; border-radius: 999px;">
+        <span style="width: 7px; height: 7px; border-radius: 50%; background: #9DC4B4;"></span>
+        <span style="font-size: 13px; font-weight: 500; color: #9DC4B4;">HIPAA Compliance</span>
+      </div>
+      <div class="cx-hero-grid" style="display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr); gap: clamp(34px, 5vw, 76px); align-items: center;">
+        <div>
+          <h1 style="font-family: 'Source Serif 4', serif; font-weight: 500; font-size: clamp(42px, 6vw, 84px); line-height: 1.0; letter-spacing: -0.04em; margin: 0; color: #FAFAF7; max-width: 16ch; text-wrap: balance;">
+            <span data-reveal style="display: block;">Compliance isn&rsquo;t a</span>
+            <span data-reveal style="display: block;">checkbox. It&rsquo;s the <span style="color: #FEC539;">architecture.</span></span>
+          </h1>
+          <p data-reveal style="font-size: clamp(16.5px, 1.3vw, 19px); line-height: 1.62; color: rgba(250,250,247,0.8); margin: clamp(24px, 3vw, 32px) 0 0; max-width: 54ch; font-weight: 450;">
+            Protecting patient information isn&rsquo;t something we bolt on at the end. It&rsquo;s designed into every workflow, every device, and every person from day one. Here&rsquo;s exactly how we safeguard PHI &mdash; and why practices trust us with it.
+          </p>
+          <div data-reveal style="display: flex; flex-wrap: wrap; gap: 14px; align-items: center; margin-top: clamp(28px, 3.5vw, 38px);">
+            <a href="#request" class="cx-gold cx-mag" style="display: inline-flex; align-items: center; gap: 9px; text-decoration: none; background: #FEC539; color: #13294B; font-weight: 600; font-size: 16px; padding: 16px 28px; border-radius: 999px; box-shadow: 0 8px 26px rgba(254,197,57,0.26);">Schedule a call <span style="font-size: 18px;">&rarr;</span></a>
+            <a href="#safeguards" class="cx-link-u" style="text-decoration: none; color: #FAFAF7; font-weight: 600; font-size: 16px;">See the safeguards</a>
+          </div>
+        </div>
+        <div class="cx-hero-art" data-reveal style="position: relative; width: 100%; max-width: 440px; margin-left: auto;">
+          <div style="position: relative; background: rgba(250,250,247,0.05); border: 1px solid rgba(250,250,247,0.14); border-radius: 24px; padding: clamp(24px, 2.8vw, 32px); backdrop-filter: blur(6px);">
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 24px;">
+              <span style="width: 48px; height: 48px; border-radius: 14px; background: rgba(254,197,57,0.16); display: flex; align-items: center; justify-content: center; color: #FEC539;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.5 8 8 10 4.5-2 8-5 8-10V6Z"/><path d="m9 12 2 2 4-4"/></svg></span>
+              <div><div style="font-weight: 600; font-size: 15px; color: #FAFAF7;">Safeguards, at a glance</div><div style="font-size: 12px; color: rgba(250,250,247,0.6);">Administrative &middot; Technical &middot; Physical</div></div>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 10px;">
+              <sc-for list="{{ heroChecks }}" as="c" hint-placeholder-count="5">
+                <div style="display: flex; align-items: center; gap: 11px; background: rgba(250,250,247,0.05); border: 1px solid rgba(250,250,247,0.09); border-radius: 12px; padding: 12px 14px;">
+                  <span style="width: 22px; height: 22px; border-radius: 7px; background: #5B8C7B; display: flex; align-items: center; justify-content: center; flex: 0 0 auto;"><svg width="12" height="12" viewBox="0 0 18 18" fill="none"><path d="M3 9.5l4 4 8-9" stroke="#FAFAF7" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                  <span style="font-size: 13.5px; font-weight: 500; color: #FAFAF7;">{{ c }}</span>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST STAT BAND -->
+  <section style="background: #13294B; color: #FAFAF7;">
+    <div style="max-width: 1320px; margin: 0 auto; padding: clamp(48px, 6vw, 72px) 32px;">
+      <div data-reveal style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1px; background: rgba(250,250,247,0.14); border: 1px solid rgba(250,250,247,0.14); border-radius: 4px; overflow: hidden;">
+        <sc-for list="{{ trustStats }}" as="s" hint-placeholder-count="6">
+          <div style="background: #13294B; padding: 30px 24px;">
+            <div style="font-family: 'Source Serif 4', serif; font-weight: 600; font-size: clamp(32px, 4vw, 46px); color: #FEC539; line-height: 1; letter-spacing: -0.02em;" aria-hidden="false">{{ s.value }}</div>
+            <div style="font-size: 13px; line-height: 1.45; color: rgba(250,250,247,0.7); margin-top: 12px;">{{ s.label }}</div>
+          </div>
+        </sc-for>
+      </div>
+      <p data-reveal style="font-size: 12px; line-height: 1.6; color: rgba(250,250,247,0.5); margin: 20px 0 0; max-width: 96ch;">These figures reflect our internal target operating standards as of June 2026. They are not service-level commitments and are not incorporated into any agreement unless expressly stated in a signed BAA, statement of work, or SLA. Carentix has not represented that it holds SOC 2, HITRUST, or other third-party certification unless explicitly stated.</p>
+    </div>
+  </section>
+
+  <!-- OUR COMMITMENT -->
+  <section style="background: #FAFAF7; padding: clamp(80px, 11vw, 150px) 32px;">
+    <div style="max-width: 1080px; margin: 0 auto;">
+      <h2 data-reveal style="font-family: 'Source Serif 4', serif; font-weight: 500; font-size: clamp(30px, 4.4vw, 56px); line-height: 1.08; letter-spacing: -0.03em; color: #13294B; margin: 0; max-width: 22ch; text-wrap: balance;">We treat your patients&rsquo; information the way we&rsquo;d want ours treated.</h2>
+      <p data-reveal style="font-size: 18px; line-height: 1.66; color: #4A4A45; margin: 28px 0 0; max-width: 64ch;">Compliance after the fact is liability management. Compliance by design is operational integrity. Our processes that touch Protected Health Information are built with minimization, access controls, and validation checkpoints from the outset &mdash; not audited in at the end. Our standard process is to put that discipline in place before deploying a tool or onboarding a person.</p>
+    </div>
+  </section>
+
+  <!-- THREE SAFEGUARDS -->
+  <section id="safeguards" style="background: #F3F0E8; padding: clamp(80px, 11vw, 150px) 32px;">
+    <div style="max-width: 1320px; margin: 0 auto;">
+      <div data-reveal style="max-width: 760px; margin-bottom: clamp(48px, 6vw, 70px);">
+        <h2 style="font-family: 'Source Serif 4', serif; font-weight: 500; font-size: clamp(34px, 5vw, 62px); line-height: 1.02; letter-spacing: -0.035em; color: #13294B; margin: 0 0 18px; text-wrap: balance;">Administrative, technical, and physical &mdash; covered.</h2>
+        <p style="font-size: 17px; line-height: 1.6; color: #4A4A45; margin: 0; max-width: 60ch;">The HIPAA Security Rule defines three categories of safeguards. We hold ourselves to each, with documented controls you can review.</p>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 22px;">
+        <sc-for list="{{ safeguards }}" as="g" hint-placeholder-count="3">
+          <div data-reveal class="cx-lift" style="background: #FAFAF7; border: 1px solid rgba(19,41,75,0.09); border-radius: 22px; padding: 34px 30px; position: relative; overflow: hidden;">
+            <div style="position: absolute; top: -40px; right: -30px; width: 150px; height: 150px; border-radius: 47% 53% 44% 56% / 55% 48% 52% 45%; background: {{ g.blob }};"></div>
+            <div class="cx-sg-ic" style="position: relative; width: 58px; height: 58px; border-radius: 16px; background: {{ g.iconBg }}; display: flex; align-items: center; justify-content: center; color: {{ g.color }}; margin-bottom: 24px;"><span dangerouslySetInnerHTML="{{ g.icon }}"></span></div>
+            <div style="position: relative; font-family: 'Source Serif 4', serif; font-weight: 600; font-size: 23px; color: #13294B; margin-bottom: 8px; letter-spacing: -0.015em;">{{ g.title }}</div>
+            <p style="position: relative; font-size: 14.5px; line-height: 1.56; color: #4A4A45; margin: 0 0 22px;">{{ g.desc }}</p>
+            <ul style="position: relative; list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px;">
+              <sc-for list="{{ g.items }}" as="it" hint-placeholder-count="4">
+                <li style="display: flex; gap: 11px; align-items: flex-start;">
+                  <span style="flex: 0 0 auto; color: {{ g.color }}; margin-top: 1px;"><svg width="17" height="17" viewBox="0 0 18 18" fill="none"><path d="M3 9.5l4 4 8-9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                  <span style="font-size: 14px; line-height: 1.5; color: #13294B;">{{ it }}</span>
+                </li>
+              </sc-for>
+            </ul>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEEP DIVE GRID -->
+  <section style="background: #FAFAF7; padding: clamp(80px, 11vw, 150px) 32px;">
+    <div style="max-width: 1320px; margin: 0 auto;">
+      <div data-reveal style="max-width: 760px; margin-bottom: clamp(48px, 6vw, 70px);">
+        <h2 style="font-family: 'Source Serif 4', serif; font-weight: 500; font-size: clamp(34px, 5vw, 62px); line-height: 1.02; letter-spacing: -0.035em; color: #13294B; margin: 0; text-wrap: balance;">The controls behind the promise.</h2>
+      </div>
+      <div class="cx-controls-grid">
+        <sc-for list="{{ controls }}" as="c" hint-placeholder-count="6">
+          <div data-reveal style="padding: 32px 30px;" class="cx-ctrl-cell">
+            <div class="cx-ctrl-ic" style="width: 50px; height: 50px; border-radius: 14px; background: rgba(19,41,75,0.10); display: flex; align-items: center; justify-content: center; color: #13294B; margin-bottom: 22px;"><span dangerouslySetInnerHTML="{{ c.icon }}"></span></div>
+            <div style="font-family: 'Source Serif 4', serif; font-weight: 600; font-size: 19px; color: #13294B; margin-bottom: 9px; letter-spacing: -0.01em;">{{ c.title }}</div>
+            <p style="font-size: 14.5px; line-height: 1.58; color: #4A4A45; margin: 0;">{{ c.body }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- BUSINESS ASSOCIATE RESPONSIBILITIES -->
+  <section style="background: #F3F0E8; padding: clamp(80px, 11vw, 150px) 32px;">
+    <div style="max-width: 1080px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: clamp(36px, 5vw, 64px); align-items: center;">
+      <div data-reveal>
+        <h2 style="font-family: 'Source Serif 4', serif; font-weight: 500; font-size: clamp(28px, 4vw, 48px); line-height: 1.06; letter-spacing: -0.03em; color: #13294B; margin: 0 0 18px; text-wrap: balance;">We sign before we access your records.</h2>
+        <p style="font-size: 16.5px; line-height: 1.62; color: #4A4A45; margin: 0 0 26px; max-width: 56ch;">As your Business Associate, we are directly and legally liable under HIPAA &mdash; not just contractually. A signed BAA is in place before any PHI access, full stop. The accountability for our people, our tools, and our AI is ours, never yours.</p>
+        <a href="Business%20Associate%20Agreement.dc.html" class="cx-link-u" style="text-decoration: none; color: #13294B; font-weight: 600; font-size: 16px;">Understand the BAA &rarr;</a>
+      </div>
+      <div data-reveal style="display: flex; flex-direction: column; gap: 14px;">
+        <sc-for list="{{ baResp }}" as="r" hint-placeholder-count="4">
+          <div style="display: flex; gap: 15px; align-items: flex-start; background: #FAFAF7; border: 1px solid rgba(19,41,75,0.09); border-radius: 16px; padding: 22px 24px;">
+            <span style="flex: 0 0 auto; width: 38px; height: 38px; border-radius: 11px; background: rgba(254,197,57,0.18); display: flex; align-items: center; justify-content: center; color: #B8902A;"><span dangerouslySetInnerHTML="{{ r.icon }}"></span></span>
+            <div><div style="font-weight: 600; font-size: 15.5px; color: #13294B; margin-bottom: 4px;">{{ r.title }}</div><p style="font-size: 14px; line-height: 1.5; color: #4A4A45; margin: 0;">{{ r.body }}</p></div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- INCIDENT RESPONSE TIMELINE -->
+  <section style="background: #0C1E3C; color: #FAFAF7; padding: clamp(80px, 11vw, 150px) 32px; position: relative; overflow: hidden;">
+    <div class="cx-anim" style="position: absolute; bottom: -180px; right: -120px; width: 540px; height: 540px; border-radius: 50%; background: radial-gradient(circle, rgba(91,140,123,0.18), transparent 64%); animation: cxDrift 26s ease-in-out infinite;"></div>
+    <div style="position: relative; max-width: 1320px; margin: 0 auto;">
+      <div data-reveal style="max-width: 760px; margin-bottom: clamp(48px, 6vw, 68px);">
+        <h2 style="font-family: 'Source Serif 4', serif; font-weight: 500; font-size: clamp(32px, 5vw, 60px); line-height: 1.02; letter-spacing: -0.04em; color: #FAFAF7; margin: 0 0 18px; max-width: 20ch; text-wrap: balance;">If something goes wrong, you hear it from us first.</h2>
+        <p style="font-size: 17px; line-height: 1.6; color: rgba(250,250,247,0.74); margin: 0; max-width: 60ch;">Our standard process targets an internal root-cause review within 24 hours of a Level 1 event, with prompt notification to you. This describes our internal review; the contractual breach-notification timeline is the one set in your BAA.</p>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 18px;">
+        <sc-for list="{{ incident }}" as="i" hint-placeholder-count="5">
+          <div data-reveal style="background: rgba(250,250,247,0.04); border: 1px solid rgba(250,250,247,0.12); border-radius: 18px; padding: 26px 24px;">
+            <div style="font-family: 'Source Serif 4', serif; font-weight: 600; font-size: 15px; color: #FEC539; margin-bottom: 16px;">{{ i.step }}</div>
+            <div style="font-family: 'Source Serif 4', serif; font-weight: 600; font-size: 18px; color: #FAFAF7; margin-bottom: 9px; letter-spacing: -0.01em;">{{ i.title }}</div>
+            <p style="font-size: 13.5px; line-height: 1.52; color: rgba(250,250,247,0.7); margin: 0;">{{ i.body }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPLIANCE CULTURE -->
+  <section style="background: #FAFAF7; padding: clamp(80px, 11vw, 150px) 32px;">
+    <div style="max-width: 1080px; margin: 0 auto;">
+      <blockquote data-reveal style="font-family: 'Source Serif 4', serif; font-weight: 500; font-size: clamp(26px, 3.6vw, 44px); line-height: 1.24; color: #13294B; margin: 0 0 28px; letter-spacing: -0.02em; text-wrap: pretty; max-width: 24ch;">Compliance is the product &mdash; so it&rsquo;s everyone&rsquo;s job, every day.</blockquote>
+      <p data-reveal style="font-size: 17px; line-height: 1.66; color: #4A4A45; margin: 0 0 36px; max-width: 64ch;">AI tools are reviewed quarterly. Vendor BAAs are kept current. Access is audited, training is refreshed annually, and every new workflow is designed with compliance checkpoints before it ships. This isn&rsquo;t a department &mdash; it&rsquo;s a culture, reinforced by our Constitution and measured like any other outcome.</p>
+      <div data-reveal style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px;">
+        <sc-for list="{{ monitoring }}" as="m" hint-placeholder-count="4">
+          <div style="background: #F3F0E8; border-radius: 18px; padding: 24px 26px;">
+            <div style="font-family: 'Source Serif 4', serif; font-weight: 600; font-size: 17px; color: #13294B; margin-bottom: 8px;">{{ m.title }}</div>
+            <p style="font-size: 14px; line-height: 1.55; color: #4A4A45; margin: 0;">{{ m.body }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA: COMPLIANCE CONVERSATION -->
+  <section id="request" style="background: #FAFAF7; padding: 0 32px clamp(80px, 11vw, 160px);">
+    <div data-reveal style="max-width: 1180px; margin: 0 auto; background: #13294B; color: #FAFAF7; border-radius: 32px; padding: clamp(48px, 7vw, 92px) clamp(32px, 5vw, 80px); position: relative; overflow: hidden; text-align: center;">
+      <div class="cx-anim" style="position: absolute; top: -160px; left: 50%; transform: translateX(-50%); width: 700px; height: 700px; border-radius: 50%; background: radial-gradient(circle, rgba(254,197,57,0.13), transparent 60%); animation: cxDrift 28s ease-in-out infinite;"></div>
+      <div style="position: relative;">
+        <h2 style="font-family: 'Source Serif 4', serif; font-weight: 500; font-size: clamp(32px, 5vw, 60px); line-height: 1.02; letter-spacing: -0.04em; margin: 0 auto 22px; color: #FAFAF7; max-width: 20ch; text-wrap: balance;">Bring your compliance team.</h2>
+        <p style="font-size: 18px; line-height: 1.6; color: rgba(250,250,247,0.78); margin: 0 auto 38px; max-width: 52ch;">We&rsquo;ll walk your compliance officer through our safeguards, workforce training, vendor BAA register, and a sample Business Associate Agreement &mdash; everything your team needs to evaluate us with confidence.</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 14px; justify-content: center;">
+          <a href="Carentix%20Homepage.dc.html#contact" class="cx-gold cx-mag" data-notice="By contacting us, your information is handled per our Privacy Policy." style="display: inline-flex; align-items: center; gap: 9px; text-decoration: none; background: #FEC539; color: #13294B; font-weight: 600; font-size: 16.5px; padding: 17px 32px; border-radius: 999px; box-shadow: 0 12px 34px rgba(254,197,57,0.26);">Schedule a call <span style="font-size: 18px;">&rarr;</span></a>
+          <a href="Business%20Associate%20Agreement.dc.html" class="cx-mag" style="display: inline-flex; align-items: center; gap: 9px; text-decoration: none; color: #FAFAF7; font-weight: 600; font-size: 16.5px; padding: 17px 28px; border-radius: 999px; border: 1px solid rgba(250,250,247,0.28);">About our BAA</a>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 24px; justify-content: center; margin-top: 34px; font-size: 13.5px; color: rgba(250,250,247,0.62);">
+          <span style="display: inline-flex; align-items: center; gap: 7px;"><span style="color:#5B8C7B;">&check;</span> BAA before any PHI access</span>
+          <span style="display: inline-flex; align-items: center; gap: 7px;"><span style="color:#5B8C7B;">&check;</span> Documented safeguards</span>
+          <span style="display: inline-flex; align-items: center; gap: 7px;"><span style="color:#5B8C7B;">&check;</span> Audited &amp; reviewed quarterly</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer style="background: #0C1E3C; color: rgba(250,250,247,0.7); padding: clamp(56px, 6vw, 84px) 32px 34px;">
+    <div style="max-width: 1320px; margin: 0 auto;">
+      <div style="display: grid; grid-template-columns: minmax(240px, 1.6fr) repeat(3, minmax(140px, 1fr)); gap: 40px; padding-bottom: 46px; border-bottom: 1px solid rgba(250,250,247,0.1);">
+        <div>
+          <div style="display: flex; align-items: center; gap: 11px; margin-bottom: 18px;">
+            <svg width="50" height="28" viewBox="0 0 100 56" fill="none"><circle cx="35" cy="28" r="14.5" fill="none" stroke="#FAFAF7" stroke-width="5.4"/><circle cx="65" cy="28" r="14.5" fill="none" stroke="#FAFAF7" stroke-width="5.4"/><circle cx="50" cy="28" r="8.5" fill="#0C1E3C"/><rect x="47" y="20.5" width="6" height="15" rx="1.8" fill="#FEC539"/><rect x="42.5" y="25" width="15" height="6" rx="1.8" fill="#FEC539"/></svg>
+            <span style="font-family: 'Source Serif 4', serif; font-weight: 600; font-size: 22px; color: #FAFAF7;">Carentix</span>
+          </div>
+          <p style="font-size: 14.5px; line-height: 1.6; max-width: 320px; margin: 0;">A managed, compliant operations partner &mdash; so your providers can focus entirely on patient care.</p>
+        </div>
+        <sc-for list="{{ footerCols }}" as="col" hint-placeholder-count="3">
+          <div>
+            <div style="font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #FAFAF7; margin-bottom: 18px;">{{ col.heading }}</div>
+            <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px;">
+              <sc-for list="{{ col.links }}" as="link" hint-placeholder-count="4">
+                <li><a href="{{ link.href }}" class="cx-link-u" style="text-decoration: none; color: rgba(250,250,247,0.7); font-size: 14px;">{{ link.label }}</a></li>
+              </sc-for>
+            </ul>
+          </div>
+        </sc-for>
+      </div>
+      <p style="margin: 24px 0 0; font-size: 12px; line-height: 1.6; color: rgba(250,250,247,0.4); max-width: 100ch;">This page is provided for general informational purposes only and does not modify, supplement, or substitute for the terms of any executed Business Associate Agreement or Master Services Agreement, which control in the event of any conflict. Carentix&trade; and the Carentix logo are trademarks of Carentix LLC.</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 14px; justify-content: space-between; align-items: center; padding-top: 20px; font-size: 13px; color: rgba(250,250,247,0.55);">
+        <div>&copy; 2026 Carentix LLC &middot; 30 N Gould St, STE R, Sheridan, WY 82801, USA</div>
+        <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+          <a href="Privacy%20Policy.dc.html" style="text-decoration: none; color: rgba(250,250,247,0.55);">Privacy Policy</a>
+          <a href="Terms%20of%20Service.dc.html" style="text-decoration: none; color: rgba(250,250,247,0.55);">Terms of Service</a>
+          <a href="HIPAA%20Compliance.dc.html" style="text-decoration: none; color: #FEC539;">HIPAA</a>
+          <a href="Business%20Associate%20Agreement.dc.html" style="text-decoration: none; color: rgba(250,250,247,0.55);">BAA</a>
+          <a href="Accessibility.dc.html" style="text-decoration: none; color: rgba(250,250,247,0.55);">Accessibility</a>
+          <button onClick="{{ openCookiePrefs }}" style="background: none; border: none; padding: 0; cursor: pointer; font: inherit; color: rgba(250,250,247,0.55);">Cookie preferences</button>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- COOKIE CONSENT -->
+  <sc-if value="{{ cookieOpen }}" hint-placeholder-val="{{ false }}">
+    <div role="dialog" aria-label="Cookie preferences" style="position: fixed; left: 16px; right: 16px; bottom: 16px; z-index: 200; display: flex; justify-content: center; pointer-events: none;">
+      <div style="pointer-events: auto; width: 100%; max-width: 560px; background: #FAFAF7; border: 1px solid rgba(19,41,75,0.14); border-radius: 20px; box-shadow: 0 28px 64px rgba(12,30,60,0.28); padding: 24px 26px; animation: cxFadeUp 0.4s cubic-bezier(0.16,1,0.3,1);">
+        <div style="font-family: 'Source Serif 4', serif; font-weight: 600; font-size: 18px; color: #13294B; margin-bottom: 8px;">Your privacy choices</div>
+        <p style="font-size: 13.5px; line-height: 1.58; color: #4A4A45; margin: 0 0 16px;">We use essential cookies to run this site and, with your consent, optional analytics cookies to understand usage. We honor Global Privacy Control signals. See our <a href="Privacy%20Policy.dc.html#cookies" class="cx-link-u" style="color:#13294B; font-weight:600; text-decoration:none;">Cookie &amp; Privacy Policy</a>.</p>
+        <sc-if value="{{ gpcDetected }}" hint-placeholder-val="{{ false }}">
+          <div style="display: flex; gap: 10px; align-items: flex-start; background: rgba(91,140,123,0.12); border: 1px solid rgba(91,140,123,0.28); border-radius: 12px; padding: 11px 13px; margin-bottom: 16px;">
+            <span style="color:#3C5A50; flex:0 0 auto; margin-top:1px;"><svg width="15" height="15" viewBox="0 0 18 18" fill="none"><path d="M3 9.5l4 4 8-9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <span style="font-size: 12.5px; line-height: 1.45; color: #3C5A50;">A Global Privacy Control signal was detected. Optional cookies are off by default and your opt-out is honored.</span>
+          </div>
+        </sc-if>
+        <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+          <button onClick="{{ acceptAll }}" class="cx-gold" style="flex: 1; min-width: 140px; background: #FEC539; color: #13294B; font-weight: 600; font-size: 14px; padding: 12px 18px; border: none; border-radius: 999px; cursor: pointer;">Accept all</button>
+          <button onClick="{{ essentialOnly }}" style="flex: 1; min-width: 140px; background: #FAFAF7; color: #13294B; font-weight: 600; font-size: 14px; padding: 12px 18px; border: 1px solid rgba(19,41,75,0.2); border-radius: 999px; cursor: pointer;">Essential only</button>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+</div>
+
+  <template id="__bundler_thumbnail">
+    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <rect width="100" height="100" fill="#13294B"/>
+      <g transform="translate(50,50)">
+        <circle cx="-15" cy="0" r="14.5" fill="none" stroke="#FAFAF7" stroke-width="5.4"/>
+        <circle cx="15" cy="0" r="14.5" fill="none" stroke="#FAFAF7" stroke-width="5.4"/>
+        <circle cx="0" cy="0" r="8.5" fill="#13294B"/>
+        <rect x="-3" y="-7.5" width="6" height="15" rx="1.8" fill="#FEC539"/>
+        <rect x="-7.5" y="-3" width="15" height="6" rx="1.8" fill="#FEC539"/>
+      </g>
+    </svg>
+  </template></x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;: {&quot;width&quot;: 1320, &quot;height&quot;: 940}}">
+class Component extends DCLogic {
+  state = { menuOpen: false, cookieOpen: false, gpcDetected: false };
+  icon(svg) { return { __html: svg }; }
+  initCookies() {
+    try {
+      const gpc = !!(navigator.globalPrivacyControl);
+      const stored = localStorage.getItem('cx-cookie-consent');
+      if (gpc && !stored) { localStorage.setItem('cx-cookie-consent', 'essential-only'); }
+      this.setState({ gpcDetected: gpc, cookieOpen: !stored });
+    } catch (e) { this.setState({ cookieOpen: true }); }
+  }
+  setConsent(v) { try { localStorage.setItem('cx-cookie-consent', v); } catch (e) {} this.setState({ cookieOpen: false }); }
+  componentDidMount() {
+    try { if ('scrollRestoration' in history) history.scrollRestoration = 'manual'; } catch (e) {}
+    requestAnimationFrame(() => { try { window.scrollTo(0, 0); } catch (e) {} });
+    const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const revealEls = Array.from(document.querySelectorAll('[data-reveal]'));
+    this._safety = setTimeout(() => revealEls.forEach(el => { el.classList.add('cx-seen'); el.style.transform = 'none'; }), 2600);
+    if (reduce) revealEls.forEach(el => { el.classList.add('cx-seen'); el.style.transform = 'none'; });
+    const scan = () => {
+      const vh = window.innerHeight || document.documentElement.clientHeight;
+      if (reduce) return;
+      for (const el of revealEls) { if (el.classList.contains('cx-seen')) continue; const r = el.getBoundingClientRect(); if (r.top < vh * 0.92 && r.bottom > 0) { el.classList.add('cx-seen'); el.style.transform = 'none'; } }
+    };
+    let raf = 0;
+    const onScroll = () => { if (raf) return; raf = requestAnimationFrame(() => { raf = 0; scan(); }); };
+    this._onScroll = onScroll;
+    document.addEventListener('scroll', onScroll, { capture: true, passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
+    let polls = 0; this._poll = setInterval(() => { scan(); if (++polls > 60) { clearInterval(this._poll); this._poll = null; } }, 120);
+    scan();
+    this.initCookies();
+    this._mag = [];
+    if (!reduce && window.matchMedia('(pointer:fine)').matches) {
+      document.querySelectorAll('.cx-mag').forEach(btn => {
+        const move = (e) => { const r = btn.getBoundingClientRect(); btn.style.transform = 'translate(' + ((e.clientX - (r.left + r.width/2)) * 0.16) + 'px,' + ((e.clientY - (r.top + r.height/2)) * 0.26) + 'px)'; };
+        const leave = () => { btn.style.transform = 'translate(0,0)'; };
+        btn.addEventListener('mousemove', move); btn.addEventListener('mouseleave', leave);
+        this._mag.push([btn, move, leave]);
+      });
+    }
+  }
+  componentWillUnmount() {
+    if (this._poll) clearInterval(this._poll);
+    if (this._onScroll) { document.removeEventListener('scroll', this._onScroll, { capture: true }); window.removeEventListener('resize', this._onScroll); }
+    if (this._mag) this._mag.forEach(([b, m, l]) => { b.removeEventListener('mousemove', m); b.removeEventListener('mouseleave', l); });
+  }
+  renderVals() {
+    const ic = (p) => `<svg width="27" height="27" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${p}</svg>`;
+    const ics = (p) => `<svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">${p}</svg>`;
+    return {
+      menuOpen: this.state.menuOpen,
+      toggleMenu: () => this.setState(s => ({ menuOpen: !s.menuOpen })),
+      closeMenu: () => this.setState({ menuOpen: false }),
+      cookieOpen: this.state.cookieOpen,
+      gpcDetected: this.state.gpcDetected,
+      acceptAll: () => this.setConsent('accepted-all'),
+      essentialOnly: () => this.setConsent('essential-only'),
+      openCookiePrefs: () => this.setState({ cookieOpen: true }),
+
+      heroChecks: ["Signed BAA before PHI access", "Company-managed devices, MFA + VPN", "Encryption in transit and at rest", "PHI access logged and audited", "Human review on AI-assisted clinical & billing outputs"],
+
+      trustStats: [
+        { value: "8/8", label: "Named training modules \u2014 80% minimum to pass" },
+        { value: "MFA", label: "Company-managed devices, MFA + VPN by default" },
+        { value: "1:8", label: "Supervisor ratio target with daily check-ins" },
+        { value: "BAA", label: "Signed before PHI access \u2014 directly accountable" },
+        { value: "24 hr", label: "Internal root-cause review target on Level 1 events" },
+      ],
+
+      safeguards: [
+        { title: "Administrative", color: "#13294B", iconBg: "rgba(19,41,75,0.12)", blob: "rgba(19,41,75,0.05)",
+          icon: this.icon(ic('<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/>')),
+          desc: "The policies and people that govern how PHI is handled \u2014 and who is accountable.",
+          items: ["Documented SOPs with named owners", "Workforce HIPAA training, 80% to pass", "1:8 supervision with daily check-ins", "Designated compliance ownership"] },
+        { title: "Technical", color: "#13294B", iconBg: "rgba(19,41,75,0.17)", blob: "rgba(19,41,75,0.08)",
+          icon: this.icon(ic('<rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3M7 9l2 2-2 2M13 13h4"/>')),
+          desc: "The systems that control access to PHI and protect it from unauthorized eyes.",
+          items: ["Encryption in transit and at rest", "MFA and mandatory VPN on every login", "Role-based, least-privilege access", "Comprehensive audit logging"] },
+        { title: "Physical", color: "#13294B", iconBg: "rgba(19,41,75,0.09)", blob: "rgba(19,41,75,0.04)",
+          icon: this.icon(ic('<rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>')),
+          desc: "Control over the devices and environments where work actually happens.",
+          items: ["Company-managed, encrypted devices", "Locked screens and auto-timeout", "No PHI on personal hardware", "Secure disposal of records and devices"] },
+      ],
+
+      controls: [
+        { title: "Workforce training", icon: this.icon(ic('<path d="M12 14 2 9l10-5 10 5-10 5Z"/><path d="M6 11v5c0 1 2.7 3 6 3s6-2 6-3v-5"/>')), body: "Our standard process has each team member complete an eight-module HIPAA and compliance program with an 80% minimum to pass \u2014 refreshed annually and on regulatory change." },
+        { title: "Access controls", icon: this.icon(ic('<rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/>')), body: "Access to PHI is role-based and least-privilege. Each person has a unique ID; permissions are reviewed and revoked promptly once they\u2019re no longer needed." },
+        { title: "Encryption", icon: this.icon(ic('<rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V8a5 5 0 0 1 10 0v3M12 16v2"/>')), body: "PHI is encrypted in transit and at rest using industry-standard protocols, so data is protected both as it moves and where it lives." },
+        { title: "Audit logs", icon: this.icon(ic('<path d="M4 4h12l4 4v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1Z"/><path d="M8 12h8M8 16h5M9 8h3"/>')), body: "PHI access is logged. Records are retained for six years and reviewed for anomalies \u2014 accountability you can audit." },
+        { title: "Secure communication", icon: this.icon(ic('<path d="M21 11.5a8.4 8.4 0 0 1-9 8.4L3 21l1.1-3.5A8.4 8.4 0 1 1 21 11.5Z"/><path d="M12 8v4M12 15h.01"/>')), body: "PHI travels through approved, secured channels. Our standard process does not route patient information through unsecured email or consumer messaging tools." },
+        { title: "Minimum Necessary Rule", icon: this.icon(ic('<circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 2"/>')), body: "We use and disclose the minimum PHI reasonably required for the task at hand \u2014 including in AI prompts, which are reviewed for PHI minimization before use." },
+      ],
+
+      baResp: [
+        { title: "Signed BAA first", icon: this.icon(ics('<path d="M9 12l2 2 4-4"/><rect x="4" y="3" width="16" height="18" rx="2"/>')), body: "Our standard onboarding process executes a Business Associate Agreement before PHI access." },
+        { title: "Direct HIPAA liability", icon: this.icon(ics('<path d="M12 2 4 6v6c0 5 3.5 8 8 10 4.5-2 8-5 8-10V6Z"/>')), body: "As a Business Associate we\u2019re directly liable under the law, not just to you by contract." },
+        { title: "Human accountability for AI", icon: this.icon(ics('<rect x="4" y="6" width="16" height="13" rx="2"/><path d="M9 2v4M15 2v4"/>')), body: "When AI assists with clinical or billing work, a human reviews the output before finalization and the accountability is ours \u2014 \u201cthe AI did it\u201d is not an answer." },
+        { title: "Vendor BAAs on file", icon: this.icon(ics('<path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2Z"/>')), body: "Any subcontractor or tool that could touch PHI signs its own BAA before we use it." },
+      ],
+
+      incident: [
+        { step: "01", title: "Detect", body: "Monitoring and audit logs surface anomalies fast \u2014 often before they become incidents." },
+        { step: "02", title: "Contain", body: "Access is locked down immediately to stop any potential exposure from spreading." },
+        { step: "03", title: "Assess", body: "An internal root-cause review, targeted within 24 hours of a Level 1 event: what did the system allow?" },
+        { step: "04", title: "Notify", body: "We notify you promptly, with the facts and the plan. Contractual breach-notification timelines are set in your BAA." },
+        { step: "05", title: "Remediate and review", body: "We fix the root cause, update the SOP, and feed the lesson back into training." },
+      ],
+
+      monitoring: [
+        { title: "Quarterly AI review", body: "Every AI tool\u2019s security posture and BAA currency is reviewed at least quarterly by our CTO." },
+        { title: "Annual recertification", body: "Workforce compliance training is refreshed annually and on regulatory change." },
+        { title: "Designed-in checkpoints", body: "New workflows are designed to include compliance validation \u2014 not audited on afterward." },
+        { title: "Measured like any KPI", body: "PHI exposure is treated as a top-priority risk, tracked on dashboards with named owners." },
+      ],
+
+      footerCols: [
+        { heading: "Company", links: [ { label: "About", href: "Carentix%20Homepage.dc.html#top" }, { label: "Careers", href: "Careers.dc.html" }, { label: "How it works", href: "Carentix%20Homepage.dc.html#process" }, { label: "Pricing", href: "Carentix%20Homepage.dc.html#pricing" } ]},
+        { heading: "Compliance", links: [ { label: "HIPAA Compliance", href: "HIPAA%20Compliance.dc.html" }, { label: "Business Associate Agreement", href: "Business%20Associate%20Agreement.dc.html" }, { label: "Our Accessibility Commitment", href: "Accessibility.dc.html" }, { label: "Privacy Policy", href: "Privacy%20Policy.dc.html" }, { label: "Terms of Service", href: "Terms%20of%20Service.dc.html" } ]},
+        { heading: "Contact", links: [ { label: "Schedule a call", href: "Carentix%20Homepage.dc.html#contact" }, { label: "info@carentix.com", href: "mailto:info@carentix.com" } ]},
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>
