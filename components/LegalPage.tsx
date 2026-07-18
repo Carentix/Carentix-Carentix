@@ -3,9 +3,10 @@ import Image from "next/image";
 
 /**
  * Faithful reproduction of the approved Claude Design legal template
- * (Privacy Policy.dc.html / Terms of Service.dc.html): light hero, meta row,
- * "at a glance" cards, sticky table-of-contents + numbered sections, dark CTA.
- * Structure, spacing, and inline styling are ported verbatim from the design.
+ * (Privacy Policy / Terms of Service handoff): dark image hero with gradient,
+ * a dark "at a glance" band of glass cards, a sticky table-of-contents with
+ * numbered-free sections, and a dark CTA. Structure and inline styling are
+ * ported verbatim from the handoff HTML.
  */
 
 const SERIF = "var(--font-source-serif), 'Source Serif 4', serif";
@@ -13,7 +14,6 @@ const SERIF = "var(--font-source-serif), 'Source Serif 4', serif";
 export type LegalListItem = { label?: string; text: string };
 export type LegalSection = {
   id: string;
-  num: string;
   title: string;
   paras?: string[];
   list?: LegalListItem[];
@@ -22,7 +22,7 @@ export type LegalSection = {
 };
 export type GlanceCard = { icon: ReactNode; title: string; body: string };
 export type MetaItem = { label: string; value: string };
-export type HeaderImage = { src: string; alt: string };
+export type HeroImage = { src: string; alt: string; objectPosition?: string };
 export type CTA = { title: string; body: string; email: string };
 
 export type LegalPageData = {
@@ -30,7 +30,7 @@ export type LegalPageData = {
   title: string;
   intro: string;
   meta: MetaItem[];
-  headerImage?: HeaderImage;
+  heroImage: HeroImage;
   glance: GlanceCard[];
   sections: LegalSection[];
   cta: CTA;
@@ -40,52 +40,42 @@ export default function LegalPage({ data }: { data: LegalPageData }) {
   return (
     <div style={{ position: "relative" }}>
       {/* HERO */}
-      <section style={{ position: "relative", background: "#FAFAF7", overflow: "hidden" }}>
-        <div style={{ maxWidth: 900, margin: "0 auto", padding: "clamp(118px, 14vw, 168px) 32px clamp(40px, 5vw, 56px)" }}>
-          <div
-            data-reveal
-            style={{ display: "inline-flex", alignItems: "center", gap: 10, marginBottom: "clamp(24px, 3vw, 34px)", background: "rgba(91,140,123,0.1)", border: "1px solid rgba(91,140,123,0.28)", padding: "8px 15px", borderRadius: 999 }}
-          >
+      <section style={{ position: "relative", overflow: "hidden", background: "#0C1E3C" }}>
+        <Image src={data.heroImage.src} alt={data.heroImage.alt} className="cx-hero-bg" fill priority sizes="100vw" style={{ objectFit: "cover", objectPosition: data.heroImage.objectPosition ?? "center" }} />
+        <div className="cx-hero-tint" aria-hidden />
+        <div aria-hidden style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, rgba(12,30,60,0.6) 0%, rgba(12,30,60,0.7) 46%, rgba(12,30,60,0.96) 100%)" }} />
+        <div style={{ position: "relative", zIndex: 2, maxWidth: 900, margin: "0 auto", padding: "clamp(128px, 15vw, 178px) 32px clamp(56px, 7vw, 80px)" }}>
+          <div data-reveal style={{ display: "inline-flex", alignItems: "center", gap: 10, marginBottom: "clamp(24px, 3vw, 34px)", background: "rgba(250,250,247,0.1)", border: "1px solid rgba(250,250,247,0.3)", padding: "8px 15px", borderRadius: 999 }}>
             <span style={{ width: 7, height: 7, borderRadius: "50%", background: "#5B8C7B" }} />
-            <span style={{ fontSize: 13, fontWeight: 500, color: "#3C5A50" }}>{data.eyebrow}</span>
+            <span style={{ fontSize: 13, fontWeight: 500, color: "rgba(250,250,247,0.9)" }}>{data.eyebrow}</span>
           </div>
-          <h1 data-reveal style={{ fontFamily: SERIF, fontWeight: 500, fontSize: "clamp(40px, 6vw, 78px)", lineHeight: 1.0, letterSpacing: "-0.04em", margin: 0, color: "#13294B", maxWidth: "16ch", textWrap: "balance" }}>
+          <h1 data-reveal style={{ fontFamily: SERIF, fontWeight: 500, fontSize: "clamp(40px, 6vw, 78px)", lineHeight: 1.0, letterSpacing: "-0.04em", margin: 0, color: "#FAFAF7", maxWidth: "16ch", textWrap: "balance" }}>
             {data.title}
           </h1>
-          <p data-reveal style={{ fontSize: "clamp(16.5px, 1.3vw, 19px)", lineHeight: 1.62, color: "#4A4A45", margin: "clamp(22px, 3vw, 30px) 0 0", maxWidth: "58ch", fontWeight: 450 }}>
+          <p data-reveal style={{ fontSize: "clamp(16.5px, 1.3vw, 19px)", lineHeight: 1.62, color: "rgba(250,250,247,0.82)", margin: "clamp(22px, 3vw, 30px) 0 0", maxWidth: "58ch", fontWeight: 450 }}>
             {data.intro}
           </p>
-          <div data-reveal style={{ display: "flex", flexWrap: "wrap", gap: 22, marginTop: "clamp(26px, 3vw, 34px)", fontSize: "13.5px", color: "#4A4A45" }}>
+          <div data-reveal style={{ display: "flex", flexWrap: "wrap", gap: 22, marginTop: "clamp(26px, 3vw, 34px)", fontSize: "13.5px", color: "rgba(250,250,247,0.75)" }}>
             {data.meta.map((m) => (
               <span key={m.label}>
-                <strong style={{ color: "#13294B" }}>{m.label}</strong> {m.value}
+                <strong style={{ color: "#FAFAF7" }}>{m.label}</strong> {m.value}
               </span>
             ))}
           </div>
         </div>
       </section>
 
-      {/* HEADER IMAGE (optional) */}
-      {data.headerImage && (
-        <section style={{ background: "#FAFAF7", padding: "0 32px clamp(30px, 4vw, 44px)" }}>
-          <div data-reveal style={{ maxWidth: 1080, margin: "0 auto", borderRadius: 22, overflow: "hidden", boxShadow: "0 30px 64px rgba(19,41,75,0.12)" }}>
-            <div style={{ position: "relative", width: "100%", aspectRatio: "24 / 8" }}>
-              <Image src={data.headerImage.src} alt={data.headerImage.alt} fill sizes="(max-width: 1080px) 100vw, 1016px" style={{ objectFit: "cover" }} />
-            </div>
-          </div>
-        </section>
-      )}
-
       {/* AT A GLANCE */}
-      <section style={{ background: "#FAFAF7", padding: "0 32px clamp(20px, 3vw, 30px)" }}>
-        <div style={{ maxWidth: 1080, margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(230px, 1fr))", gap: 1, background: "rgba(19,41,75,0.1)", border: "1px solid rgba(19,41,75,0.1)", borderRadius: 6, overflow: "hidden" }}>
+      <section style={{ background: "#13294B", padding: "clamp(44px, 6vw, 72px) 32px" }}>
+        <div style={{ maxWidth: 1080, margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(230px, 1fr))", gap: 18 }}>
           {data.glance.map((g) => (
-            <div key={g.title} data-reveal style={{ background: "#fff", padding: "28px 26px" }}>
-              <div style={{ width: 44, height: 44, borderRadius: 12, background: "rgba(91,140,123,0.14)", display: "flex", alignItems: "center", justifyContent: "center", color: "#5B8C7B", marginBottom: 18 }}>
+            <div key={g.title} data-reveal className="cx-glass" style={{ position: "relative", overflow: "hidden", background: "linear-gradient(150deg, rgba(255,255,255,0.09), rgba(255,255,255,0.03))", border: "1px solid rgba(250,250,247,0.14)", borderRadius: 22, padding: "30px 28px", backdropFilter: "blur(8px)" }}>
+              <div className="cx-glow" aria-hidden style={{ position: "absolute", top: -40, right: -40, width: 150, height: 150, borderRadius: "50%", background: "radial-gradient(circle, rgba(254,197,57,0.22), transparent 65%)" }} />
+              <div className="cx-glass-ic" style={{ position: "relative", width: 48, height: 48, borderRadius: 14, background: "rgba(254,197,57,0.16)", display: "flex", alignItems: "center", justifyContent: "center", color: "#FEC539", marginBottom: 20 }}>
                 {g.icon}
               </div>
-              <div style={{ fontFamily: SERIF, fontWeight: 600, fontSize: 17, color: "#13294B", marginBottom: 7 }}>{g.title}</div>
-              <p style={{ fontSize: "13.5px", lineHeight: 1.55, color: "#4A4A45", margin: 0 }}>{g.body}</p>
+              <div style={{ position: "relative", fontFamily: SERIF, fontWeight: 600, fontSize: 17, color: "#FAFAF7", marginBottom: 7 }}>{g.title}</div>
+              <p style={{ position: "relative", fontSize: "13.5px", lineHeight: 1.55, color: "rgba(250,250,247,0.72)", margin: 0 }}>{g.body}</p>
             </div>
           ))}
         </div>
@@ -110,10 +100,6 @@ export default function LegalPage({ data }: { data: LegalPageData }) {
           <div style={{ minWidth: 0 }}>
             {data.sections.map((s) => (
               <div key={s.id} id={s.id} data-reveal style={{ scrollMarginTop: 100, paddingBottom: "clamp(40px, 5vw, 56px)", marginBottom: "clamp(40px, 5vw, 56px)", borderBottom: "1px solid rgba(19,41,75,0.1)" }}>
-                <div style={{ display: "flex", alignItems: "center", gap: 13, marginBottom: 18 }}>
-                  <span style={{ fontFamily: SERIF, fontSize: 14, fontWeight: 600, color: "#5B8C7B" }}>{s.num}</span>
-                  <span style={{ width: 26, height: 1, background: "rgba(19,41,75,0.28)" }} />
-                </div>
                 <h2 style={{ fontFamily: SERIF, fontWeight: 600, fontSize: "clamp(25px, 3.2vw, 36px)", lineHeight: 1.08, letterSpacing: "-0.025em", color: "#13294B", margin: "0 0 18px", textWrap: "balance" }}>
                   {s.title}
                 </h2>
@@ -140,7 +126,7 @@ export default function LegalPage({ data }: { data: LegalPageData }) {
                     <span style={{ flex: "0 0 auto", width: 42, height: 42, borderRadius: 12, background: "rgba(254,197,57,0.18)", display: "flex", alignItems: "center", justifyContent: "center", color: "#FEC539" }}>
                       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2 4 6v6c0 5 3.5 8 8 10 4.5-2 8-5 8-10V6Z" /><path d="M12 9v4M12 16h.01" /></svg>
                     </span>
-                    <div>
+                    <div style={{ flex: 1, minWidth: 0 }}>
                       <div style={{ fontFamily: SERIF, fontWeight: 600, fontSize: 17, color: "#FAFAF7", marginBottom: 6 }}>{s.calloutTitle}</div>
                       <p style={{ fontSize: "14.5px", lineHeight: 1.6, color: "rgba(250,250,247,0.82)", margin: 0 }}>{s.calloutBody}</p>
                     </div>
@@ -155,7 +141,7 @@ export default function LegalPage({ data }: { data: LegalPageData }) {
       {/* CTA */}
       <section style={{ background: "#FAFAF7", padding: "0 32px clamp(80px, 11vw, 150px)" }}>
         <div data-reveal style={{ maxWidth: 1080, margin: "0 auto", background: "#13294B", color: "#FAFAF7", borderRadius: 28, padding: "clamp(40px, 6vw, 70px) clamp(28px, 5vw, 64px)", position: "relative", overflow: "hidden", textAlign: "center" }}>
-          <div className="cx-anim" style={{ position: "absolute", top: -160, left: "50%", transform: "translateX(-50%)", width: 600, height: 600, borderRadius: "50%", background: "radial-gradient(circle, rgba(254,197,57,0.12), transparent 60%)", animation: "cxDrift 28s ease-in-out infinite" }} />
+          <div className="cx-anim" aria-hidden style={{ position: "absolute", top: -160, left: "50%", transform: "translateX(-50%)", width: 600, height: 600, borderRadius: "50%", background: "radial-gradient(circle, rgba(254,197,57,0.12), transparent 60%)", animation: "cxDrift 28s ease-in-out infinite" }} />
           <div style={{ position: "relative" }}>
             <h2 style={{ fontFamily: SERIF, fontWeight: 500, fontSize: "clamp(28px, 4vw, 48px)", lineHeight: 1.05, letterSpacing: "-0.035em", margin: "0 auto 18px", color: "#FAFAF7", maxWidth: "22ch", textWrap: "balance" }}>
               {data.cta.title}

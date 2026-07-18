@@ -248,6 +248,35 @@ textarea:focus-visible {
     box-shadow 0.3s ease, background 0.3s ease, color 0.3s ease;
 }
 
+/* Legal template: dark image hero + glass "at a glance" cards */
+.cx-hero-tint {
+  position: absolute;
+  inset: 0;
+  background: #13294b;
+  mix-blend-mode: multiply;
+  opacity: 0;
+  pointer-events: none;
+}
+.cx-glass {
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.45s ease, border-color 0.45s ease;
+}
+.cx-glass:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 26px 56px rgba(0, 0, 0, 0.32);
+  border-color: rgba(254, 197, 57, 0.4);
+}
+.cx-glass-ic {
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.cx-glass:hover .cx-glass-ic {
+  transform: translateY(-3px) rotate(-6deg) scale(1.08);
+}
+.cx-glow {
+  animation: cxDrift 14s ease-in-out infinite;
+  will-change: transform;
+}
+
 /* Legal template: sticky table-of-contents sidebar (Privacy / Terms) */
 .cx-toc a {
   transition: color 0.25s ease, border-color 0.25s ease;

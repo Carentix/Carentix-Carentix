@@ -26,10 +26,7 @@ const data: LegalPageData = {
     { label: "Last updated", value: "June 30, 2026" },
     { label: "Version", value: "1.0" },
   ],
-  headerImage: {
-    src: "/images/terms-hero.jpg",
-    alt: "A calm, professional healthcare partnership moment",
-  },
+  heroImage: { src: "/images/terms-hero.jpg", alt: "A calm, professional healthcare partnership moment", objectPosition: "center" },
   glance: [
     {
       icon: (
@@ -65,7 +62,6 @@ const data: LegalPageData = {
   sections: [
     {
       id: "acceptance",
-      num: "01",
       title: "Acceptance of these terms",
       paras: [
         "These Website Terms of Service govern your access to and use of www.carentix.com (the “Site”), operated by Carentix LLC, a Wyoming limited liability company with its registered address at 30 N Gould St, STE R, Sheridan, WY 82801, USA. By accessing or using the Site, you agree to be bound by these Terms. If you do not agree, please do not use the Site.",
@@ -74,7 +70,6 @@ const data: LegalPageData = {
     },
     {
       id: "eligibility",
-      num: "02",
       title: "Eligibility & intended use",
       paras: ["The Site is intended for business use by healthcare providers, prospective clients, job applicants, and other business contacts."],
       list: [
@@ -85,7 +80,6 @@ const data: LegalPageData = {
     },
     {
       id: "website",
-      num: "03",
       title: "Use of the Site",
       paras: ["We grant you a limited, non-exclusive, non-transferable, revocable license to use this Site for its intended business purpose, subject to these Terms. The Site is provided as-is and may change or pause for maintenance without notice. When using the Site, you agree not to:"],
       list: [
@@ -98,13 +92,11 @@ const data: LegalPageData = {
     },
     {
       id: "inquiries",
-      num: "04",
       title: "Service inquiries & estimates",
       paras: ["Booking a call, requesting a quote, or receiving a pricing estimate does not create a binding engagement, and pricing shown on the Site is illustrative and non-binding. Estimates depend on the details of your practice. A working relationship begins only when we both sign a written services agreement."],
     },
     {
       id: "engagements",
-      num: "05",
       title: "Services & client relationships",
       paras: [
         "Our healthcare operations services are governed by a separate Master Services Agreement and, where Protected Health Information is involved, a Business Associate Agreement. Those documents — not this page — control scope, fees, service levels, liability, and data handling for an engagement, and control in the event of any conflict with the Site.",
@@ -113,7 +105,6 @@ const data: LegalPageData = {
     },
     {
       id: "no-medical",
-      num: "06",
       title: "No medical advice",
       paras: [
         "Carentix professionals handle operations — scheduling, prior authorizations, verification, scribing, records. We are not clinicians, and nothing on this Site or in our services constitutes medical, clinical, or diagnostic advice. Clinical decision-making remains with licensed providers.",
@@ -124,7 +115,6 @@ const data: LegalPageData = {
     },
     {
       id: "ip",
-      num: "07",
       title: "Intellectual property & trademarks",
       paras: [
         "The Site and its content — including text, graphics, logos, software, the Carentix Academy curriculum, and the Carentix Certified credential — are owned by Carentix or its licensors and protected by copyright, trademark, and other laws. Nothing here transfers any ownership interest to you.",
@@ -133,13 +123,11 @@ const data: LegalPageData = {
     },
     {
       id: "thirdparty",
-      num: "08",
       title: "Third-party links",
       paras: ["The Site may contain links to third-party websites. Carentix does not control and is not responsible for the content, privacy practices, or availability of any third-party site. Inclusion of a link does not imply endorsement."],
     },
     {
       id: "liability",
-      num: "09",
       title: "Disclaimers & limitation of liability",
       paras: [
         "The Site is provided “as is” and “as available” without warranties of any kind, express or implied, including merchantability, fitness for a particular purpose, and non-infringement. Carentix does not warrant that the Site will be uninterrupted, error-free, or secure.",
@@ -150,19 +138,16 @@ const data: LegalPageData = {
     },
     {
       id: "indemnification",
-      num: "10",
       title: "Indemnification",
       paras: ["You agree to indemnify and hold harmless Carentix and its members, officers, employees, and agents from any claim arising from your violation of these Terms or your misuse of the Site."],
     },
     {
       id: "termination",
-      num: "11",
       title: "Termination",
       paras: ["We may suspend or limit access to the Site if these Terms are violated. Termination of a services engagement is handled under that engagement’s agreement, including any transition obligations — because continuity of your operations matters."],
     },
     {
       id: "law",
-      num: "12",
       title: "Governing law & disputes",
       paras: [
         "These Terms are governed by the laws of the State of Wyoming, without regard to conflict-of-laws principles. Any dispute arising from these Terms will be resolved by binding arbitration administered by the American Arbitration Association under its Commercial Arbitration Rules, seated in Cheyenne, Wyoming, except that either party may seek injunctive relief in a court of competent jurisdiction to protect intellectual property rights.",
@@ -171,10 +156,9 @@ const data: LegalPageData = {
     },
     {
       id: "contact",
-      num: "13",
       title: "Changes & contact",
       paras: [
-        "We may update these Terms from time to time by posting a revised version with an updated “Last Updated” date; continued use after a revision constitutes acceptance. Questions? Email support@carentix.com.",
+        "We may update these Terms from time to time by posting a revised version with an updated “Last Updated” date; continued use after a revision constitutes acceptance. Questions? Email info@carentix.com.",
         "Carentix LLC · 30 N Gould St, STE R, Sheridan, WY 82801, USA.",
       ],
     },
@@ -182,7 +166,7 @@ const data: LegalPageData = {
   cta: {
     title: "Questions about these terms?",
     body: "Our team is happy to walk through anything here before you sign or engage. No legalese required.",
-    email: "support@carentix.com",
+    email: "info@carentix.com",
   },
 };
 
