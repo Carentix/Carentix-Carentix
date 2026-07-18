@@ -342,6 +342,22 @@ textarea:focus-visible {
   }
 }
 
+/* Even bordered grids: fill rows completely so no empty cells show.
+   6 items -> 3 across (2 rows); collapses cleanly on smaller screens. */
+.cx-even-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+@media (max-width: 900px) {
+  .cx-even-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 560px) {
+  .cx-even-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* Careers: Academy phase rows stack on mobile */
 @media (max-width: 620px) {
   .cx-phase-row {

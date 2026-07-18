@@ -67,11 +67,7 @@ export default function Page() {
         <Image src="/images/baa-hero.jpg" alt="A signed agreement protecting patient information" className="cx-hero-bg" fill priority sizes="100vw" style={{ objectFit: "cover", objectPosition: "center 35%" }} />
         <div className="cx-hero-tint" aria-hidden />
         <div aria-hidden style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, rgba(12,30,60,0.6) 0%, rgba(12,30,60,0.7) 46%, rgba(12,30,60,0.96) 100%)" }} />
-        <div style={{ position: "relative", zIndex: 2, maxWidth: 1080, margin: "0 auto", padding: "clamp(128px, 15vw, 178px) 32px clamp(56px, 7vw, 80px)" }}>
-          <div data-reveal style={{ display: "inline-flex", alignItems: "center", gap: 10, marginBottom: "clamp(24px, 3vw, 34px)", background: "rgba(250,250,247,0.1)", border: "1px solid rgba(250,250,247,0.3)", padding: "8px 15px", borderRadius: 999 }}>
-            <span style={{ width: 7, height: 7, borderRadius: "50%", background: "#5B8C7B" }} />
-            <span style={{ fontSize: 13, fontWeight: 500, color: "rgba(250,250,247,0.9)" }}>Compliance · Business Associate Agreement</span>
-          </div>
+        <div style={{ position: "relative", zIndex: 2, maxWidth: 900, margin: "0 auto", padding: "clamp(128px, 15vw, 178px) 32px clamp(56px, 7vw, 80px)" }}>
           <h1 data-reveal style={{ fontFamily: SERIF, fontWeight: 500, fontSize: "clamp(40px, 6vw, 78px)", lineHeight: 1.0, letterSpacing: "-0.04em", margin: 0, color: "#FAFAF7", maxWidth: "18ch", textWrap: "balance" }}>Your Business Associate Agreement, explained.</h1>
           <p data-reveal style={{ fontSize: "clamp(16.5px, 1.3vw, 19px)", lineHeight: 1.62, color: "rgba(250,250,247,0.82)", margin: "clamp(22px, 3vw, 30px) 0 0", maxWidth: "60ch", fontWeight: 450 }}>
             Before we handle a single record, we sign a BAA with your practice. This page explains what that document is, why it protects you, and exactly what we commit to under it — in plain English. When you’re ready, request a copy of ours.
@@ -85,9 +81,9 @@ export default function Page() {
 
       {/* GLANCE */}
       <section style={{ background: "#FAFAF7", padding: "0 32px clamp(40px, 5vw, 60px)" }}>
-        <div style={{ maxWidth: 1080, margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(230px, 1fr))", gap: 1, background: "rgba(19,41,75,0.1)", border: "1px solid rgba(19,41,75,0.1)", borderRadius: 6, overflow: "hidden" }}>
+        <div style={{ maxWidth: 1080, margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 18 }}>
           {glance.map((g, i) => (
-            <div key={i} data-reveal style={{ background: "#fff", padding: "30px 28px" }}>
+            <div key={i} data-reveal className="cx-lift" style={{ background: "#fff", border: "1px solid rgba(19,41,75,0.09)", borderRadius: 20, padding: "30px 28px" }}>
               <div style={{ width: 46, height: 46, borderRadius: 13, background: "rgba(91,140,123,0.14)", display: "flex", alignItems: "center", justifyContent: "center", color: "#5B8C7B", marginBottom: 18 }}>
                 <span dangerouslySetInnerHTML={{ __html: g.icon }} />
               </div>
@@ -179,10 +175,10 @@ export default function Page() {
             {eyebrowRow("04", "What our BAA guarantees")}
             <h2 style={{ fontFamily: SERIF, fontWeight: 500, fontSize: "clamp(30px, 4.4vw, 56px)", lineHeight: 1.04, letterSpacing: "-0.03em", color: "#13294B", margin: 0, textWrap: "balance" }}>The commitments inside the contract.</h2>
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))", gap: 1, background: "rgba(19,41,75,0.1)", border: "1px solid rgba(19,41,75,0.1)", borderRadius: 6, overflow: "hidden" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))", gap: 18 }}>
             {commitments.map((c, i) => (
-              <div key={i} data-reveal style={{ background: "#FAFAF7", padding: "32px 30px" }}>
-                <div style={{ width: 50, height: 50, borderRadius: 14, background: "rgba(254,197,57,0.18)", display: "flex", alignItems: "center", justifyContent: "center", color: "#B8902A", marginBottom: 22 }}>
+              <div key={i} data-reveal className="cx-lift" style={{ background: "#FAFAF7", border: "1px solid rgba(19,41,75,0.09)", borderRadius: 20, padding: "32px 30px" }}>
+                <div className="cx-sg-ic" style={{ width: 50, height: 50, borderRadius: 14, background: "rgba(254,197,57,0.18)", display: "flex", alignItems: "center", justifyContent: "center", color: "#B8902A", marginBottom: 22 }}>
                   <span dangerouslySetInnerHTML={{ __html: c.icon }} />
                 </div>
                 <div style={{ fontFamily: SERIF, fontWeight: 600, fontSize: 19, color: "#13294B", marginBottom: 9, letterSpacing: "-0.01em" }}>{c.title}</div>

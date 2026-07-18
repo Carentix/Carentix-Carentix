@@ -133,7 +133,7 @@ export default function Page() {
           </div>
         </div>
         <div data-reveal style={{ position: "relative", zIndex: 2, borderTop: "1px solid rgba(250,250,247,0.14)", background: "rgba(12,30,60,0.55)", backdropFilter: "saturate(180%) blur(14px)", WebkitBackdropFilter: "saturate(180%) blur(14px)" }}>
-          <div style={{ maxWidth: 1320, margin: "0 auto", padding: "20px 32px", display: "flex", flexWrap: "wrap", alignItems: "center", gap: "14px 22px" }}>
+          <div style={{ maxWidth: 1320, margin: "0 auto", padding: "20px 32px", display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "center", gap: "14px 22px" }}>
             <span style={{ fontSize: "11.5px", fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase", color: "#5B8C7B" }}>What you’ll master</span>
             {skillTags.map((t, i) => (
               <span key={i} style={{ display: "inline-flex", alignItems: "center", gap: 22 }}>
@@ -316,7 +316,7 @@ export default function Page() {
         <div style={{ position: "relative", maxWidth: 1320, margin: "0 auto" }}>
           <h2 data-reveal style={{ fontFamily: SERIF, fontWeight: 500, fontSize: "clamp(32px, 5vw, 64px)", lineHeight: 1.02, letterSpacing: "-0.04em", color: "#FAFAF7", margin: "0 0 clamp(20px, 3vw, 28px)", maxWidth: "20ch", textWrap: "balance" }}>Values you can <span style={{ color: "#FEC539" }}>observe</span>, not just read.</h2>
           <p data-reveal style={{ fontSize: 17, lineHeight: 1.6, color: "rgba(250,250,247,0.74)", margin: "0 0 clamp(44px, 5vw, 60px)", maxWidth: "60ch" }}>We don’t have preferences — we have standards. Each value below shows up in daily behavior, or it doesn’t count.</p>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: 1, background: "rgba(250,250,247,0.14)", border: "1px solid rgba(250,250,247,0.14)", borderRadius: 4, overflow: "hidden" }}>
+          <div className="cx-even-grid" style={{ display: "grid", gap: 1, background: "rgba(250,250,247,0.14)", border: "1px solid rgba(250,250,247,0.14)", borderRadius: 4, overflow: "hidden" }}>
             {values.map((v, i) => (
               <div key={i} data-reveal style={{ background: "#0C1E3C", padding: "32px 30px" }}>
                 <div style={{ fontFamily: SERIF, fontSize: 14, fontWeight: 600, color: "#FEC539", marginBottom: 14 }}>{v.num}</div>

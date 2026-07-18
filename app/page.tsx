@@ -81,7 +81,7 @@ export default function Page() {
           </div>
         </div>
         <div data-reveal style={{ position: "relative", zIndex: 2, background: "rgba(250,250,247,0.9)", backdropFilter: "saturate(160%) blur(10px)", WebkitBackdropFilter: "saturate(160%) blur(10px)", borderTop: "1px solid rgba(19,41,75,0.1)", borderBottom: "1px solid rgba(19,41,75,0.1)" }}>
-          <div style={{ maxWidth: 1320, margin: "0 auto", padding: "20px 32px", display: "flex", flexWrap: "wrap", alignItems: "center", gap: "14px 22px" }}>
+          <div style={{ maxWidth: 1320, margin: "0 auto", padding: "20px 32px", display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "center", gap: "14px 22px" }}>
             <span style={{ fontSize: "11.5px", fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase", color: "#5B8C7B" }}>Our team handles</span>
             {capabilityTags.map((t, i) => (
               <span key={i} style={{ display: "inline-flex", alignItems: "center", gap: 22 }}>
