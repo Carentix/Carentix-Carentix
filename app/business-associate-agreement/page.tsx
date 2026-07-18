@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import DesignFaqList from "@/components/DesignFaqList";
 
 export const metadata: Metadata = {
@@ -14,7 +15,7 @@ const ic = (p: string) =>
 const glance = [
   { icon: ic('<rect x="4" y="3" width="16" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h4"/>'), title: "It’s required by HIPAA", body: "Any partner that handles PHI on a provider’s behalf must have a signed BAA in place. It’s the law, not a formality." },
   { icon: ic('<path d="M12 2 4 6v6c0 5 3.5 8 8 10 4.5-2 8-5 8-10V6Z"/><path d="m9 12 2 2 4-4"/>'), title: "It protects your patients", body: "It binds us to specific safeguards and makes us directly liable for protecting the information you entrust to us." },
-  { icon: ic('<path d="M3 17l6-6 4 4 8-8"/><path d="M17 7h4v4"/>'), title: "We sign before day one", body: "No PHI access happens before the BAA is executed — every time, without exception." },
+  { icon: ic('<path d="M3 17l6-6 4 4 8-8"/><path d="M17 7h4v4"/>'), title: "We sign before day one", body: "Our standard onboarding process requires a signed BAA before PHI access." },
 ];
 
 const whyWhen = [
@@ -39,19 +40,19 @@ const clientResp = [
 ];
 
 const commitments = [
-  { title: "Security commitments", icon: ic('<path d="M12 2 4 6v6c0 5 3.5 8 8 10 4.5-2 8-5 8-10V6Z"/><path d="m9 12 2 2 4-4"/>'), body: "Encryption in transit and at rest, MFA and VPN on every login, company-managed devices, and audit logging — written into the agreement, not just promised." },
-  { title: "Incident reporting", icon: ic('<path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/>'), body: "We commit to prompt notification if a security incident or breach involving your PHI occurs — you hear it from us first, with a clear remediation plan." },
-  { title: "Subcontractors", icon: ic('<circle cx="6" cy="12" r="3"/><circle cx="18" cy="5" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 10.6 6.8-4M8.6 13.4l6.8 4"/>'), body: "Any tool or partner that could access PHI — including AI vendors — must sign its own BAA before we use it. The chain of accountability never breaks." },
+  { title: "Security commitments", icon: ic('<path d="M12 2 4 6v6c0 5 3.5 8 8 10 4.5-2 8-5 8-10V6Z"/><path d="m9 12 2 2 4-4"/>'), body: "Encryption in transit and at rest, MFA and VPN on login, company-managed devices, and audit logging — written into the agreement, not just promised." },
+  { title: "Incident reporting", icon: ic('<path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/>'), body: "We commit to prompt notification, consistent with your BAA, if a security incident or breach involving your PHI occurs — with a clear remediation plan." },
+  { title: "Subcontractors", icon: ic('<circle cx="6" cy="12" r="3"/><circle cx="18" cy="5" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 10.6 6.8-4M8.6 13.4l6.8 4"/>'), body: "A tool or partner that may access PHI — including AI vendors — is required to sign its own BAA before use, so the chain of accountability is maintained." },
   { title: "Compliance & audit", icon: ic('<path d="M4 4h12l4 4v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1Z"/><path d="M8 12h8M8 16h5"/>'), body: "We keep records for six years, review controls regularly, and make our compliance practices available so your team can verify, not just trust." },
 ];
 
 const faqs = [
   { q: "Do we have to use your BAA, or can we use ours?", a: "Either works. We have a standard BAA ready for your compliance team to review, and we’re equally happy to sign yours. What matters is that a mutually agreed agreement is fully executed before any PHI changes hands." },
-  { q: "When exactly is the BAA signed in the process?", a: "During onboarding, before any systems access or PHI exposure — always. Our standard sequence is BAA executed first, then systems secured, then SOPs and access configured. Your team never works on live PHI before the agreement is in place." },
+  { q: "When exactly is the BAA signed in the process?", a: "During onboarding, before systems access or PHI exposure. Our standard sequence is BAA executed first, then systems secured, then SOPs and access configured. Your team never works on live PHI before the agreement is in place." },
   { q: "What counts as PHI in our engagement?", a: "Any individually identifiable health information we encounter while supporting you — patient names and contact details, insurance and claims data, appointment and scheduling records, and clinical documentation. We use only the minimum necessary for each task." },
-  { q: "How do you handle AI tools under the BAA?", a: "Any AI tool that could process PHI must have its own signed BAA before we use it, and a human reviews every clinical or billing output. We minimize PHI in AI prompts to the minimum necessary, and accountability for the result is always ours — never “the AI did it.”" },
+  { q: "How do you handle AI tools under the BAA?", a: "An AI tool that may process PHI is subject to its own signed BAA before we use it, and human review is required on AI-assisted clinical or billing outputs before finalization. We minimize PHI in AI prompts to the minimum necessary, and accountability for the result is always ours — never “the AI did it.”" },
   { q: "What happens to our data when the engagement ends?", a: "At the end of the relationship we return or securely destroy the PHI we hold on your behalf, as the agreement specifies, and we document that it was done. Required compliance and audit records are retained only as the law allows." },
-  { q: "How do we request a copy?", a: "Email support@carentix.com or use the button below, and we’ll send our standard BAA along with our security package so your compliance officer has everything needed to review and approve." },
+  { q: "How do we request a copy?", a: "Email info@carentix.com or use the button below, and we’ll send our standard BAA along with our safeguards documentation so your compliance officer has everything needed to review and approve." },
 ];
 
 const eyebrowRow = (num: string, label: string) => (
@@ -66,19 +67,22 @@ export default function Page() {
   return (
     <div style={{ position: "relative", color: "#4A4A45", overflowX: "hidden" }}>
       {/* HERO */}
-      <section style={{ position: "relative", background: "#FAFAF7", overflow: "hidden" }}>
-        <div style={{ maxWidth: 1080, margin: "0 auto", padding: "clamp(118px, 14vw, 172px) 32px clamp(40px, 5vw, 56px)" }}>
-          <div data-reveal style={{ display: "inline-flex", alignItems: "center", gap: 10, marginBottom: "clamp(24px, 3vw, 34px)", background: "rgba(91,140,123,0.1)", border: "1px solid rgba(91,140,123,0.28)", padding: "8px 15px", borderRadius: 999 }}>
+      <section style={{ position: "relative", overflow: "hidden", background: "#0C1E3C" }}>
+        <Image src="/images/baa-hero.jpg" alt="A signed agreement protecting patient information" className="cx-hero-bg" fill priority sizes="100vw" style={{ objectFit: "cover", objectPosition: "center 35%" }} />
+        <div className="cx-hero-tint" aria-hidden />
+        <div aria-hidden style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, rgba(12,30,60,0.6) 0%, rgba(12,30,60,0.7) 46%, rgba(12,30,60,0.96) 100%)" }} />
+        <div style={{ position: "relative", zIndex: 2, maxWidth: 1080, margin: "0 auto", padding: "clamp(128px, 15vw, 178px) 32px clamp(56px, 7vw, 80px)" }}>
+          <div data-reveal style={{ display: "inline-flex", alignItems: "center", gap: 10, marginBottom: "clamp(24px, 3vw, 34px)", background: "rgba(250,250,247,0.1)", border: "1px solid rgba(250,250,247,0.3)", padding: "8px 15px", borderRadius: 999 }}>
             <span style={{ width: 7, height: 7, borderRadius: "50%", background: "#5B8C7B" }} />
-            <span style={{ fontSize: 13, fontWeight: 500, color: "#3C5A50" }}>Compliance · Business Associate Agreement</span>
+            <span style={{ fontSize: 13, fontWeight: 500, color: "rgba(250,250,247,0.9)" }}>Compliance · Business Associate Agreement</span>
           </div>
-          <h1 data-reveal style={{ fontFamily: SERIF, fontWeight: 500, fontSize: "clamp(40px, 6vw, 78px)", lineHeight: 1.0, letterSpacing: "-0.04em", margin: 0, color: "#13294B", maxWidth: "18ch", textWrap: "balance" }}>Your Business Associate Agreement, explained.</h1>
-          <p data-reveal style={{ fontSize: "clamp(16.5px, 1.3vw, 19px)", lineHeight: 1.62, color: "#4A4A45", margin: "clamp(22px, 3vw, 30px) 0 0", maxWidth: "60ch", fontWeight: 450 }}>
+          <h1 data-reveal style={{ fontFamily: SERIF, fontWeight: 500, fontSize: "clamp(40px, 6vw, 78px)", lineHeight: 1.0, letterSpacing: "-0.04em", margin: 0, color: "#FAFAF7", maxWidth: "18ch", textWrap: "balance" }}>Your Business Associate Agreement, explained.</h1>
+          <p data-reveal style={{ fontSize: "clamp(16.5px, 1.3vw, 19px)", lineHeight: 1.62, color: "rgba(250,250,247,0.82)", margin: "clamp(22px, 3vw, 30px) 0 0", maxWidth: "60ch", fontWeight: 450 }}>
             Before we handle a single record, we sign a BAA with your practice. This page explains what that document is, why it protects you, and exactly what we commit to under it — in plain English. When you’re ready, request a copy of ours.
           </p>
           <div data-reveal style={{ display: "flex", flexWrap: "wrap", gap: 14, alignItems: "center", marginTop: "clamp(26px, 3.5vw, 36px)" }}>
             <a href="#request" className="cx-gold cx-mag" style={{ display: "inline-flex", alignItems: "center", gap: 9, textDecoration: "none", background: "#FEC539", color: "#13294B", fontWeight: 600, fontSize: 16, padding: "16px 28px", borderRadius: 999, boxShadow: "0 8px 26px rgba(254,197,57,0.26)" }}>Request a copy of our BAA <span style={{ fontSize: 18 }}>→</span></a>
-            <a href="/hipaa-compliance" className="cx-link-u" style={{ textDecoration: "none", color: "#13294B", fontWeight: 600, fontSize: 16 }}>See our HIPAA program</a>
+            <a href="/hipaa-compliance" className="cx-link-u" style={{ textDecoration: "none", color: "#FAFAF7", fontWeight: 600, fontSize: 16 }}>See our HIPAA program</a>
           </div>
         </div>
       </section>
@@ -213,7 +217,7 @@ export default function Page() {
             <h2 style={{ fontFamily: SERIF, fontWeight: 500, fontSize: "clamp(30px, 4.6vw, 56px)", lineHeight: 1.04, letterSpacing: "-0.04em", margin: "0 auto 22px", color: "#FAFAF7", maxWidth: "24ch", textWrap: "balance" }}>Request a copy of our Business Associate Agreement.</h2>
             <p style={{ fontSize: 18, lineHeight: 1.6, color: "rgba(250,250,247,0.78)", margin: "0 auto 38px", maxWidth: "52ch" }}>We’ll send our standard BAA for your compliance team to review — and we’re glad to work from yours instead.</p>
             <div style={{ display: "flex", flexWrap: "wrap", gap: 14, justifyContent: "center" }}>
-              <a href="mailto:support@carentix.com" className="cx-gold cx-mag" style={{ display: "inline-flex", alignItems: "center", gap: 9, textDecoration: "none", background: "#FEC539", color: "#13294B", fontWeight: 600, fontSize: "16.5px", padding: "17px 32px", borderRadius: 999, boxShadow: "0 12px 34px rgba(254,197,57,0.26)" }}>Request our BAA <span style={{ fontSize: 18 }}>→</span></a>
+              <a href="mailto:info@carentix.com?subject=BAA%20request" className="cx-gold cx-mag" style={{ display: "inline-flex", alignItems: "center", gap: 9, textDecoration: "none", background: "#FEC539", color: "#13294B", fontWeight: 600, fontSize: "16.5px", padding: "17px 32px", borderRadius: 999, boxShadow: "0 12px 34px rgba(254,197,57,0.26)" }}>Schedule a call <span style={{ fontSize: 18 }}>→</span></a>
               <a href="/hipaa-compliance" className="cx-mag" style={{ display: "inline-flex", alignItems: "center", gap: 9, textDecoration: "none", color: "#FAFAF7", fontWeight: 600, fontSize: "16.5px", padding: "17px 28px", borderRadius: 999, border: "1px solid rgba(250,250,247,0.28)" }}>See our HIPAA program</a>
             </div>
             <div style={{ display: "flex", flexWrap: "wrap", gap: 24, justifyContent: "center", marginTop: 34, fontSize: "13.5px", color: "rgba(250,250,247,0.62)" }}>
