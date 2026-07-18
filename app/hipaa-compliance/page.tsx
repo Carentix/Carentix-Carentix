@@ -80,7 +80,7 @@ const incident = [
   { step: "02", title: "Contain", body: "Access is locked down immediately to stop any potential exposure from spreading." },
   { step: "03", title: "Assess", body: "An internal root-cause review, targeted within 24 hours of a Level 1 event: what did the system allow?" },
   { step: "04", title: "Notify", body: "We notify you promptly, with the facts and the plan. Contractual breach-notification timelines are set in your BAA." },
-  { step: "05", title: "Remediate & review", body: "We fix the root cause, update the SOP, and feed the lesson back into training." },
+  { step: "05", title: "Remediate and review", body: "We fix the root cause, update the SOP, and feed the lesson back into training." },
 ];
 
 const monitoring = [
@@ -89,14 +89,6 @@ const monitoring = [
   { title: "Designed-in checkpoints", body: "New workflows are designed to include compliance validation — not audited on afterward." },
   { title: "Measured like any KPI", body: "PHI exposure is treated as a top-priority risk, tracked on dashboards with named owners." },
 ];
-
-const eyebrowRow = (num: string, label: string, dark = false) => (
-  <div style={{ display: "flex", alignItems: "center", gap: 13, marginBottom: 22 }}>
-    <span style={{ fontFamily: SERIF, fontSize: 14, fontWeight: 600, color: dark ? "#FEC539" : "#5B8C7B" }}>{num}</span>
-    <span style={{ width: 26, height: 1, background: dark ? "rgba(250,250,247,0.4)" : "rgba(19,41,75,0.28)" }} />
-    <span style={{ fontSize: "12.5px", fontWeight: 500, letterSpacing: "0.04em", color: dark ? "rgba(250,250,247,0.66)" : "#5B8C7B" }}>{label}</span>
-  </div>
-);
 
 export default function Page() {
   return (
@@ -239,7 +231,6 @@ export default function Page() {
       <section style={{ background: "#F3F0E8", padding: "clamp(80px, 11vw, 150px) 32px" }}>
         <div style={{ maxWidth: 1080, margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "clamp(36px, 5vw, 64px)", alignItems: "center" }}>
           <div data-reveal>
-            {eyebrowRow("04", "Business Associate responsibilities")}
             <h2 style={{ fontFamily: SERIF, fontWeight: 500, fontSize: "clamp(28px, 4vw, 48px)", lineHeight: 1.06, letterSpacing: "-0.03em", color: "#13294B", margin: "0 0 18px", textWrap: "balance" }}>We sign before we access your records.</h2>
             <p style={{ fontSize: "16.5px", lineHeight: 1.62, color: "#4A4A45", margin: "0 0 26px", maxWidth: "56ch" }}>As your Business Associate, we are directly and legally liable under HIPAA — not just contractually. A signed BAA is in place before any PHI access, full stop. The accountability for our people, our tools, and our AI is ours, never yours.</p>
             <a href="/business-associate-agreement" className="cx-link-u" style={{ textDecoration: "none", color: "#13294B", fontWeight: 600, fontSize: 16 }}>Understand the BAA →</a>
@@ -265,7 +256,6 @@ export default function Page() {
         <div className="cx-anim" aria-hidden style={{ position: "absolute", bottom: -180, right: -120, width: 540, height: 540, borderRadius: "50%", background: "radial-gradient(circle, rgba(91,140,123,0.18), transparent 64%)", animation: "cxDrift 26s ease-in-out infinite" }} />
         <div style={{ position: "relative", maxWidth: 1320, margin: "0 auto" }}>
           <div data-reveal style={{ maxWidth: 760, marginBottom: "clamp(48px, 6vw, 68px)" }}>
-            {eyebrowRow("05", "Incident response", true)}
             <h2 style={{ fontFamily: SERIF, fontWeight: 500, fontSize: "clamp(32px, 5vw, 60px)", lineHeight: 1.02, letterSpacing: "-0.04em", color: "#FAFAF7", margin: "0 0 18px", maxWidth: "20ch", textWrap: "balance" }}>If something goes wrong, you hear it from us first.</h2>
             <p style={{ fontSize: 17, lineHeight: 1.6, color: "rgba(250,250,247,0.74)", margin: 0, maxWidth: "60ch" }}>Our standard process targets an internal root-cause review within 24 hours of a Level 1 event, with prompt notification to you. This describes our internal review; the contractual breach-notification timeline is the one set in your BAA.</p>
           </div>
