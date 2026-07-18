@@ -2,6 +2,7 @@ import Image from "next/image";
 import DisciplineSelector from "@/components/DisciplineSelector";
 import PricingCalculator from "@/components/PricingCalculator";
 import DesignFaqList from "@/components/DesignFaqList";
+import { BOOKING_URL } from "@/lib/site";
 
 const SERIF = "var(--font-source-serif), 'Source Serif 4', serif";
 
@@ -75,7 +76,7 @@ export default function Page() {
               Carentix is your operations partner — a dedicated, supervised care team that owns the administrative work, so you can give patients your full attention.
             </p>
             <div data-reveal style={{ display: "flex", flexWrap: "wrap", gap: 14, alignItems: "center", marginTop: "clamp(28px, 3.5vw, 38px)" }}>
-              <a href="#contact" className="cx-gold cx-mag" style={{ display: "inline-flex", alignItems: "center", gap: 9, textDecoration: "none", background: "#FEC539", color: "#13294B", fontWeight: 600, fontSize: 16, padding: "16px 28px", borderRadius: 999, boxShadow: "0 8px 26px rgba(254,197,57,0.3)" }}>Schedule a call <span style={{ fontSize: 18 }}>→</span></a>
+              <a href={BOOKING_URL} data-calendly className="cx-gold cx-mag" style={{ display: "inline-flex", alignItems: "center", gap: 9, textDecoration: "none", background: "#FEC539", color: "#13294B", fontWeight: 600, fontSize: 16, padding: "16px 28px", borderRadius: 999, boxShadow: "0 8px 26px rgba(254,197,57,0.3)" }}>Schedule a call <span style={{ fontSize: 18 }}>→</span></a>
               <a href="#capabilities" className="cx-link-u" style={{ textDecoration: "none", color: "#13294B", fontWeight: 600, fontSize: 16 }}>See what we handle</a>
             </div>
           </div>
@@ -267,7 +268,7 @@ export default function Page() {
               <span style={{ fontSize: "12.5px", fontWeight: 500, letterSpacing: "0.04em", color: "#5B8C7B" }}>Answered plainly</span>
             </div>
             <h2 style={{ fontFamily: SERIF, fontWeight: 500, fontSize: "clamp(30px, 4vw, 52px)", lineHeight: 1.04, letterSpacing: "-0.035em", color: "#13294B", margin: "0 0 20px", textWrap: "balance" }}>The things practices ask before they say yes.</h2>
-            <a href="#contact" className="cx-link-u" style={{ textDecoration: "none", color: "#13294B", fontWeight: 600, fontSize: 16 }}>Still unsure? Schedule a 20-minute call →</a>
+            <a href={BOOKING_URL} data-calendly className="cx-link-u" style={{ textDecoration: "none", color: "#13294B", fontWeight: 600, fontSize: 16 }}>Still unsure? Schedule a 20-minute call →</a>
           </div>
           <DesignFaqList faqs={faqs} />
         </div>
@@ -281,7 +282,7 @@ export default function Page() {
             <h2 style={{ fontFamily: SERIF, fontWeight: 500, fontSize: "clamp(32px, 5vw, 62px)", lineHeight: 1.02, letterSpacing: "-0.04em", margin: "0 auto 22px", color: "#FAFAF7", maxWidth: "20ch", textWrap: "balance" }}>You got into medicine for the patients. Let&apos;s protect that.</h2>
             <p style={{ fontSize: 18, lineHeight: 1.6, color: "rgba(250,250,247,0.78)", margin: "0 auto 38px", maxWidth: "52ch" }}>A 20-minute call. A real estimate for your practice. No scripts, no pressure — you decide.</p>
             <div style={{ display: "flex", flexWrap: "wrap", gap: 14, justifyContent: "center" }}>
-              <a href="mailto:info@carentix.com" className="cx-gold cx-mag" style={{ display: "inline-flex", alignItems: "center", gap: 9, textDecoration: "none", background: "#FEC539", color: "#13294B", fontWeight: 600, fontSize: "16.5px", padding: "17px 32px", borderRadius: 999, boxShadow: "0 12px 34px rgba(254,197,57,0.26)" }}>Schedule a call <span style={{ fontSize: 18 }}>→</span></a>
+              <a href={BOOKING_URL} data-calendly className="cx-gold cx-mag" style={{ display: "inline-flex", alignItems: "center", gap: 9, textDecoration: "none", background: "#FEC539", color: "#13294B", fontWeight: 600, fontSize: "16.5px", padding: "17px 32px", borderRadius: 999, boxShadow: "0 12px 34px rgba(254,197,57,0.26)" }}>Schedule a call <span style={{ fontSize: 18 }}>→</span></a>
               <a href="#capabilities" className="cx-mag" style={{ display: "inline-flex", alignItems: "center", gap: 9, textDecoration: "none", color: "#FAFAF7", fontWeight: 600, fontSize: "16.5px", padding: "17px 28px", borderRadius: 999, border: "1px solid rgba(250,250,247,0.28)" }}>See what we handle</a>
             </div>
             <div style={{ display: "flex", flexWrap: "wrap", gap: 24, justifyContent: "center", marginTop: 34, fontSize: "13.5px", color: "rgba(250,250,247,0.62)" }}>

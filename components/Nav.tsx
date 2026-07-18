@@ -75,8 +75,9 @@ export default function Nav() {
               {l.label}
             </Link>
           ))}
-          <Link
+          <a
             href={CTA.href}
+            data-calendly
             className="cx-gold cx-mag"
             style={{
               display: "inline-flex",
@@ -92,7 +93,7 @@ export default function Nav() {
             }}
           >
             {CTA.label} <span style={{ fontSize: 15 }}>→</span>
-          </Link>
+          </a>
         </div>
         <button
           id="cx-burger"
@@ -147,8 +148,9 @@ export default function Nav() {
               {l.label}
             </Link>
           ))}
-          <Link
+          <a
             href={CTA.href}
+            data-calendly
             onClick={() => setMenuOpen(false)}
             style={{
               textAlign: "center",
@@ -163,7 +165,7 @@ export default function Nav() {
             }}
           >
             {CTA.label} →
-          </Link>
+          </a>
         </div>
       )}
     </header>

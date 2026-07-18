@@ -85,21 +85,36 @@ export default function Footer() {
                   gap: 12,
                 }}
               >
-                {col.links.map((link) => (
-                  <li key={link.label}>
-                    <Link
-                      href={link.href}
-                      className="cx-link-u"
-                      style={{
-                        textDecoration: "none",
-                        color: "rgba(250,250,247,0.7)",
-                        fontSize: 14,
-                      }}
-                    >
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
+                {col.links.map((link) => {
+                  const linkStyle = {
+                    textDecoration: "none",
+                    color: "rgba(250,250,247,0.7)",
+                    fontSize: 14,
+                  } as const;
+                  const isCalendly = "calendly" in link && link.calendly;
+                  return (
+                    <li key={link.label}>
+                      {isCalendly ? (
+                        <a
+                          href={link.href}
+                          data-calendly
+                          className="cx-link-u"
+                          style={linkStyle}
+                        >
+                          {link.label}
+                        </a>
+                      ) : (
+                        <Link
+                          href={link.href}
+                          className="cx-link-u"
+                          style={linkStyle}
+                        >
+                          {link.label}
+                        </Link>
+                      )}
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           ))}

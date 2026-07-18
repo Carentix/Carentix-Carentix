@@ -15,7 +15,15 @@ export const NAV_LINKS = [
   { label: "FAQ", href: "/#faq" },
 ] as const;
 
-export const CTA = { label: "Schedule a Call", href: "/#contact" } as const;
+/**
+ * Calendly booking link. Every "Schedule a Call" CTA points here as its
+ * plain-anchor href (the no-JS fallback) and is tagged with `data-calendly`
+ * so CalendlyPopup can intercept the click and open the booking modal.
+ */
+export const BOOKING_URL =
+  "https://calendly.com/carentix/new-meeting?hide_gdpr_banner=1";
+
+export const CTA = { label: "Schedule a Call", href: BOOKING_URL } as const;
 
 export const CONTACT = {
   email: "info@carentix.com",
@@ -49,7 +57,7 @@ export const FOOTER_COLS = [
   {
     heading: "Contact",
     links: [
-      { label: "Schedule a Call", href: "/#contact" },
+      { label: "Schedule a Call", href: BOOKING_URL, calendly: true },
       { label: CONTACT.email, href: `mailto:${CONTACT.email}` },
       { label: CONTACT.phone, href: CONTACT.phoneHref },
     ],

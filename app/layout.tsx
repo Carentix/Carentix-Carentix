@@ -5,6 +5,7 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import CookieConsent from "@/components/CookieConsent";
 import ScrollEffects from "@/components/ScrollEffects";
+import CalendlyPopup from "@/components/CalendlyPopup";
 import { SITE_URL } from "@/lib/site";
 
 const inter = Inter({
@@ -160,6 +161,7 @@ export default function RootLayout({
           <Footer />
           <CookieConsent />
           <ScrollEffects />
+          <CalendlyPopup />
         </div>
       </body>
     </html>

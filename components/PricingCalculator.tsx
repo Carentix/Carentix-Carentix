@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { BOOKING_URL } from "@/lib/site";
 
 const SERIF = "var(--font-source-serif), 'Source Serif 4', serif";
 const money = (n: number) => "$" + Math.round(n).toLocaleString("en-US");
@@ -95,7 +96,7 @@ export default function PricingCalculator() {
             <span style={{ fontSize: 13, color: "rgba(250,250,247,0.86)", lineHeight: 1.4 }}>Pay annually and save {money(annualSave)}/yr — 10% off the core fee, plus 5% off premium services.</span>
           </div>
         </div>
-        <a href="#contact" className="cx-gold cx-mag" style={{ position: "relative", marginTop: 24, display: "inline-flex", alignItems: "center", justifyContent: "center", gap: 9, textDecoration: "none", background: "#FEC539", color: "#13294B", fontWeight: 600, fontSize: "15.5px", padding: "15px 26px", borderRadius: 999, alignSelf: "flex-start" }}>Get an exact quote <span style={{ fontSize: 17 }}>→</span></a>
+        <a href={BOOKING_URL} data-calendly className="cx-gold cx-mag" style={{ position: "relative", marginTop: 24, display: "inline-flex", alignItems: "center", justifyContent: "center", gap: 9, textDecoration: "none", background: "#FEC539", color: "#13294B", fontWeight: 600, fontSize: "15.5px", padding: "15px 26px", borderRadius: 999, alignSelf: "flex-start" }}>Get an exact quote <span style={{ fontSize: 17 }}>→</span></a>
       </div>
     </div>
   );
