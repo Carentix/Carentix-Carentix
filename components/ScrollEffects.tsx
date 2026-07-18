@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 /**
  * ScrollEffects reproduces the behavior of the approved design's runtime:
@@ -12,6 +13,11 @@ import { useEffect } from "react";
  * It renders nothing; it just wires up global listeners for the current route.
  */
 export default function ScrollEffects() {
+  const pathname = usePathname();
+  // Re-run on every route change: this component lives in the persistent root
+  // layout, so without the pathname dependency it would only ever reveal the
+  // first page's [data-reveal] elements — client-navigated pages would stay
+  // stuck in their pre-reveal transform.
   useEffect(() => {
     // Fix: browsers restoring a previous scroll position combined with
     // CSS smooth-scrolling made the page visibly scroll to the middle on
@@ -29,15 +35,11 @@ export default function ScrollEffects() {
       window.matchMedia &&
       window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-    const revealEls = Array.from(
-      document.querySelectorAll<HTMLElement>("[data-reveal], [data-stagger]")
-    );
-    if (reduce) {
-      revealEls.forEach((el) => {
-        el.classList.add("cx-seen");
-        el.style.transform = "none";
-      });
-    }
+    // Note: [data-reveal] / [data-stagger] entrance motion is now handled
+    // entirely by CSS animations (see globals.css). CSS animations replay on
+    // every mount — including client-side navigation — and always run to
+    // completion, so content can never get stuck in its pre-reveal state.
+    // This effect only wires up counters, parallax, and magnetic buttons.
 
     const counters = Array.from(
       document.querySelectorAll<HTMLElement & { _done?: boolean }>(
@@ -83,15 +85,6 @@ export default function ScrollEffects() {
           const progress = (r.top + r.height / 2 - vh / 2) / vh; // -1..1
           const factor = parseFloat(el.dataset.parallax || "26");
           el.style.transform = `translateY(${(-progress * factor).toFixed(1)}px)`;
-        }
-      }
-      if (reduce) return;
-      for (const el of revealEls) {
-        if (el.classList.contains("cx-seen")) continue;
-        const r = el.getBoundingClientRect();
-        if (r.top < vh * 0.92 && r.bottom > 0) {
-          el.classList.add("cx-seen");
-          el.style.transform = "none";
         }
       }
       for (const el of counters) {
@@ -157,7 +150,7 @@ export default function ScrollEffects() {
         b.removeEventListener("mouseleave", l);
       });
     };
-  }, []);
+  }, [pathname]);
 
   return null;
 }

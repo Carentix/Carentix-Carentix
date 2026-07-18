@@ -150,24 +150,23 @@ textarea:focus-visible {
   mask-image: radial-gradient(130% 130% at 50% 42%, #000 62%, transparent 98%);
 }
 
-/* staggered reveal children */
+/* staggered reveal children — CSS-animation driven so it always plays to
+   completion on mount (page load OR client-side navigation) and can never
+   leave content stuck hidden/shifted. */
+@keyframes cxStaggerUp {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
 [data-stagger] > * {
-  opacity: 0;
-  transform: translateY(22px);
-  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
-    transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+  animation: cxStaggerUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
-[data-stagger].cx-seen > * {
-  opacity: 1;
-  transform: none;
-}
-[data-stagger].cx-seen > *:nth-child(1) { transition-delay: 0s; }
-[data-stagger].cx-seen > *:nth-child(2) { transition-delay: 0.08s; }
-[data-stagger].cx-seen > *:nth-child(3) { transition-delay: 0.16s; }
-[data-stagger].cx-seen > *:nth-child(4) { transition-delay: 0.24s; }
-[data-stagger].cx-seen > *:nth-child(5) { transition-delay: 0.32s; }
-[data-stagger].cx-seen > *:nth-child(6) { transition-delay: 0.4s; }
-[data-stagger].cx-seen > *:nth-child(n + 7) { transition-delay: 0.48s; }
+[data-stagger] > *:nth-child(1) { animation-delay: 0.04s; }
+[data-stagger] > *:nth-child(2) { animation-delay: 0.12s; }
+[data-stagger] > *:nth-child(3) { animation-delay: 0.2s; }
+[data-stagger] > *:nth-child(4) { animation-delay: 0.28s; }
+[data-stagger] > *:nth-child(5) { animation-delay: 0.36s; }
+[data-stagger] > *:nth-child(6) { animation-delay: 0.44s; }
+[data-stagger] > *:nth-child(n + 7) { animation-delay: 0.52s; }
 
 /* richer navy surface with subtle depth */
 .cx-navy-deep {
@@ -198,28 +197,33 @@ textarea:focus-visible {
   .cx-cine-img img {
     animation: none !important;
   }
-  [data-stagger] > * {
+  [data-stagger] > *,
+  [data-reveal] {
     opacity: 1 !important;
     transform: none !important;
     transition: none !important;
+    animation: none !important;
   }
   [data-parallax] {
     transform: none !important;
   }
 }
 
-/* fail-safe reveal: transform-only, content never opacity-hidden */
-[data-reveal] {
-  transform: translateY(28px);
-  transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+/* fail-safe reveal — CSS-animation driven (never opacity-hidden). Because the
+   animation plays on mount, freshly rendered elements always finish at their
+   final position, so client-side navigation and reloads can never leave a
+   section stuck in its pre-reveal transform. */
+@keyframes cxRevealUp {
+  from { transform: translateY(28px); }
+  to   { transform: translateY(0); }
 }
-[data-reveal].cx-seen {
-  transform: none;
+[data-reveal] {
+  animation: cxRevealUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 @media (prefers-reduced-motion: reduce) {
   [data-reveal] {
     transform: none !important;
-    transition: none !important;
+    animation: none !important;
   }
   .cx-anim {
     animation: none !important;
