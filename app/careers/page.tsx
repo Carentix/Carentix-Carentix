@@ -9,6 +9,9 @@ export const metadata: Metadata = {
 };
 
 const SERIF = "var(--font-source-serif), 'Source Serif 4', serif";
+/** Google Form applicants fill out when they apply for a role. */
+const APPLY_URL =
+  "https://docs.google.com/forms/d/e/1FAIpQLScIGd8B-vVTjoe8kQbwygHRU7uwe61sEBwjOGcucFpXiVtwhQ/viewform?usp=publish-editor";
 const ic = (p: string) =>
   `<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${p}</svg>`;
 
@@ -294,7 +297,7 @@ export default function Page() {
           </div>
           <div style={{ borderTop: "1px solid rgba(19,41,75,0.12)" }}>
             {openings.map((o, i) => (
-              <a key={i} href="/#contact" className="cx-role" data-reveal style={{ display: "grid", gridTemplateColumns: "1fr auto", gap: 18, alignItems: "center", textDecoration: "none", background: "transparent", border: "1px solid transparent", borderBottom: "1px solid rgba(19,41,75,0.12)", borderRadius: 14, padding: "26px clamp(16px, 2.5vw, 28px)" }}>
+              <a key={i} href={APPLY_URL} target="_blank" rel="noopener noreferrer" className="cx-role" data-reveal style={{ display: "grid", gridTemplateColumns: "1fr auto", gap: 18, alignItems: "center", textDecoration: "none", background: "transparent", border: "1px solid transparent", borderBottom: "1px solid rgba(19,41,75,0.12)", borderRadius: 14, padding: "26px clamp(16px, 2.5vw, 28px)" }}>
                 <div>
                   <div style={{ fontFamily: SERIF, fontWeight: 600, fontSize: "clamp(19px, 2.4vw, 24px)", color: "#13294B", letterSpacing: "-0.015em", marginBottom: 12 }}>{o.title}</div>
                   <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
