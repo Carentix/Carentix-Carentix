@@ -23,7 +23,7 @@ export type LegalSection = {
 export type GlanceCard = { icon: ReactNode; title: string; body: string };
 export type MetaItem = { label: string; value: string };
 export type HeroImage = { src: string; alt: string; objectPosition?: string };
-export type CTA = { title: string; body: string; email: string };
+export type CTA = { title: string; body: string; email: string; secondaryLabel?: string; secondaryHref?: string };
 
 export type LegalPageData = {
   eyebrow: string;
@@ -151,8 +151,8 @@ export default function LegalPage({ data }: { data: LegalPageData }) {
               <a href={`mailto:${data.cta.email}`} className="cx-gold cx-mag" style={{ display: "inline-flex", alignItems: "center", gap: 9, textDecoration: "none", background: "#FEC539", color: "#13294B", fontWeight: 600, fontSize: 16, padding: "16px 30px", borderRadius: 999 }}>
                 {data.cta.email}
               </a>
-              <a href="/hipaa-compliance" className="cx-mag" style={{ display: "inline-flex", alignItems: "center", gap: 9, textDecoration: "none", color: "#FAFAF7", fontWeight: 600, fontSize: 16, padding: "16px 28px", borderRadius: 999, border: "1px solid rgba(250,250,247,0.28)" }}>
-                See our HIPAA program
+              <a href={data.cta.secondaryHref ?? "/hipaa-compliance"} className="cx-mag" style={{ display: "inline-flex", alignItems: "center", gap: 9, textDecoration: "none", color: "#FAFAF7", fontWeight: 600, fontSize: 16, padding: "16px 28px", borderRadius: 999, border: "1px solid rgba(250,250,247,0.28)" }}>
+                {data.cta.secondaryLabel ?? "See our HIPAA program"}
               </a>
             </div>
           </div>
