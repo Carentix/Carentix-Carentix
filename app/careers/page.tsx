@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import DesignFaqList from "@/components/DesignFaqList";
 
 export const metadata: Metadata = {
@@ -105,6 +106,7 @@ export default function Page() {
     <div style={{ position: "relative", color: "#4A4A45", overflowX: "hidden" }}>
       {/* HERO */}
       <section id="top" style={{ position: "relative", overflow: "hidden", background: "#0C1E3C" }}>
+        <Image src="/images/careers-hero.jpg" alt="Professionals building their careers in healthcare operations" className="cx-hero-bg" fill priority sizes="100vw" style={{ objectFit: "cover", objectPosition: "center" }} />
         <div className="cx-hero-tint" aria-hidden />
         <div className="cx-hero-scrim" aria-hidden style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, rgba(12,30,60,0.5) 0%, rgba(12,30,60,0.58) 46%, rgba(12,30,60,0.95) 100%)" }} />
         <div style={{ position: "relative", zIndex: 2, maxWidth: 1320, margin: "0 auto", padding: "clamp(150px, 19vw, 244px) 32px clamp(56px, 7vw, 84px)" }}>

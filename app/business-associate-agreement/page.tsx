@@ -55,13 +55,9 @@ const faqs = [
   { q: "How do we request a copy?", a: "Email info@carentix.com or use the button below, and we’ll send our standard BAA along with our safeguards documentation so your compliance officer has everything needed to review and approve." },
 ];
 
-const eyebrowRow = (num: string, label: string) => (
-  <div style={{ display: "flex", alignItems: "center", gap: 13, marginBottom: 22 }}>
-    <span style={{ fontFamily: SERIF, fontSize: 14, fontWeight: 600, color: "#5B8C7B" }}>{num}</span>
-    <span style={{ width: 26, height: 1, background: "rgba(19,41,75,0.28)" }} />
-    <span style={{ fontSize: "12.5px", fontWeight: 500, letterSpacing: "0.04em", color: "#5B8C7B" }}>{label}</span>
-  </div>
-);
+// Section eyebrows (the numbered "01 · Label" rows) intentionally removed per
+// request — BAA sections show only their heading.
+const eyebrowRow = (_num: string, _label: string): null => null;
 
 export default function Page() {
   return (
