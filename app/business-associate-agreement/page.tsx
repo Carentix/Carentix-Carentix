@@ -74,7 +74,7 @@ export default function Page() {
             Before we handle a single record, we sign a BAA with your practice. This page explains what that document is, why it protects you, and exactly what we commit to under it — in plain English. When you’re ready, request a copy of ours.
           </p>
           <div data-reveal style={{ display: "flex", flexWrap: "wrap", gap: 14, alignItems: "center", marginTop: "clamp(26px, 3.5vw, 36px)" }}>
-            <a href="#request" className="cx-gold cx-mag" style={{ display: "inline-flex", alignItems: "center", gap: 9, textDecoration: "none", background: "#FEC539", color: "#13294B", fontWeight: 600, fontSize: 16, padding: "16px 28px", borderRadius: 999, boxShadow: "0 8px 26px rgba(254,197,57,0.26)" }}>Request a copy of our BAA <span style={{ fontSize: 18 }}>→</span></a>
+            <a href={BOOKING_URL} data-calendly className="cx-gold cx-mag" style={{ display: "inline-flex", alignItems: "center", gap: 9, textDecoration: "none", background: "#FEC539", color: "#13294B", fontWeight: 600, fontSize: 16, padding: "16px 28px", borderRadius: 999, boxShadow: "0 8px 26px rgba(254,197,57,0.26)" }}>Schedule a call <span style={{ fontSize: 18 }}>→</span></a>
             <a href="/hipaa-compliance" className="cx-link-u" style={{ textDecoration: "none", color: "#FAFAF7", fontWeight: 600, fontSize: 16 }}>See our HIPAA program</a>
           </div>
         </div>
